@@ -1,0 +1,310 @@
+/************
+Header Styles
+*************/
+.site-header {
+	background-color: $black;
+	width: 100%;
+	z-index: 201;
+	position: fixed;
+	height: auto;
+
+	@include breakpoint( $break-large ) {
+		position: absolute;
+	}
+
+	&__wrap {
+		background-color: $black;
+		z-index: 5;
+		width: 100%;
+		padding-bottom: 10px;
+
+		@include breakpoint( $break-large ) {
+			padding-bottom: 0;
+		}
+	}
+
+	.sticky {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+	&__wrap-container {
+		@extend .container;
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+
+	&__logo {
+		float: left;
+		margin-top: 5px;
+		flex: 0 0 115px;
+
+		h1 {
+			margin: 0;
+			height: auto;
+			display: block;
+			line-height: 1;
+		}
+
+		a {
+			line-height: 1;
+			display: block;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+		@include breakpoint( $break-large ) {
+			flex: 0 0 210px;
+			margin: 20px 0;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	&__desktop-nav {
+		display: none;
+		flex: 1 1 auto;
+		flex-wrap: nowrap;
+		padding-right: 10px;
+
+		> div {
+			float: right;
+		}
+		@include breakpoint( $break-large ) {
+			display: block;
+		}
+
+		.dropdown {
+			position: relative;
+
+			> li {
+				&.is-active {
+					position: relative;
+
+					&::before {
+						position: absolute;
+						z-index: 3;
+						width: 0;
+						height: 0;
+						bottom: 0;
+						left: 50%;
+						margin-left: -18px;
+						border-left: 18px solid transparent;
+						border-right: 18px solid transparent;
+						border-bottom: 18px solid $off-white;
+						content: "";
+					}
+
+					> a {
+						color: $white;
+						background: $blue;
+					}
+				}
+
+				> a {
+					@include font-size( 1.4 );
+					text-transform: uppercase;
+					font-weight: $medium;
+					color: $white;
+					display: block;
+					line-height: 104px;
+					padding: 0 22px;
+					white-space: nowrap;
+
+					&:hover {
+						background: $blue;
+					}
+
+					&::after {
+						display: none !important;
+					}
+				}
+
+				.sub-menu {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					background: $off-white;
+					box-shadow: 0 3px 10px 0 rgba( 0, 0, 0, 0.5 );
+					border: 0;
+					z-index: 2;
+
+					> li {
+						> a {
+							@include font-size( 1.5 );
+							color: $gray;
+							padding: 10px 20px;
+							border-bottom: solid 1px $white;
+							font-weight: $medium;
+							border-left: solid 5px transparent;
+
+							&:hover {
+								color: $blue;
+								border-left: solid 5px $blue;
+							}
+						}
+
+						&.current-menu-item {
+							a {
+								color: $blue;
+								background-color: rgba( 2, 112, 205, 0.2 );
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__hamburger-desktop,
+	&__hamburger-mobile {
+		float: right;
+		margin-top: 12px;
+	}
+
+	&__hamburger-desktop {
+		display: none;
+		margin-top: 0;
+		height: 104px;
+		@include breakpoint( $break-large ) {
+			display: block;
+
+			.hamburger__box {
+				top: 6px;
+			}
+
+			> a {
+				@include font-size( 1.4 );
+				text-transform: uppercase;
+				font-weight: $medium;
+				line-height: 104px;
+				margin-right: 19px;
+				margin-left: 19px;
+			}
+		}
+		@include breakpoint( $break-medium ) {
+			flex: 0 0 106px;
+		}
+
+		&.hover {
+			background: $blue;
+
+			&::after {
+				content: "";
+				width: 21px;
+				height: 100%;
+				display: block;
+				background-color: $blue;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+		}
+
+		.desktop-nav-more-pane {
+			width: 240px;
+			max-width: 240px;
+			padding: 0;
+			right: 0;
+			position: absolute;
+			overflow-y: auto;
+			max-height: 900px;
+			@media screen and ( max-height: 700px ) {
+				max-height: 500px;
+			}
+
+			@media screen and ( max-height: 600px ) {
+				max-height: 400px;
+			}
+
+			@media screen and ( max-height: 500px ) {
+				max-height: 300px;
+			}
+
+			@media screen and ( max-height: 400px ) {
+				max-height: 200px;
+			}
+
+			a {
+				padding: 0 25px;
+			}
+
+			&::after {
+				display: block;
+				position: absolute;
+				top: -14px;
+				right: auto;
+				left: 192px;
+				border-left: 12px solid transparent;
+				border-right: 12px solid transparent;
+				border-bottom: 14px solid $white;
+				content: "";
+			}
+		}
+	}
+
+	&__hamburger-mobile {
+		margin-left: auto;
+		@include breakpoint( $break-large ) {
+			display: none;
+		}
+	}
+}
+
+.top-bar {
+	display: none;
+	background-color: $blue;
+	width: 100%;
+	@include breakpoint( $break-large ) {
+		display: flex;
+		align-items: center;
+	}
+
+	&__social-icons {
+		flex-grow: 1;
+		text-align: right;
+		margin: 5px 0;
+		padding: 10px $space * 2 10px 0;
+		border-right: solid 1px rgba( 241, 241, 241, 0.2 );
+		box-sizing: border-box;
+
+		a {
+			@include font-size( 1.8 );
+			color: $off-white;
+			margin-right: 20px;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+	&__location-dropdown {
+		box-sizing: border-box;
+		padding: 0 $space * 2 0 $space * 2;
+
+		.location-dropdown {
+			min-height: auto;
+		}
+	}
+
+	&__student-login {
+		@include font-size( 1.3 );
+		text-transform: uppercase;
+		font-weight: $bold;
+		line-height: 50px;
+		flex: 0 0 170px;
+		background-color: $white;
+		color: $blue;
+		display: block;
+		text-align: center;
+	}
+}

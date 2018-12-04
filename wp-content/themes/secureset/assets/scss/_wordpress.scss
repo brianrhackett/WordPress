@@ -1,0 +1,212 @@
+/*****************
+WordPress Defaults
+******************/
+@include breakpoint ( 600px, max ) {
+	#wpadminbar {
+		position: fixed;
+	}
+}
+
+.entry-content img {
+	margin: 0 0 1.5em;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-smiley {
+	margin: 0 !important;
+	max-height: 1em;
+}
+
+blockquote.left {
+	margin-right: 20px;
+	text-align: right;
+	margin-left: 0;
+	width: 33%;
+	float: left;
+}
+
+blockquote.right {
+	margin-left: 20px;
+	text-align: left;
+	margin-right: 0;
+	width: 33%;
+	float: right;
+}
+
+
+
+
+/*****************
+WordPress Captions
+******************/
+
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[ class*="wp-image-" ] {
+	display: block;
+	margin: 0 auto;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+
+
+
+/****************
+WordPress Widgets
+*****************/
+
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget. */
+.widget_search .search-submit {
+	display: none;
+}
+
+
+
+
+/******************
+WordPress Galleries
+*******************/
+
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+
+
+
+/*****************
+WordPress Comments
+******************/
+
+#social {
+	background: url( "../img/lines-gray.png" ) left top repeat-x;
+	padding-top: 20px;
+
+	#reply-title {
+		background: none;
+		padding: 0;
+	}
+}
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.comment-list {
+	margin: 0 0 ($space * 2);
+	padding: 0;
+
+	.children {
+		margin-top: $space;
+	}
+}
+
+.comment {
+	& + .comment {
+		margin: $space 0 0;
+	}
+}
+
+.comment-author {
+	@include clearfix;
+
+	.avatar {
+		float: left;
+		height: 64px;
+		margin: 0 $space $space 0;
+		width: 64px;
+	}
+}
+
+.comment-meta {
+	min-height: 64px;
+
+	.fn {
+		display: block;
+		padding-top: 10px;
+	}
+}

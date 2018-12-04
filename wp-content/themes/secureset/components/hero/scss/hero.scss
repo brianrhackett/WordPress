@@ -1,0 +1,584 @@
+// Styles to hide nav when no-hero-hero is active
+.nonav-hero {
+	padding-top: 0;
+}
+
+.nonav-hero {
+	main {
+		@include breakpoint( $break-large ) {
+			margin-top: 100px;
+		}	
+	}
+}
+
+.nonav-hero .mobile-menu-mask,
+.nonav-hero .mobile-nav,
+.nonav-hero .site-header {
+	display: none !important;
+}
+
+.hero {
+	position: relative;
+	min-height: 400px;
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 0 0 10px 0 rgba( $black, 0.5 );
+	z-index: 10;
+
+	&__gradient-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: $lightest-blue;
+		opacity: 0.8;
+		z-index: 2;
+	}
+
+	&__image--desktop,
+	&__image--mobile {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		position: absolute;
+		background-size: cover;
+		background-position: center center;
+		z-index: 1;
+	}
+
+	&__image--desktop {
+		display: none;
+
+		@include breakpoint( $break-small ) {
+			display: block;
+		}
+	}
+
+	&__image--mobile {
+		display: block;
+		@include breakpoint( $break-small ) {
+			display: none;
+		}
+	}
+
+	&__image--grayscale {
+		filter: grayscale( 100% );
+	}
+
+	&__content {
+		@include clearfix;
+		position: relative;
+		z-index: 3;
+	}
+
+	&__theme--dark {
+		color: $white;
+
+		p {
+			color: $white;
+		}
+	}
+
+	&__theme--light {
+		background-color: $white;
+
+		p {
+			color: $blue;
+		}
+
+		.hero__headline {
+
+			&::after {
+				background-color: $transparent-blue;
+			}
+		}
+	}
+
+	// Regular Hero
+	&--hero-regular .hero__content {
+		padding: 50px 0;
+
+		@include breakpoint( $break-small ) {
+			padding: 75px 0;
+		}
+	}
+	// Hero with search
+	&--hero-search {
+		overflow: visible;
+		z-index: 15;
+
+		.hero__content {
+			padding: 50px 0;
+
+			@include breakpoint( $break-small ) {
+				padding: 125px 0;
+			}
+		}
+	}
+	// Text only Hero (no bg)
+	&--hero-text {
+		display: flex;
+		align-items: center;
+		box-shadow: none;
+
+		.container {
+			width: 100%;
+		}
+
+		.hero__content {
+			padding: 50px 0;
+			text-align: center;
+
+			.hero__headline {
+				margin-bottom: 25px;
+				max-width: 100%;
+			}
+
+			.hero__copy {
+				margin-bottom: 50px;
+				max-width: 100%;
+
+				@include breakpoint( $break-small ) {
+					margin-bottom: 25px;
+				}
+			}
+
+			@include breakpoint( $break-small ) {
+				padding: 75px 0;
+				max-width: 80%;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	// No Nav Hero (regular hero w/ hidden main header/nav)
+	&--hero-nonav {
+		padding: 0 0 50px;
+		overflow: visible;
+
+		.hero__header {
+			display: flex;
+			align-items: center;
+			padding-top: 0;
+			padding-bottom: 0;
+			height: 50px;
+			transform: translateY( -50px );
+			background: $black;
+			max-width: none;
+			width: 100%;
+			margin: 0;
+
+			@include breakpoint( $break-large ) {
+				transform: translateY( -100px );
+				height: 100px;
+			}
+		}
+
+		.hero__logo {
+			max-width: $max-width;
+			margin: 0 auto;
+			width: 100%;
+
+			img {
+				max-height: 40px;
+				height: auto;
+				width: auto;
+
+				@include breakpoint( $break-large ) {
+					width: 200px;
+					max-height: 150px;
+				}
+			}
+		}
+	}
+
+	&__header {
+		position: relative;
+		z-index: 3;
+		padding-top: 30px;
+		padding-bottom: 140px;
+
+		@include breakpoint( $break-medium ) {
+			padding-top: 20px;
+		}
+	}
+
+	&__logo {
+		width: 130px;
+		height: auto;
+
+		@include breakpoint( $break-medium ) {
+			width: 200px;
+		}
+	}
+
+	&__pre-headline {
+		@include font-size( 1.8 );
+		color: rgba( $white, 0.6 );
+		margin: 0;
+		padding: 0;
+		font-family: $font-secondary;
+		margin-bottom: 10px;
+
+		@include breakpoint( $break-small ) {
+			@include font-size( 3 );
+		}
+	}
+
+	&__headline {
+		margin: 0 0 $space;
+		max-width: 900px;
+
+		@include breakpoint( $break-small ) {
+			@include font-size( 7.2 );
+		}
+	}
+
+	&__copy {
+		@include font-size( 1.8 );
+		margin: 0 0 $space * 2;
+		line-height: 1.4;
+		font-family: $font-secondary;
+		max-width: 900px;
+
+		@include breakpoint( $break-small ) {
+			@include font-size( 2 );
+		}
+	}
+
+	&__cta-group {
+		text-align: left;
+
+		.btn {
+			@include font-size( 1.8 );
+			padding: 12px 23px;
+			float: left;
+			clear: left;
+
+			& + .btn {
+				margin: 25px 0 0;
+			}
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 2.4 );
+				padding: 20px 50px;
+
+				& + .btn {
+					margin: 0 0 0 40px;
+					clear: none;
+				}
+			}
+		}
+	}
+
+	&--hero-text .hero__cta-group {
+		text-align: center;
+
+		.btn {
+			float: none;
+		}
+	}
+}
+
+.hero--hero-text.hero__theme--light {
+	color: $blue;
+}
+
+.hero-search {
+	position: relative;
+	z-index: 2;
+	background: $white;
+	color: $gray;
+	overflow: visible;
+	max-width: 100%;
+
+	@include breakpoint( $break-large ) {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		z-index: 4;
+	}
+
+	&__form {
+
+		@include breakpoint( $break-large ) {
+			display: flex;
+			justify-content: flex-end;
+			position: relative;
+		}
+	}
+
+	&__content {
+		padding: 15px 10px;
+
+		@include breakpoint( $break-large ) {
+			display: flex;
+			flex-wrap: nowrap;
+			flex-direction: row;
+			align-items: stretch;
+			padding: 0 0 0 20px;
+			margin: 0;
+		}
+
+		@include breakpoint( $break-large ) {
+			padding: 0 0 0 20px;
+		}
+	}
+
+	&__title {
+		@include font-size( 2 );
+		margin: 0 0 10px;
+
+		@include breakpoint( $break-small ) {
+			@include font-size( 2.6 );
+		}
+
+		@include breakpoint( $break-large ) {
+			@include font-size( 2.4 );
+			margin: 0 20px 0 0;
+			align-self: center;
+		}
+	}
+
+	&__dropdown-wrapper {
+
+		@include breakpoint( $break-large ) {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			flex-direction: row;
+			align-items: stretch;
+		}
+	}
+
+	&__dropdown {
+		display: block;
+		float: left;
+		position: relative;
+
+		@include breakpoint( $break-large ) {
+			float: none;
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+			padding-right: 0;
+		}
+
+		&:nth-child( 1 ) {
+			margin-right: 20px;
+
+			@include breakpoint( $break-medium ) {
+				margin-right: 30px;
+			}
+
+			@include breakpoint( $break-large ) {
+				margin-right: 0;
+			}
+
+			&::after {
+
+				@include breakpoint( $break-large ) {
+					content: "";
+					position: absolute;
+					z-index: -1;
+					right: 0;
+					top: 10px;
+					bottom: 10px;
+					width: 3px;
+					background: $light-gray;
+				}
+			}
+		}
+	}
+
+	&__dropdown-trigger {
+		@include font-size( 1.6 );
+		font-family: $font-secondary;
+		color: $light-gray;
+		display: inline-block;
+		padding-right: 20px;
+		cursor: pointer;
+		position: relative;
+		z-index: 1;
+		transition: all 100ms ease;
+		min-width: auto;
+
+		&--location {
+			margin-left: -3px;
+
+			@include breakpoint( $break-large ) {
+				min-width: 300px;
+			}
+		}
+
+		&--interest {
+			@include breakpoint( $break-large ) {
+				min-width: 236px;
+			}
+		}
+
+		@include breakpoint( $break-small ) {
+			padding-right: 60px;
+		}
+
+		@include breakpoint( $break-large ) {
+			@include font-size( 2 );
+			font-family: $font-primary;
+			font-weight: $medium;
+			letter-spacing: 1px;
+			border: none;
+			padding: 0 50px 0 20px;
+			width: auto;
+			height: 80px;
+			line-height: 80px;
+			overflow: hidden;
+		}
+
+		@include breakpoint( $break-large ) {
+			@include font-size( 2.4 );
+		}
+
+		&::after {
+			border-color: $blue transparent transparent;
+			margin-top: -8px;
+			right: 0;
+
+			@include breakpoint( $break-large ) {
+				margin-top: -5px;
+				right: 20px;
+			}
+		}
+
+		&.hover,
+		&:hover {
+			@include breakpoint( $break-large ) {
+				background: $blue;
+				background: $light-blue-gradient;
+				color: $white;
+
+				&::after {
+					border-color: $white transparent transparent;
+				}
+			}
+		}
+
+		&.hover {
+			&::after {
+				border-top: none;
+				border-color: transparent transparent $blue;
+				margin-top: -8px;
+				@include breakpoint( $break-medium ) {
+					margin-top: -5px;
+					border-color: transparent transparent $white;
+				}
+			}
+		}
+
+		@include breakpoint( $break-large, "max" ) {
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 100%;
+				width: 100%;
+				height: 4px;
+				background: $blue-gradient;
+			}
+		}
+	}
+
+	&__submit {
+		@include font-size( 2.6 );
+		color: $white;
+		background: $blue;
+		line-height: 1;
+		display: block;
+		border: none;
+		outline: none;
+		width: 100%;
+		padding: 12px 0 10px;
+		border-radius: 0;
+		cursor: pointer;
+		transition: all 100ms ease;
+
+		&:hover {
+			@include font-size( 3 );
+			@include breakpoint( $break-large ) {
+				@include font-size( 3.2 );
+			}
+		}
+
+		@include breakpoint( $break-large ) {
+			@include font-size( 3 );
+			position: relative;
+			width: 80px;
+			flex: 0 0 80px;
+			padding: auto;
+		}
+	}
+
+	.dropdown-pane {
+		background: $blue;
+		background: $light-blue-gradient;
+
+		@include breakpoint( $break-large, "max" ) {
+			box-shadow: 0 0 20px 0 rgba( $black, 0.5 );
+		}
+
+		@include breakpoint( $break-large ) {
+			width: 100%;
+			max-width: 100%;
+		}
+
+		&::after {
+
+			@include breakpoint( $break-large ) {
+				display: none;
+			}
+		}
+
+		ul {
+			max-height: 200px;
+			overflow: auto;
+
+			@include breakpoint( $break-large ) {
+				padding: 10px 0;
+				max-height: 400px;
+			}
+
+			li:last-of-type a {
+				border-left: 4px solid transparent;
+
+				&:hover {
+					border-left-color: $white;
+				}
+			}
+		}
+
+		a {
+			@include font-size( 1.4 );
+			font-family: $font-primary;
+			font-weight: $bold;
+			line-height: 1;
+			padding: 1rem 20px;
+			margin: 1rem 0;
+			transition: color 0.2s ease, border-left-color 0.2s ease;
+
+			@include breakpoint( $break-large ) {
+				@include font-size( 1.8 );
+				color: $light-blue;
+				line-height: 1.6;
+				margin: 8px 0;
+				border: none;
+				border-left: 4px solid transparent;
+
+				&:hover {
+					color: $white;
+					border-left-color: $white;
+				}
+			}
+		}
+	}
+}

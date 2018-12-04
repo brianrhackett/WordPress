@@ -1,0 +1,147 @@
+/***************
+Utility Elements
+****************/
+.clearfix {
+	@include clearfix;
+}
+
+.display {
+	&--none {
+		display: none;
+	}
+
+	&--block {
+		display: block;
+	}
+
+	&--inline-block {
+		display: inline-block;
+	}
+
+	&--inline {
+		display: inline;
+	}
+}
+
+/* Vertical Align Via Disaplay Table */
+.v-align {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.v-align-middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
+
+/*******************
+Breakpoint indicator
+********************/
+.breakpoint-context {
+	position: absolute;
+	top: -999em;
+	left: -999em;
+	z-index: 1;
+
+	@include breakpoint( $break-small ) {
+		z-index: 2;
+	}
+
+	@include breakpoint( $break-medium ) {
+		z-index: 3;
+	}
+
+	@include breakpoint( $break-large ) {
+		z-index: 4;
+	}
+
+	@include breakpoint( $break-xl ) {
+		z-index: 5;
+	}
+}
+
+.hidden {
+	display: none !important;
+}
+
+.affix {
+	position: fixed;
+}
+
+.hide-on-mobile {
+	@include breakpoint( $break-medium, max ) {
+		display: none !important;
+	}
+}
+
+.hide-on-desktop {
+	@include breakpoint( $break-medium ) {
+		display: none !important;
+	}
+}
+
+
+.back-arrow {
+
+	&::after {
+		content: "";
+		width: 0;
+		height: 0;
+		border-top: 6px solid transparent;
+		border-bottom: 6px solid transparent;
+		border-right: 6px solid $white;
+		position: absolute;
+		left: 8px;
+		top: 50%;
+		margin-top: -6px;
+
+		@include breakpoint( $break-small ) {
+			left: 0;
+			margin-top: -8px;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-right: 8px solid $white;
+		}
+	}
+}
+
+
+// Text
+.text-center {
+	text-align: center;
+}
+
+.text-error {
+	color: $red !important;
+}
+
+.text-warning {
+	color: $orange !important;
+}
+
+.text-success {
+	color: $green !important;
+}
+
+// Status Text
+.success {
+	color: $green;
+}
+
+.warning {
+	color: $orange;
+}
+
+.error {
+	color: $red;
+}

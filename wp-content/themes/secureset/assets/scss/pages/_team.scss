@@ -1,0 +1,86 @@
+.team-details {
+	@include clearfix;
+	padding: 36px 0 50px;
+
+	&__image {
+		width: 214px;
+		float: left;
+		text-align: center;
+
+		img {
+			width: 100%;
+			height: auto;
+
+			@include breakpoint( $break-medium ) {
+				margin-bottom: 45px;
+			}
+		}
+	}
+
+	&__content {
+		@include span( 12 last );
+		float: left;
+		clear: left;
+		margin: 60px 0 0;
+
+		@include breakpoint( $break-medium ) {
+			@include push( 3 );
+			@include span( 9 last );
+			margin: 0;
+			clear: none;
+		}
+	}
+
+	&__name {
+		margin: 0;
+
+		@include breakpoint( $break-medium ) {
+			clear: none;
+		}
+	}
+
+	&__role {
+		color: $white;
+		margin: 28px 0 0;
+	}
+
+	&__bio {
+		color: $white;
+		margin: 20px 0 0;
+	}
+
+	&__linked-in-mobile {
+		margin: 50px 0 0;
+
+		@include breakpoint( $break-medium ) {
+			display: none !important;
+		}
+	}
+
+	&__facebook-mobile {
+		margin: 50px 0 0 25px;
+
+		@include breakpoint( $break-medium ) {
+			display: none !important;
+		}
+	}
+
+	&__linked-in-desktop,
+	&__facebook-desktop {
+		display: none !important;
+		width: 90%;
+		box-sizing: border-box;
+
+		@include breakpoint( $break-medium ) {
+			display: inline-block !important;
+		}
+	}
+
+	&__linked-in-desktop {
+		margin: 0 auto 25px;
+	}
+
+	&__facebook-desktop {
+		margin: 0 auto;
+	}
+}

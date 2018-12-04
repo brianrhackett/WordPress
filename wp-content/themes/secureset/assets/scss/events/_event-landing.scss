@@ -1,0 +1,1090 @@
+.events-land {
+
+	.hero.hero--hero-text {
+		min-height: 0;
+
+		.hero__content {
+			padding: 50px 0 27px;
+
+			@include breakpoint( $break-medium ) {
+				padding: 102px 0 50px;
+			}
+		}
+
+		.hero__copy {
+			margin: 0;
+		}
+
+		.hero__headline {
+
+			&::after {
+				background: rgba( 140, 183, 231, 0.3 );
+			}
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 6.8 );
+
+				&::after {
+					background: rgba( 140, 183, 231, 0.3 );
+				}
+			}
+		}
+	}
+
+	&__top-bar {
+		@include font-size( 1.5 );
+		background: $blue;
+		background: $blue-gradient;
+		color: $light-blue;
+		padding: 17px 0;
+		position: relative;
+
+		@include breakpoint( $break-medium ) {
+			padding: 30px 0;
+		}
+
+		&-item {
+			@include span( 6 );
+
+			@include breakpoint( $break-medium ) {
+				@include span( 3 );
+				@include push( 3 );
+			}
+
+			&::before {
+				@include font-size( 3 );
+				font-family: $font-icons;
+				content: "\e921";
+				position: absolute;
+				z-index: 1;
+				top: 8px;
+
+				@include breakpoint( $break-medium ) {
+					@include font-size( 4 );
+					top: 16px;
+				}
+			}
+
+			&:last-child {
+				@include span( 6 last );
+
+				@include breakpoint( $break-medium ) {
+					@include push( 0 );
+				}
+
+				&::before {
+					content: "\e922";
+
+					@include breakpoint( $break-medium ) {
+						top: 12px;
+					}
+				}
+			}
+
+			&-title {
+				@include font-size( 1.5 );
+				font-family: $font-secondary;
+				margin-left: 45px;
+				line-height: 1;
+
+				@include breakpoint( $break-medium ) {
+					@include font-size( 1.4 );
+					font-family: $font-primary;
+					text-transform: uppercase;
+					margin-left: 60px;
+				}
+
+				a {
+					color: $light-blue;
+				}
+			}
+		}
+	}
+}
+
+.event-bar {
+	margin-top: 43px;
+
+	@include breakpoint( $break-medium ) {
+		margin-top: 50px;
+	}
+
+	.tribe-events-notices {
+		box-sizing: border-box;
+	}
+
+	&__form {
+		width: 100%;
+		display: flex;
+	}
+
+	&__month-input,
+	&__search-input,
+	&__submit-input {
+		width: 100%;
+		height: 45px;
+		border: 0;
+		padding: 0;
+		display: block;
+
+		@include breakpoint( $break-medium ) {
+			height: 80px;
+		}
+	}
+
+	&__month {
+		width: 108px;
+		flex: 0 0 108px;
+		position: relative;
+		background-color: $white;
+		cursor: pointer;
+
+		@include breakpoint( $break-medium ) {
+			flex: 0 0 300px;
+
+			&::before {
+				width: 3px;
+				content: "";
+				background-color: rgba( 174, 182, 191, 0.6 );
+				right: 0;
+				height: 60px;
+				top: 10px;
+				position: absolute;
+				z-index: 1;
+			}
+		}
+
+		// Tribe id override
+		#tribe-bar-dates {
+			@include breakpoint( $break-medium ) {
+				display: inline-block;
+				position: relative;
+
+				&::after {
+					content: "";
+					width: 0;
+					height: 0;
+					border-left: 7px solid transparent;
+					border-right: 7px solid transparent;
+					border-top: 7px solid $blue;
+					right: 13px;
+					top: 50%;
+					margin-top: -3px;
+					position: absolute;
+					z-index: 1;
+					pointer-events: none;
+				}
+			}
+		}
+
+		&-input {
+			@include font-size( 1.6 );
+			font-family: $font-secondary;
+			color: $gray;
+			padding: 0 15px;
+			box-sizing: border-box;
+			border-bottom: solid 4px $blue;
+			font-weight: $bold;
+			border-right: solid 1px $light-gray;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			cursor: pointer;
+
+			&::placeholder {
+				color: $gray;
+			}
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 2 );
+				font-family: $font-primary;
+				border: none;
+				padding: 0 30px;
+				color: $dark-gray;
+
+				&::placeholder {
+					color: $dark-gray;
+				}
+			}
+		}
+
+		&::after {
+			content: "";
+			width: 0;
+			height: 0;
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-top: 7px solid $blue;
+			right: 13px;
+			top: 50%;
+			margin-top: -3px;
+			position: absolute;
+			z-index: 1;
+			pointer-events: none;
+
+			@include breakpoint( $break-medium ) {
+				display: none;
+			}
+		}
+	}
+
+	&__level {
+		display: none;
+
+		@include breakpoint( $break-medium ) {
+			display: block;
+			cursor: pointer;
+			flex: 0 0 230px;
+			box-sizing: border-box;
+			width: 370px;
+			position: relative;
+			background: $white;
+
+			&-popup {
+
+				.active {
+					color: $blue !important;
+				}
+			}
+
+			&::before {
+				width: 3px;
+				content: "";
+				background-color: rgba( 174, 182, 191, 0.6 );
+				right: 0;
+				height: 60px;
+				top: 10px;
+				position: absolute;
+				z-index: 1;
+			}
+
+			&-trigger {
+				@include font-size( 2 );
+				font-family: $font-primary;
+				line-height: 80px;
+				display: block;
+				margin: 0;
+				border: none;
+				color: $dark-gray;
+				user-select: none;
+				padding: 0 20px;
+				position: relative;
+
+				&::after {
+					content: "";
+					width: 0;
+					height: 0;
+					border-left: 7px solid transparent;
+					border-right: 7px solid transparent;
+					border-top: 7px solid $blue;
+					top: 50%;
+					margin-top: -3px;
+					position: absolute;
+					z-index: 1;
+					pointer-events: none;
+					right: 20px;
+				}
+
+				&.hover::after {
+					border-left: 7px solid transparent;
+					border-right: 7px solid transparent;
+					border-top: 7px solid transparent;
+					border-bottom: 7px solid $blue;
+					margin-top: -10px;
+				}
+			}
+		}
+		@include breakpoint( $break-large ) {
+			display: block;
+			flex: 0 0 370px;
+		}
+	}
+
+	&__search {
+		flex-grow: 1;
+
+		&-input {
+			@include font-size( 1.4 );
+			font-family: $font-secondary;
+			font-weight: $bold;
+			padding: 0 15px;
+			width: 100%;
+			box-sizing: border-box;
+
+			&::placeholder {
+				color: $light-gray;
+			}
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 2 );
+				font-family: $font-primary;
+				padding: 0 30px;
+
+				&::placeholder {
+					color: $light-gray;
+				}
+			}
+		}
+	}
+
+	&__submit {
+		width: 45px;
+		flex: 0 0 45px;
+		position: relative;
+		text-align: center;
+
+		@include breakpoint( $break-medium ) {
+			width: 80px;
+			flex: 0 0 80px;
+		}
+
+		&-input {
+			width: 45px;
+			height: 45px;
+			background: $blue;
+			background: $light-blue-gradient;
+			cursor: pointer;
+
+			@include breakpoint( $break-medium ) {
+				width: 80px;
+				height: 80px;
+			}
+		}
+
+		&::after {
+			@include font-size( 2 );
+			line-height: 45px;
+			font-family: $font-icons;
+			content: "\e919";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			pointer-events: none;
+			transition: font-size 0.2s ease;
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 3 );
+				line-height: 80px;
+			}
+		}
+
+		&:hover {
+			&::after {
+				@include font-size( 2.2 );
+
+				@include breakpoint( $break-medium ) {
+					@include font-size( 3.2 );
+				}
+			}
+		}
+	}
+}
+
+.event-filters {
+	position: relative;
+
+	&__wrap {
+		padding-top: 25px;
+		position: relative;
+	}
+
+	&__form-label {
+		@include font-size( 1.4 );
+		@include span( 6 );
+		font-family: $font-primary;
+		font-weight: $medium;
+		color: $white;
+		display: block;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 2 );
+			@include span( 3 );
+			font-family: $font-primary;
+			text-align: center;
+			margin: 25px 0 0;
+			line-height: 1;
+			font-weight: $bold;
+		}
+	}
+
+	&__reset-filters {
+		@include span( 6 last );
+		text-align: right;
+		transition: color 0.2s;
+
+		span {
+			position: relative;
+			right: 5px;
+			line-height: 1;
+		}
+
+		&:hover {
+			color: $light-blue;
+		}
+
+		@include breakpoint( $break-medium ) {
+			@include span( 2 last );
+			margin-top: 25px;
+		}
+	}
+
+	&__form {
+		@include span( 12 );
+		margin: 25px 0 0;
+		display: flex;
+		align-items: center;
+
+		@include breakpoint( $break-medium ) {
+			@include span( 7 last );
+		}
+	}
+
+	// Tribe filter bar overrides
+	.tribe_events_filter_item {
+		background-color: transparent;
+		margin: 0 13px 0 0;
+		position: relative;
+
+		@include breakpoint( $break-medium ) {
+			margin: 0 25px 0 0;
+		}
+
+		@include breakpoint( $break-large ) {
+			margin: 0 60px 0 0;
+		}
+
+		&:last-of-type {
+			margin: 0;
+		}
+
+		.horizontal-drop-indicator {
+			margin-left: 5px;
+
+			&::before {
+				border-color: transparent transparent $blue;
+				border-style: solid;
+				border-width: 6px;
+				content: "";
+				display: inline-block;
+				height: 0;
+				position: relative;
+				left: 0;
+				top: 0;
+			}
+		}
+
+		.tribe-filter-status {
+			display: none;
+		}
+
+		.tribe-events-filters-group-heading {
+			@include font-size( 1.5 );
+			cursor: pointer;
+			user-select: none;
+			font-family: $font-secondary;
+			line-height: 1;
+			background-color: transparent;
+			display: inline-block;
+			border: 0;
+			transition: all 0.5s ease;
+			margin: 0;
+			position: relative;
+			padding-bottom: 10px;
+
+			&::after {
+				height: 4px;
+				width: 100%;
+				content: "";
+				display: block;
+				background: $blue;
+				background: $blue-gradient;
+				position: absolute;
+				z-index: 1;
+				bottom: 0;
+			}
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 2 );
+				letter-spacing: normal;
+				font-family: $font-primary;
+			}
+		}
+
+		.tribe-events-filter-group {
+			color: $white;
+			position: absolute;
+			z-index: 3;
+			background: $light-blue-gradient;
+			width: 100%;
+			box-sizing: border-box;
+			border-top-right-radius: 6px;
+			border-bottom-left-radius: 6px;
+			border-bottom-right-radius: 6px;
+			min-width: 160px;
+			top: 45px;
+			left: 0;
+
+			@include breakpoint( $break-small ) {
+				min-width: 200px;
+			}
+
+			&::after {
+				position: absolute;
+				top: -14px;
+				left: 0;
+				margin-right: -12px;
+				border-left: 12px solid transparent;
+				border-right: 12px solid transparent;
+				border-bottom: 14px solid $blue;
+				content: "";
+				display: block;
+			}
+
+			> ul {
+				padding: 0;
+				margin: 0;
+
+				> li {
+					list-style-type: none;
+					padding: 0;
+					margin: 0;
+
+					input {
+						position: relative;
+						top: 2px;
+					}
+
+					label {
+						@include font-size( 1.5 );
+						font-family: $font-primary;
+						font-weight: 500;
+						color: $white;
+						line-height: 1;
+						padding: 1rem;
+						margin: 1rem;
+						display: block;
+						cursor: pointer;
+						position: relative;
+
+						span {
+							margin-left: 20px;
+							display: block;
+
+							&::after {
+								content: "";
+								background: transparent;
+								width: 20px;
+								height: 20px;
+								display: block;
+								position: absolute;
+								left: 0;
+								top: 7px;
+								z-index: 0;
+								border: 2px solid $white;
+							}
+
+							&::before {
+								content: "";
+								display: block;
+								position: absolute;
+								width: 6px;
+								height: 15px;
+								border: solid $white;
+								border-width: 0 2px 2px 0;
+								left: 9px;
+								top: 6px;
+								transform: rotate( 45deg );
+								opacity: 0;
+								z-index: 1;
+								transition: all 100ms;
+							}
+						}
+					}
+					input[ type="checkbox" ] {
+						opacity: 0;
+						float: left;
+
+						+ label {
+							cursor: pointer;
+						}
+
+						&:checked + span {
+							&::before {
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.closed {
+
+			.horizontal-drop-indicator {
+
+				&::before {
+					border-color: $blue transparent transparent;
+					left: 0;
+					top: 5px;
+				}
+			}
+
+			.tribe-events-filter-group {
+				display: none;
+			}
+		}
+	}
+	margin-bottom: 30px;
+
+	#tribe_events_filter_item_locations {
+		margin: 0;
+	}
+}
+
+// Month Styles
+.events-month {
+
+	&__table {
+		box-shadow: 0 0 20px 0 rgba( $black, 0.5 );
+		background: $white;
+	}
+
+	&__flexwrap {
+
+		@include breakpoint( $break-medium ) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 50px;
+		}
+	}
+
+	&__prev,
+	&__next {
+		display: none;
+
+		@include breakpoint( $break-medium ) {
+			display: block;
+			text-align: center;
+		}
+
+		&--after {
+			margin-top: 50px;
+		}
+	}
+
+	&__prev {
+		@include span( 2 );
+	}
+
+	&__next {
+
+		@include breakpoint( $break-medium ) {
+			@include push( 1 );
+			@include span( 2 last );
+		}
+	}
+
+	&__title,
+	&__title > a {
+		@include font-size( 3.2 );
+		font-style: italic;
+		font-weight: $bold;
+		font-family: $font-primary;
+		color: $white;
+		text-align: left;
+		max-width: 50%;
+		margin: 0 0 30px;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 5 );
+			@include span( 6 );
+			@include push( 1 );
+			display: block;
+			clear: none;
+			max-width: none;
+			text-align: center;
+			margin-bottom: 0;
+		}
+	}
+
+	&__prev-link,
+	&__next-link {
+		max-width: 100%;
+		width: 175px;
+		box-sizing: border-box;
+		position: relative;
+
+		&::before {
+			content: "";
+			width: 0;
+			height: 0;
+			border-top: 7px solid transparent;
+			border-bottom: 7px solid transparent;
+			top: 50%;
+			margin-top: -5px;
+			position: absolute;
+			z-index: 1;
+			pointer-events: none;
+		}
+	}
+
+	&__prev-link {
+
+		&::before {
+			left: 20px;
+			border-right: 7px solid $blue;
+		}
+	}
+
+	&__next-link {
+
+		&::before {
+			right: 20px;
+			border-left: 7px solid $blue;
+		}
+	}
+
+	&__header {
+		display: none;
+	}
+
+	&__heading {
+
+		@include font-size( 1.4 );
+		font-weight: $medium;
+		font-family: $font-primary;
+		color: $blue;
+		text-align: center;
+		background: $black;
+		text-transform: capitalize;
+
+		&--current {
+			color: $white;
+			background: $blue;
+			background: $light-blue-gradient;
+		}
+	}
+
+	&__day {
+		@include font-size( 1.4 );
+		font-family: $font-primary;
+		font-weight: $bold;
+		color: $blue;
+		background: $lighter-blue;
+		text-align: center;
+		border-right: solid 1px $white;
+
+		@include breakpoint( $break-medium ) {
+			text-align: left;
+		}
+
+		.day-header {
+
+			> a {
+				color: $blue;
+			}
+		}
+
+		.hentry {
+			height: 52px;
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			position: relative;
+		}
+
+		&.tribe-events-othermonth {
+			background-color: $gray-alt-c;
+
+			.day-header {
+				background-color: $light-gray;
+
+				> a {
+					color: $white;
+				}
+			}
+
+			.events-month__event-anchor {
+				color: $white;
+
+				&:hover {
+					color: $blue;
+				}
+			}
+		}
+
+		&.tribe-events-present {
+			background: $blue;
+			background: $blue-gradient;
+			color: $white;
+
+			@include breakpoint( $break-medium ) {
+				background: $white;
+				color: $blue;
+				position: relative;
+
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					box-shadow: 0 0 10px 0 rgba( 0, 0, 0, 0.5 );
+					border: solid 2px $blue;
+					pointer-events: none;
+				}
+			}
+
+			.day-header {
+				background: transparent;
+
+				@include breakpoint( $break-medium ) {
+					background: $blue;
+					background: $light-blue-gradient;
+				}
+
+				> a {
+					color: $white;
+				}
+			}
+
+			.events-month__event-anchor {
+				background: $white;
+
+				@include breakpoint( $break-medium ) {
+					color: $blue;
+				}
+			}
+		}
+	}
+
+	&__event-anchor {
+		@include font-size( 3 );
+		margin: 0;
+		padding: 0;
+		display: block;
+		border-radius: 10px;
+		background: $blue;
+		width: 10px;
+		height: 10px;
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: 50%;
+		margin-top: 5px;
+		margin-left: -5px;
+		transition: color 0.2s;
+
+		&:hover {
+			color: $blue;
+		}
+
+		@include breakpoint( $break-medium ) {
+			width: auto;
+			height: auto;
+			position: static;
+			background: transparent;
+			color: $black;
+			padding: 0 10px 0 40px;
+			margin: 25px 0 0;
+
+			&:last-of-type {
+				margin-bottom: 25px;
+			}
+
+			&--beginner::before,
+			&--expert::before {
+				@include font-size( 1.8 );
+				font-family: $font-icons;
+				position: absolute;
+				left: 10px;
+				color: $blue;
+			}
+
+			&--beginner::before {
+				content: "\e921";
+			}
+
+
+			&--expert::before {
+				content: "\e922";
+			}
+		}
+
+		> span {
+			display: none;
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 1.4 );
+				display: block;
+				font-weight: $regular;
+				font-family: $font-secondary;
+			}
+		}
+	}
+
+	&__event-anchor ~ &__event-anchor {
+		display: none;
+
+		@include breakpoint( $break-medium ) {
+			display: block;
+		}
+	}
+
+	&__footer {
+		display: none;
+	}
+}
+
+.events-list {
+
+	@include breakpoint ( $break-medium ) {
+		display: none;
+	}
+
+	&__title {
+		@include font-size( 2.6 );
+		font-family: $font-primary;
+		font-weight: $bold;
+		color: $off-white;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	&__event {
+		background-color: $off-white;
+		width: 100%;
+		margin-bottom: 25px;
+
+		&:last-child {
+			margin-bottom: 50px;
+		}
+	}
+
+	&__event-flexwrap {
+		display: flex;
+	}
+
+	&__event-icon {
+		width: 60px;
+		flex: 0 0 60px;
+		color: $blue;
+		text-align: center;
+		padding-top: 10px;
+
+		> .icon-double-caret-down {
+			@include font-size( 3 );
+		}
+
+		> .icon-star-down {
+			@include font-size( 4 );
+		}
+	}
+
+	&__event-content {
+		flex-grow: 1;
+		color: $black;
+		padding: 10px 20px 16px 0;
+	}
+
+	&__event-title {
+		@include font-size( 1.6 );
+		font-family: $font-secondary;
+		font-weight: $bold;
+		color: $blue;
+		margin: 0 0 6px;
+	}
+
+	&__event-excerpt {
+
+		p {
+			color: $black;
+			margin: 0;
+		}
+	}
+
+	&__event-link {
+		@include font-size( 1.8 );
+		background-color: $blue;
+		font-weight: $bold;
+		width: 100%;
+		flex: 0 0 100%;
+		display: block;
+		color: $white;
+		padding: 12px 10px;
+		text-transform: uppercase;
+		box-sizing: border-box;
+	}
+}
+
+// Tribe overrides
+h2.tribe-events-page-title a {
+	color: $white;
+}
+
+#tribe-events-content .tribe-events-calendar td,
+#tribe-events-content table.tribe-events-calendar {
+	border: 0;
+}
+
+h2.tribe-events-page-title {
+	text-align: left;
+
+	@include breakpoint( $break-medium ) {
+		text-align: center;
+	}
+}
+
+#tribe-events-content .tribe-events-calendar td {
+	border-right: solid 1px $white;
+	height: 75px;
+	padding: 0;
+
+	@include breakpoint( $break-medium ) {
+		height: 300px;
+	}
+}
+
+.events-archive.events-gridview #tribe-events-content table .type-tribe_events {
+	margin: 0;
+	padding: 0;
+	border-bottom: 0;
+}
+
+.tribe-events-calendar th {
+	padding: 15px 0;
+
+	@include breakpoint( $break-medium ) {
+		padding: 30px 0;
+	}
+}
+
+.tribe-events-calendar td div[ id*="tribe-events-daynum-" ] {
+	padding: 5px 0;
+	background: $white;
+
+	@include breakpoint( $break-medium ) {
+		padding: 17px 20px;
+	}
+}
+
+.tribe-events-calendar td.tribe-events-present div[ id*="tribe-events-daynum-" ] {
+	background: $blue;
+	background: $light-blue-gradient;
+	color: $white;
+}
+
+.tribe-events-ical {
+	display: none;
+}
+
+#tribe-mobile-container {
+	display: none;
+}
+
+.tribe-events-viewmore {
+	display: none;
+}
+// END TRIBE OVERRIDES

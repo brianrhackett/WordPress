@@ -1,0 +1,61 @@
+// light form theme
+.form-stack.light {
+	background-color: $off-white;
+	color: $blue !important;
+
+	.form-stack__title {
+		color: $blue;
+	}
+
+	.gform_wrapper label.gfield_label {
+		color: $blue;
+	}
+
+	.gform_wrapper .gform_body .gform_fields .gfield input,
+	.gform_wrapper .gform_body .gform_fields .gfield .ginput_container_select option,
+	.gform_wrapper .gform_body .gform_fields .gfield .ginput_container_select select,
+	.gform_wrapper .gform_body .gform_fields .gfield textarea {
+		@include font-size( 1.8 );
+		color: $blue !important;
+		background-color: $white !important;
+		border: none !important;
+		letter-spacing: 0.68px;
+		box-shadow: none;
+		font-weight: bold;
+
+		&::placeholder {
+			color: $light-blue;
+		}
+	}
+
+	.gform_wrapper .gform_body .gform_fields .gfield.gfield_error input {
+		border: $orange 2px solid !important;
+	}
+
+	label {
+		color: $dark-blue !important;
+	}
+
+	.gf_progressbar {
+		background-color: $gray-white;
+	}
+
+	.gform_wrapper .gf_progressbar_wrapper h3.gf_progressbar_title {
+		color: $dark-blue !important;
+	}
+
+	.gfield_required {
+		color: $dark-blue !important;
+	}
+
+	.selectboxit-list {
+		background-color: $white !important;
+		border: none !important;
+	}
+
+	.ginput_container_select .selectboxit-btn {
+		background: none !important;
+		background-color: $white !important;
+		border: none !important;
+	}
+}

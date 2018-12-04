@@ -1,0 +1,341 @@
+/*********
+Typography
+**********/
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html {
+	font-size: 10px;
+}
+
+body,
+html {
+	-ms-overflow-style: scrollbar;
+}
+
+body {
+	@include font-size( 1 );
+	color: $font-color;
+	font-family: $font-primary;
+	line-height: 1.2;
+	background-color: $gray;
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+h1 {
+	@include font-size( 3.9 );
+	font-weight: $bold;
+	text-transform: uppercase;
+	font-style: italic;
+	letter-spacing: 1px;
+	display: inline-block;
+	span {
+		background-image: linear-gradient( to right, $transparent-blue 0%, $transparent-blue 100% );
+		background-repeat: repeat-x;
+		background-position: 0 100%;
+		background-size: 100% 35px;
+		box-decoration-break: clone;
+		-webkit-box-decoration-break: clone;
+		padding: 5px 15px;
+		margin-left: -15px;
+	}
+
+	&::after {
+		content: "";
+	}
+
+	@include breakpoint( $break-medium ) {
+		@include font-size( 6.2 );
+	}
+}
+
+h2 {
+	@include font-size( 3.2 );
+	font-weight: $medium;
+	font-weight: $bold;
+	font-style: italic;
+
+	@include breakpoint( $break-medium ) {
+		@include font-size( 5.4 );
+	}
+}
+
+h3 {
+	@include font-size( 2.2 );
+	font-weight: $bold;
+	letter-spacing: 1px;
+
+	@include breakpoint( $break-medium ) {
+		@include font-size( 3.8 );
+	}
+}
+
+h4 {
+	@include font-size( 2 );
+	font-weight: $bold;
+	letter-spacing: 1px;
+
+	@include breakpoint( $break-medium ) {
+		@include font-size( 2.6 );
+	}
+}
+
+h5 {
+	@include font-size( 1.4 );
+	font-family: $font-secondary;
+	font-weight: $bold;
+	line-height: 1.8;
+	letter-spacing: 1px;
+
+	@include breakpoint( $break-medium ) {
+		@include font-size( 2.4 );
+	}
+}
+
+h6 {
+	@include font-size( 1.4 );
+	font-family: $font-secondary;
+	font-weight: $bold;
+	line-height: 1.8;
+	letter-spacing: 1px;
+
+	@include breakpoint( $break-medium ) {
+		@include font-size( 2 );
+	}
+}
+
+p,
+address {
+	@include font-size( 1.5 );
+	font-family: $font-secondary;
+	color: $off-white;
+
+	@include breakpoint( $break-medium ) {
+		@include font-size( 1.6 );
+		line-height: 1.4;
+	}
+
+	&.big {
+		@include font-size( 1.8 );
+		color: $white;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 2 );
+		}
+	}
+
+	&.bold {
+		font-weight: $bold;
+	}
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+a {
+	@include font-size( 1.5 );
+	color: $font-color;
+	text-decoration: none;
+
+	&.alt-anchor {
+		@include font-size( 2 );
+		color: $dark-blue;
+		font-family: $font-primary;
+		letter-spacing: 0.75px;
+		line-height: 1.4;
+	}
+}
+
+hr {
+	border: none;
+	height: 2px;
+	background-color: $gray-alt;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+ol,
+ul {
+
+	li {
+		@include font-size( 1.6 );
+		line-height: 1.8;
+	}
+}
+
+cite,
+dfn,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	@include font-size( 1.8 );
+	line-height: 1.4;
+	margin: 0;
+	font-style: italic;
+	color: $white;
+	font-family: $font-secondary;
+	font-weight: $regular;
+
+	@include breakpoint( $break-medium ) {
+		@include font-size( 2.2 );
+	}
+
+	&.medium {
+		@include font-size( 2.2 );
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 2.5 );
+		}
+	}
+
+	&.large {
+		@include font-size( 2.8 );
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 3.5 );
+		}
+	}
+}
+
+pre {
+	@include font-size( 1.2 );
+	background: $light-gray;
+	color: $font-color;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+	display: block;
+	word-break: break-all;
+	word-wrap: normal;
+	white-space: pre;
+	border: 1px solid $gray;
+}
+
+code,
+kbd,
+tt,
+var {
+	@include font-size( 1.2 );
+	color: $dark-gray;
+	font-weight: bold;
+	display: inline-block;
+	padding: 1px 4px;
+	background-color: $light-gray;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted $gray;
+	cursor: help;
+}
+
+ins,
+mark {
+	background: $light-gray;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+sub,
+sup {
+	font-size: 55%;
+}
+
+.wysiwyg {
+
+	img:first-child + * {
+		margin-top: 0;
+	}
+
+	*:first-child {
+		margin-top: 0;
+	}
+
+	* {
+		color: $off-white;
+		font-family: $font-primary;
+	}
+
+	p {
+		font-family: $font-secondary;
+	}
+
+	a {
+		@include font-size( 1.5 );
+		font-family: $font-secondary;
+		color: $light-blue;
+		transition: color 0.2s ease;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 1.6 );
+			line-height: 1.4;
+		}
+
+		&:hover {
+			color: $blue;
+		}
+
+		&.alt-anchor {
+			@include font-size( 2 );
+			color: $blue;
+			font-family: $font-secondary;
+			letter-spacing: 0.75px;
+			line-height: 1.4;
+			text-decoration: underline;
+
+			&:hover {
+				color: $light-blue;
+			}
+		}
+	}
+
+	h5,
+	h6 {
+		font-family: $font-secondary;
+	}
+
+	.light & {
+
+		* {
+			color: $dark-blue;
+		}
+
+		a {
+			color: $blue;
+
+			&:hover {
+				color: $light-blue;
+			}
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: $blue;
+		}
+	}
+}

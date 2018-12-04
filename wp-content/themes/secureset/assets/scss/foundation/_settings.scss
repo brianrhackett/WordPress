@@ -1,0 +1,81 @@
+// Foundation for Sites by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+////
+/// @group dropdown
+////
+
+/// Padding for dropdown panes.
+/// @type List
+$dropdown-padding: 1rem;
+
+/// Background for dropdown panes.
+/// @type Color
+$dropdown-background: $body-background;
+
+/// Border for dropdown panes.
+/// @type List
+$dropdown-border: 1px solid $medium-gray;
+
+/// Font size for dropdown panes.
+/// @type List
+$dropdown-font-size: 1rem;
+
+/// Width for dropdown panes.
+/// @type Number
+$dropdown-width: 300px;
+
+/// Border radius dropdown panes.
+/// @type Number
+$dropdown-radius: $global-radius;
+
+
+
+////
+/// @group orbit
+////
+
+/// Default color for Orbit's bullets.
+/// @type Color
+$orbit-bullet-background: transparent;
+
+/// Default active color for Orbit's bullets.
+/// @type Color
+$orbit-bullet-background-active: $white;
+
+/// Default diameter for Orbit's bullets.
+/// @type Number
+$orbit-bullet-diameter: 9px;
+
+/// Default margin between Orbit's bullets.
+/// @type Number
+$orbit-bullet-margin: 7px;
+
+/// Default distance from slide region for Orbit's bullets.
+/// @type Number
+$orbit-bullet-margin-top: 0.8rem;
+
+/// Default bottom margin from Orbit's bullets to whatever content may lurk below it.
+/// @type Number
+$orbit-bullet-margin-bottom: 0.8rem;
+
+/// Default background color for Orbit's caption.
+/// @type Color
+$orbit-caption-background: rgba( $black, 0.5 );
+
+/// Default padding for Orbit's caption.
+/// @type Number
+$orbit-caption-padding: 1rem;
+
+/// Default background color for Orbit's controls when hovered.
+/// @type Color
+$orbit-control-background-hover: rgba( $black, 0.5 );
+
+/// Default padding for Orbit's controls.
+/// @type Number
+$orbit-control-padding: 1rem;
+
+/// Default z-index for Orbit's controls.
+/// @type Number
+$orbit-control-zindex: 10;

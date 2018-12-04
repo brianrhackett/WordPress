@@ -1,0 +1,315 @@
+.event-details {
+
+	&__back {
+		color: $white;
+		font-family: $font-primary;
+		display: block;
+		width: 100%;
+		background: $gray-alt-b;
+		padding-left: 12px;
+		box-sizing: border-box;
+		transition: background-color 200ms;
+		box-shadow: 0 0 20px 0 rgba( $black, 0.5 );
+		clear: both;
+
+		&:hover {
+			background: $blue;
+		}
+
+		&-anchor {
+			@include font-size( 1.4 );
+			line-height: 45px;
+			display: block;
+			position: relative;
+			text-transform: uppercase;
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 2.4 );
+				line-height: 75px;
+				text-transform: none;
+				font-weight: $medium;
+			}
+		}
+	}
+
+	// Hero component overrides
+	&__hero {
+
+		.hero {
+			min-height: 0;
+		}
+
+		.hero--hero-regular {
+
+			.hero__content {
+				padding: 80px 0;
+			}
+		}
+
+		.hero__gradient-overlay {
+			background: linear-gradient( 250.21deg, rgba( 46, 42, 38, 0 ) 0%, rgba( 46, 42, 38, 0.85 ) 100% );
+		}
+
+		.hero__headline {
+
+			span {
+				background: none;
+				padding: 0;
+			}
+		}
+	}
+	// End hero component overrides
+
+	&__details {
+		max-width: $max-width;
+		margin: 0 auto;
+	}
+
+	&__content {
+		margin-bottom: 30px;
+
+		@include breakpoint( $break-medium ) {
+			@include span( 7 );
+			margin: 0 0 60px;
+		}
+	}
+
+	&__organizer {
+		@include clearfix;
+		margin: 30px 0 0;
+		width: 100%;
+
+		@include breakpoint( $break-medium ) {
+			margin-top: 60px;
+		}
+
+		&-heading {
+			@include font-size( 1.8 );
+			font-family: $font-primary;
+			font-weight: bold;
+			margin: 0;
+		}
+
+		&-info {
+			@include clearfix;
+			margin: 14px 0 0;
+		}
+
+		&-flexwrap {
+			display: flex;
+			align-items: center;
+		}
+
+		&-icon {
+			display: inline;
+			margin-right: 17px;
+			width: auto;
+			height: auto;
+		}
+
+		&-name {
+			@include font-size( 1.8 );
+			text-transform: uppercase;
+			font-weight: $regular;
+			color: $white;
+			font-family: $font-secondary;
+			display: inline;
+			margin: 0;
+			line-height: 1;
+		}
+
+		&-website {
+			@include font-size( 1.8 );
+			font-family: $font-secondary;
+			display: inline-block;
+			position: relative;
+			padding-left: 42px;
+			line-height: 1;
+			margin: 14px 0 0;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: $light-blue;
+			}
+
+			@include breakpoint( $break-medium ) {
+				margin: 0 0 0 40px;
+			}
+
+			&::before {
+				font-family: $font-icons;
+				content: "\e90f";
+				position: absolute;
+				left: 3px;
+			}
+		}
+	}
+
+	.program-event-details__content {
+
+		@include breakpoint( $break-large ) {
+			padding-bottom: 0;
+		}
+	}
+
+	&__buttons {
+		text-align: center;
+		padding: 32px 0;
+
+		@include breakpoint( $break-large ) {
+			text-align: left;
+			padding: 32px 20px 32px 0;
+		}
+
+		&-message {
+			color: $green;
+			font-weight: bold;
+			margin-top: 0;
+			margin-bottom: 25px;
+
+			&.tribe-rsvp-message-error {
+				color: $red;
+			}
+		}
+
+		.btn {
+			min-width: 154px;
+			text-align: center;
+			margin: 12px;
+		}
+
+		&-form {
+			width: 100%;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.6s ease;
+			padding: 0 20px;
+
+			@include breakpoint( $break-large ) {
+				padding: 0;
+			}
+
+			&.expanded {
+				max-height: 666px;
+			}
+		}
+
+		&-fields {
+
+			label {
+				@include font-size( 1.8 );
+				text-align: left;
+				display: block;
+				margin-bottom: 15px;
+				color: $white;
+				font-family: $font-secondary;
+
+				&.event-details__buttons-quantity-input {
+					display: none;
+				}
+
+				@include breakpoint( $break-medium ) {
+					margin-bottom: 40px;
+				}
+
+				input,
+				select {
+					margin-top: 10px;
+				}
+
+				select {
+
+					option {
+						color: $dark-gray;
+					}
+				}
+			}
+		}
+
+		&-nostock {
+			color: $red;
+			margin: 0;
+		}
+
+		&-order-status {
+
+			@include breakpoint( $break-medium ) {
+				width: 48%;
+				float: right;
+			}
+
+			select {
+				@extend .form-field;
+			}
+		}
+	}
+
+	&__rvsp,
+	&__cta {
+		float: left;
+	}
+
+	&__categories {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			display: inline;
+
+			&::after {
+				@include font-size( 2 );
+				content: ", ";
+				font-family: $font-secondary;
+				color: $dark-gray;
+			}
+
+			&:last-child::after {
+				content: "";
+			}
+		}
+
+		a {
+			@include font-size( 2 );
+			font-family: $font-secondary;
+			color: $dark-gray;
+
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+
+	&__social {
+		margin: 30px 0;
+		clear: both;
+	}
+
+	.tribe-events-notices,
+	.tickets-unavilable {
+		@include font-size( 1.5 );
+		color: $orange;
+		margin-bottom: 25px;
+		font-family: $font-primary;
+		font-weight: bold;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 1.6 );
+			line-height: 1.4;
+		}
+	}
+
+	.tribe-events-notices {
+		background: transparent;
+		border: none;
+		text-shadow: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.event-details__social {
+		clear: left;
+		float: left;
+		padding: 0 20px;
+	}
+}

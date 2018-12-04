@@ -1,0 +1,347 @@
+# Copyright (C) 2015 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: __secureset 1.0.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/__secureset\n"
+"POT-Creation-Date: 2015-06-12 21:51:31+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:15
+#@ __secureset
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+#@ __secureset
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:27
+#@ __secureset
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.php:44
+#, php-format
+#@ __secureset
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: comments.php:29
+#, php-format
+#@ __secureset
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:38
+#: comments.php:59
+#@ __secureset
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41
+#: comments.php:62
+#@ __secureset
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:42
+#: comments.php:63
+#@ __secureset
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:75
+#@ __secureset
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:16
+#@ __secureset
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer.php:16
+#, php-format
+#@ __secureset
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:18
+#, php-format
+#@ __secureset
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:45
+#: header.php:32
+#@ __secureset
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:100
+#@ __secureset
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:23
+#@ __secureset
+msgid "Skip to content"
+msgstr ""
+
+#: inc/extras.php:52
+#, php-format
+#@ __secureset
+msgid "Page %s"
+msgstr ""
+
+#: inc/template-tags.php:23
+#@ __secureset
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:27
+#@ __secureset
+msgid "Older posts"
+msgstr ""
+
+#: inc/template-tags.php:31
+#@ __secureset
+msgid "Newer posts"
+msgstr ""
+
+#: inc/template-tags.php:56
+#@ __secureset
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:86
+#, php-format
+#@ __secureset
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:91
+#, php-format
+#@ __secureset
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:108
+#: inc/template-tags.php:114
+#@ __secureset
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:110
+#, php-format
+#@ __secureset
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:116
+#, php-format
+#@ __secureset
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:122
+#@ __secureset
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:122
+#@ __secureset
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:122
+#@ __secureset
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:126
+#: template-parts/content-page.php:26
+#@ __secureset
+msgid "Edit"
+msgstr ""
+
+#: inc/template-tags.php:143
+#, php-format
+#@ __secureset
+msgid "Category: %s"
+msgstr ""
+
+#: inc/template-tags.php:145
+#, php-format
+#@ __secureset
+msgid "Tag: %s"
+msgstr ""
+
+#: inc/template-tags.php:147
+#, php-format
+#@ __secureset
+msgid "Author: %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+#, php-format
+#@ __secureset
+msgid "Year: %s"
+msgstr ""
+
+#: inc/template-tags.php:149
+#@ __secureset
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:151
+#, php-format
+#@ __secureset
+msgid "Month: %s"
+msgstr ""
+
+#: inc/template-tags.php:151
+#@ __secureset
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/template-tags.php:153
+#, php-format
+#@ __secureset
+msgid "Day: %s"
+msgstr ""
+
+#: inc/template-tags.php:153
+#@ __secureset
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: inc/template-tags.php:156
+#@ __secureset
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: inc/template-tags.php:158
+#@ __secureset
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: inc/template-tags.php:160
+#@ __secureset
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: inc/template-tags.php:162
+#@ __secureset
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: inc/template-tags.php:164
+#@ __secureset
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: inc/template-tags.php:166
+#@ __secureset
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: inc/template-tags.php:168
+#@ __secureset
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: inc/template-tags.php:170
+#@ __secureset
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: inc/template-tags.php:172
+#@ __secureset
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr ""
+
+#: inc/template-tags.php:175
+#, php-format
+#@ __secureset
+msgid "Archives: %s"
+msgstr ""
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:179
+#, php-format
+#@ __secureset
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: inc/template-tags.php:181
+#@ __secureset
+msgid "Archives"
+msgstr ""
+
+#: search.php:16
+#, php-format
+#@ __secureset
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-none.php:14
+#@ __secureset
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:20
+#, php-format
+#@ __secureset
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:24
+#@ __secureset
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:29
+#@ __secureset
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:19
+#: template-parts/content-single.php:23
+#: template-parts/content.php:32
+#@ __secureset
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post 
+#: template-parts/content.php:25
+#, php-format
+#@ __secureset
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""

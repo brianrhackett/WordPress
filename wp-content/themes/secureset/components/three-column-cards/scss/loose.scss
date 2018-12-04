@@ -1,0 +1,131 @@
+.loose {
+	clear: both;
+	padding: 50px 0;
+	width: 100%;
+
+	@include breakpoint( $break-medium ) {
+		padding: 75px 0;
+	}
+
+	&__item {
+		box-sizing: border-box;
+		padding-bottom: 25px;
+		position: relative;
+		@include span( 12 last );
+
+		@include breakpoint( $break-small ) {
+			@include span( 6 );
+
+			&:nth-child( 2n+0 ) {
+				@include span( 6 last );
+			}
+		}
+
+		@include breakpoint( $break-medium ) {
+			@include span( 4 );
+
+			&:nth-child( 3n+0 ) {
+				@include span( 4 last );
+			}
+
+			&:nth-child( 2n+0 ) {
+				@include span( 4 );
+			}
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+
+	&__link {
+		cursor: default;
+		pointer-events: none;
+	}
+
+	&__bg {
+		background-color: $blue;
+		height: 126px;
+		transform: translateX( -5px );
+		width: 155px;
+
+		@include breakpoint( $break-medium  ) {
+			height: 132px;
+			transform: translateX( -10px );
+			width: 179px;
+		}
+	}
+
+	&__image {
+		background-position: center;
+		background-size: cover;
+		height: 126px;
+		left: 0;
+		position: absolute;
+		top: 5px;
+		width: 155px;
+
+		@include breakpoint( $break-medium ) {
+			height: 132px;
+			left: 0;
+			top: 10px;
+			width: 179px;
+		}
+	}
+
+	&__title {
+		clear: both;
+		margin: 0 0 10px;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 2.4 );
+			line-height: 1.25;
+		}
+
+		@include breakpoint( $break-medium  ) {
+			margin-bottom: 25px;
+			padding-right: $space;
+		}
+	}
+
+	&__spacer {
+		height: 25px;
+		width: 100%;
+		background: transparent;
+	}
+
+	&__paragraph {
+		line-height: 25px;
+		margin-bottom: 25px;
+		max-width: 750px;
+
+		@include breakpoint( $break-medium ) {
+			margin-bottom: 50px;
+			padding-right: $space;
+		}
+	}
+
+	&__cta {
+		@extend .btn;
+		@extend .btn--light;
+	}
+
+	&.light {
+		background: $off-white;
+
+		.loose__title,
+		.loose__paragraph p {
+			color: $blue;
+			transition: color 0.3s ease-out;
+		}
+
+		.loose__cta {
+			@extend .btn;
+		}
+	}
+}
+
+.three-column-stack ~ .three-column-stack {
+	padding-top: 0;
+	margin-top: -50px;
+}

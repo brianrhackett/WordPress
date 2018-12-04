@@ -1,0 +1,245 @@
+.location-details {
+	padding: 50px 0;
+
+	@include breakpoint( $break-medium ) {
+		padding: 75px 0;
+	}
+
+	&__background {
+		background-color: rgba( 255, 255, 255, 0.1 );
+
+		@include breakpoint( $break-small ) {
+			@include container;
+			background-color: transparent;
+		}
+	}
+
+	&.light {
+		background-color: $white;
+		padding: 50px 0;
+	}
+
+	&__title {
+		margin-left: auto;
+		margin-right: auto;
+
+		@include breakpoint( $break-small ) {
+			max-width: $max-width;
+		}
+
+		.light & {
+			color: $blue;
+		}
+	}
+
+	&__location-bar-label {
+		@include font-size( 2.2 );
+		color: $off-white;
+		font-family: $font-primary;
+		font-weight: $medium;
+		margin: 0 0 10px;
+	}
+
+	&__location-bar {
+
+		.location-dropdown__trigger {
+			font-family: $font-primary;
+			float: none;
+			display: block;
+			box-sizing: border-box;
+			border-bottom: solid 3px $blue;
+
+			&::after {
+				border-color: $blue transparent transparent;
+			}
+
+			&.hover::after {
+				border-color: transparent transparent $blue;
+			}
+		}
+
+		.map--hide & {
+			display: none;
+		}
+	}
+
+	&__location-bar--desktop {
+		display: none;
+		background-color: rgba( 255, 255, 255, 0.1 );
+
+		.location-details__location-bar-label {
+			@include span( 5 );
+			@include font-size( 2.4 );
+			text-align: right;
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
+
+		.location-details__location-bar-wrap {
+			@include span( 5 last );
+			@include push( 1 );
+		}
+
+		.location-dropdown__trigger {
+			@include font-size( 2.4 );
+			font-weight: $regular;
+			width: auto;
+			display: inline-block;
+			margin: 0;
+
+			@include breakpoint( $break-large ) {
+				min-width: 200px;
+			}
+		}
+
+		@include breakpoint( $break-small ) {
+			align-items: center;
+			justify-content: center;
+			display: flex;
+		}
+	}
+
+	&__location-bar--mobile {
+		display: block;
+
+		.location-dropdown__trigger {
+			margin: 0 0 30px;
+			width: 100%;
+		}
+
+		@include breakpoint( $break-small ) {
+			display: none;
+		}
+	}
+
+	&__map {
+		clear: both;
+		height: 450px;
+		width: 100%;
+
+		@include breakpoint( $break-small ) {
+			height: 556px;
+		}
+
+		.map--hide & {
+			display: none;
+		}
+	}
+
+	&__content {
+		padding-top: 25px;
+		padding-bottom: 50px;
+		text-align: left;
+
+		@include breakpoint( $break-small ) {
+			text-align: center;
+		}
+
+		@include breakpoint( $break-large ) {
+			text-align: left;
+			margin: default;
+			width: auto;
+			padding-top: 86px;
+			padding-bottom: 0;
+			align-items: center;
+			display: flex;
+
+			.map--hide & {
+				padding-top: 0;
+			}
+		}
+	}
+
+	&__content-title {
+
+		h3 {
+			display: inline-block;
+			margin: 0;
+		}
+
+		@include breakpoint( $break-large ) {
+			@include span( 5 );
+		}
+
+		.light & {
+
+			h3 {
+				color: $blue;
+			}
+		}
+	}
+
+	&__content-address {
+		@include font-size( 2.2 );
+		margin: 0 0 25px;
+		font-family: $font-secondary;
+		font-weight: $bold;
+		color: $off-white;
+
+		a {
+			@include font-size( 2.2 );
+			color: $off-white;
+			margin: 0 0 25px;
+			font-family: $font-secondary;
+			font-weight: $bold;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: $blue;
+			}
+		}
+
+		.light & {
+			color: $blue;
+			a {
+				color: $blue;
+
+				&:hover {
+					color: $light-blue;
+				}
+			}
+		}
+
+
+		@include breakpoint( $break-large ) {
+			margin: 0;
+		}
+
+		@include breakpoint( $break-large ) {
+			@include span( 4 );
+		}
+	}
+
+	&__content-phone-email-wrap {
+		@include breakpoint( $break-large ) {
+			@include span( 3 last );
+		}
+	}
+
+	&__content-telephone,
+	&__content-email {
+		@include font-size( 1.8 );
+		display: inline-block;
+		text-decoration: underline;
+		font-weight: $medium;
+		color: $blue;
+		transition: color 0.2s ease;
+		text-transform: uppercase;
+		margin: 0;
+
+		&:hover {
+			color: $off-white;
+		}
+
+		.light & {
+
+			&:hover {
+				color: $light-blue;
+			}
+		}
+	}
+
+	&__content-email {
+		margin-top: 5px;
+	}
+}

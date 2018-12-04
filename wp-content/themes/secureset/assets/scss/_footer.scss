@@ -1,0 +1,549 @@
+/*****
+Footer
+******/
+.footer {
+	background: $footer-gray;
+	padding: 15px 0 0;
+	top: 50px;
+	position: relative;
+
+	@include breakpoint( $break-large ) {
+		top: 0;
+	}
+
+	@include breakpoint( $break-medium ) {
+		padding: 40px 0 0;
+	}
+
+	&__top {
+		@include container;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 0 25px;
+		border-bottom: 2px solid $white;
+		margin: 0 0 25px;
+
+		&--left {
+			@include span( 6 );
+			display: inline-block;
+			vertical-align: middle;
+			text-align: left;
+			flex-basis: 50%;
+			align-items: center;
+
+			@include breakpoint( $break-medium ) {
+				@include span( 3 );
+				flex-basis: 25%;
+			}
+		}
+
+		&--right {
+			@include span( 6 last );
+			display: inline-block;
+			vertical-align: middle;
+			text-align: right;
+			flex-basis: 50%;
+			align-items: center;
+
+			@include breakpoint( $break-medium ) {
+				@include span( 9 last );
+				flex-basis: 75%;
+			}
+		}
+	}
+
+	&__logo {
+		display: inline-block;
+		vertical-align: middle;
+		width: 100%;
+		max-width: 155px;
+		height: auto;
+
+		@include breakpoint( $break-medium ) {
+			max-width: 220px;
+		}
+	}
+
+	&__cta {
+		vertical-align: middle;
+	}
+
+	&__contact {
+		@include breakpoint( $break-medium ) {
+			@include span( 5 );
+		}
+	}
+
+	&__copy {
+		padding: 20px 0;
+
+		@include breakpoint( $break-medium ) {
+			padding: 0 0 20px;
+		}
+
+		p {
+			margin: 0 0 20px;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+	.gform_wrapper {
+		.gform_ajax_spinner {
+			display: none;
+		}
+	}
+
+	.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container {
+		margin: 0;
+	}
+
+	.footer__contact-form_wrapper {
+		&.gform_validation_error {
+			.btn {
+				background: $red;
+			}
+		}
+	}
+
+	.footer__contact-form {
+		.validation_error {
+			display: none;
+		}
+
+		.btn {
+			transform: none;
+		}
+	}
+
+	.gform_wrapper,
+	.gform_wrapper .gform_heading {
+		margin: 0;
+	}
+
+	.gform_wrapper .gform_heading {
+		display: none;
+	}
+
+	.gform_wrapper ul.gform_fields li.gfield {
+		padding: 0;
+		margin: 0;
+	}
+
+	.gform_wrapper .top_label .gfield_label {
+		display: none;
+	}
+
+	.gform_wrapper .top_label div.ginput_container {
+		margin: 0;
+	}
+
+	&__contact-form {
+		width: 100%;
+		height: 40px;
+		position: relative;
+		display: block;
+	}
+	// Gravity Forms Overrides/styles
+	.gform_wrapper .gform_footer {
+		margin: 0;
+		padding: 0;
+	}
+
+	.gform_wrapper input:not( [ type="radio" ] ):not( [ type="checkbox" ] ):not( [ type="submit" ] ):not( [ type="button" ] ):not( [ type="image" ] ):not( [ type="file" ] ),
+	.top_label input.medium,
+	.top_label select.medium,
+	input[ type="email" ],
+	input[ type="password" ] {
+		@include font-size( 1.5 );
+		font-family: $font-secondary;
+		display: block;
+		width: 100%;
+		line-height: 1.2;
+		padding: 11px 15px 7px;
+		color: $off-white;
+		border: 2px solid $blue;
+		background: transparent;
+		appearance: none;
+		box-sizing: border-box;
+
+		@include placeholder {
+			color: $off-white;
+		}
+	}
+
+	.btn--submit {
+		@include font-size( 1.8 );
+		text-align: center;
+		vertical-align: center;
+		color: $white;
+		background: $blue;
+		appearance: none;
+		outline: none;
+		border: none;
+		display: block;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		height: 100%;
+		width: 40px;
+		top: 0;
+		right: 0;
+		z-index: 5;
+		border-radius: 0;
+
+		.btn__text {
+			display: none;
+			width: 0;
+			height: 0;
+			opacity: 0;
+		}
+
+		[ class^="icon-" ] {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			vertical-align: middle;
+			height: 18px;
+			transform: translate( -50%, -50% );
+		}
+	}
+
+	&__social {
+		padding: 50px 0 30px;
+
+		ul {
+			display: block;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			font-size: 0;
+		}
+
+		li {
+			display: inline-block;
+			margin: 0 20px 0 0;
+
+			&:last-of-type {
+				margin: 0;
+			}
+		}
+
+		a {
+			display: inline-block;
+			position: relative;
+			width: 30px;
+			height: 30px;
+			margin: 0;
+			text-indent: -9999px;
+			color: $white;
+
+			@include breakpoint( $break-medium ) {
+				width: 20px;
+				height: 20px;
+			}
+
+			span {
+				@include font-size( 3 );
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				text-indent: 0;
+				text-align: center;
+				vertical-align: middle;
+
+				@include breakpoint( $break-medium ) {
+					@include font-size( 2 );
+				}
+			}
+		}
+	}
+
+	&__badge {
+		display: inline-block;
+		margin: 10px 0 30px;
+		padding: 0;
+
+		&--logo {
+			max-width: 185px;
+			height: auto;
+
+			@include breakpoint( $break-medium ) {
+				max-width: 155px;
+			}
+		}
+	}
+
+	.footer__nav-mobile-primary {
+		display: block;
+		height: auto;
+		position: relative;
+		padding-bottom: 0;
+		box-sizing: border-box;
+		margin-bottom: 10px;
+
+		@include breakpoint( $break-medium ) {
+			display: none;
+		}
+		.sub-menu a {
+			text-transform: none;
+		}
+	}
+
+	&__nav {
+		position: relative;
+		padding-bottom: 60px;
+		overflow: hidden;
+		box-sizing: border-box;
+
+		@include breakpoint( $break-medium ) {
+			@include span( 6 last );
+		}
+
+		&--desktop {
+			display: none;
+			@include breakpoint( $break-medium ) {
+				display: block;
+			}
+		}
+
+		&--mobile {
+			display: block;
+			max-height: 0;
+			transition: all 0.6s ease-in;
+			@include breakpoint( $break-medium ) {
+				display: none;
+			}
+		}
+
+		&--show-more {
+			@include font-size( 1.5 );
+			color: $white;
+			text-transform: uppercase;
+			text-align: left;
+			outline: none;
+			border: none;
+			appearance: none;
+			cursor: pointer;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 15px 0;
+			background: $footer-gray;
+			border-top: 2px solid $white;
+			border-bottom: 2px solid $white;
+		}
+
+		&--caret {
+			display: block;
+			position: absolute;
+			right: 7px;
+			top: 50%;
+			width: 0;
+			height: 0;
+			border-top: 7px solid $white;
+			border-right: 7px solid transparent;
+			border-left: 7px solid transparent;
+			transform: translateY( -50% ) rotate( 0deg );
+			transition: transform 0.3s ease;
+		}
+
+		.footer-column {
+			float: left;
+			width: 32%;
+
+			ul {
+				padding-left: 0;
+				margin-top: 10px;
+			}
+		}
+
+		.show-more {
+			display: inline;
+		}
+
+		.show-less {
+			display: none;
+		}
+
+		&--expanded {
+			max-height: 900px;
+			transition: all 0.6s ease-in;
+
+			.footer__nav--caret {
+				transform: translateY( -50% ) rotate( 180deg );
+			}
+
+			.show-more {
+				display: none;
+			}
+
+			.show-less {
+				display: inline;
+			}
+		}
+
+		&--menu {
+			@include container;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: block;
+			}
+
+			a,
+			span {
+				display: inline-block;
+			}
+		}
+
+		&--col {
+			@include span( 4 );
+
+			&:last-of-type {
+				@include span( 4 last );
+			}
+
+			ul {
+				padding: 0;
+				list-style: none;
+				box-sizing: border-box;
+			}
+		}
+
+		.menu-item {
+			display: block;
+			padding: 8px 0;
+			@include breakpoint( $break-medium ) {
+				padding: 0 0 25px;
+				font-weight: $medium;
+				line-height: 1;
+			}
+
+			a,
+			span {
+				@include font-size( 1.6 );
+				text-transform: uppercase;
+				font-weight: $bold;
+				@include breakpoint( $break-medium ) {
+					font-weight: $medium;
+				}
+			}
+
+			&.menu-item-has-children {
+				> a,
+				> span {
+					@include breakpoint( $break-medium ) {
+						margin: 0 0 10px;
+					}
+				}
+			}
+		}
+
+		.sub-menu {
+			padding: 0;
+
+			.menu-item {
+				padding: 0;
+			}
+
+			a,
+			span {
+				@include font-size( 1.4 );
+				color: $light-gray;
+				font-weight: $regular;
+				text-transform: none;
+				line-height: 1.5;
+			}
+		}
+	}
+
+	&__bottom {
+		background: $black;
+		padding: 30px 0;
+		font-weight: $regular;
+
+		&--left {
+			@include breakpoint( $break-medium ) {
+				@include span( 6 );
+			}
+			@include breakpoint( $break-large ) {
+				@include span( 4 );
+			}
+		}
+
+		&--right {
+			@include breakpoint( $break-medium ) {
+				@include span( 6 last );
+			}
+			@include breakpoint( $break-large ) {
+				@include span( 8 last );
+			}
+		}
+	}
+
+	&__copyright {
+		padding: 0;
+		margin: 0;
+	}
+
+	&__bottom-links {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		@include breakpoint( $break-medium ) {
+			text-align: right;
+		}
+
+		li {
+			display: inline-block;
+			margin: 0 20px 0 0;
+			@include breakpoint( $break-medium ) {
+				margin: 0 0 0 20px;
+			}
+		}
+
+		a {
+			text-decoration: underline;
+		}
+	}
+}
+
+// Footer Captcha Syles
+.footer__contact-form {
+	.ginput_container.ginput_recaptcha {
+		display: none;
+	}
+}
+
+.captcha-focus {
+	.ginput_container.ginput_recaptcha {
+		padding-top: 30px;
+	}
+}
+
+.captcha-focus-social {
+	padding-top: 140px;
+}
+
+.captcha-focus-social-error {
+	padding-top: 190px;
+}
+
+.gform_confirmation_wrapper.footer__contact-form {
+	.gform_confirmation_message.wysiwyg {
+		text-align: left;
+		padding-top: 20px;
+	}
+}

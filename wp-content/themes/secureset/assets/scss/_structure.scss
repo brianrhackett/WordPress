@@ -1,0 +1,27 @@
+/********************************
+Structure and High-Level Elements
+*********************************/
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+}
+
+.container {
+	@include container;
+	padding: 0 20px;
+}
+
+.custom-page-background {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+main {
+	@include breakpoint( $break-large ) {
+		margin-top: 154px;
+	}
+}

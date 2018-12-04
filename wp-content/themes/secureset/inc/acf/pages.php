@@ -1,0 +1,383 @@
+<?php
+if ( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group( array(
+	'key' => 'group_59f787e769993',
+	'title' => 'Page Configuration Data',
+	'fields' => array(
+		array(
+			'key' => 'field_59f787ef394d5',
+			'label' => 'Page Background Image',
+			'name' => 'page-background-image',
+			'type' => 'image',
+			'value' => NULL,
+			'instructions' => 'Please add a background image that is primarily light or dark that contrasts with the text, Global background images can be changed from the admin.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'preview_size' => 'large',
+			'library' => 'all',
+			'min_width' => 800,
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+		array(
+			'key' => 'field_59f794a86e170',
+			'label' => 'Page Background Color',
+			'name' => 'page-background-color',
+			'type' => 'color_picker',
+			'value' => NULL,
+			'instructions' => 'If you don\'t have a background image please select a color, if no color is selected the fallback image selected in the admin will be used.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+		),
+		array(
+			'key' => 'field_0eir8ngy237ac',
+			'label' => 'Lite Footer',
+			'name' => 'lite_footer',
+			'type' => 'checkbox',
+			'value' => NULL,
+			'instructions' => 'If this box is checked, the footer on this page will show only the Logo, Apply Now CTA (optionally), Social Media Buttons, Privacy Policy and Newsletter Subscription.',
+			'required' => 0,
+			'choices' => array(
+				'true' => 'Yes'
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'allow_custom' => 0,
+			'save_custom' => 0,
+			'default_value' => array(),
+			'layout' => 'block',
+			'toggle' => 0,
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_19neu5nai43pa',
+			'label' => 'Hide Footer CTA',
+			'name' => 'hide_footer_cta',
+			'type' => 'checkbox',
+			'value' => NULL,
+			'instructions' => 'If this box is checked, the footer Apply Now CTA will be hidden on this page.',
+			'required' => 0,
+			'choices' => array(
+				'true' => 'Yes'
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'allow_custom' => 0,
+			'save_custom' => 0,
+			'default_value' => array(),
+			'layout' => 'block',
+			'toggle' => 0,
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_2983hueivh857',
+			'label' => 'Footer Newsletter Description',
+			'name' => 'footer_newsletter_description',
+			'type' => 'text',
+			'value' => NULL,
+			'instructions' => 'If this text field is filled out, it will override the footer newsletter description.',
+			'required' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
+		array(
+			'key' => 'field_129v83ndyt743',
+			'label' => 'Footer Bottom Links Override',
+			'name' => 'footer_bottom_links_override',
+			'type' => 'repeater',
+			'instructions' => 'These footer links will override the footer links in the theme options.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'collapsed' => '',
+			'min' => 0,
+			'max' => 0,
+			'layout' => 'block',
+			'button_label' => 'Add Link',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_8394jeivyd7bf',
+					'label' => 'Link Title',
+					'name' => 'link_title',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '60',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_09dioe83jvnuq',
+					'label' => 'Link Type',
+					'name' => 'link_type',
+					'type' => 'radio',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '40',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'external' => 'External url',
+						'page' => 'Internal Page',
+						'file' => 'File/Upload',
+					),
+					'allow_null' => 0,
+					'other_choice' => 0,
+					'save_other_choice' => 0,
+					'default_value' => 'external',
+					'layout' => '',
+					'return_format' => '',
+				),
+				array(
+					'key' => 'field_skvid83hvr74n3',
+					'label' => 'Url',
+					'name' => 'url',
+					'type' => 'url',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_09dioe83jvnuq',
+								'operator' => '==',
+								'value' => 'external',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '100',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+				),
+				array(
+					'key' => 'field_mvi398ovufh12',
+					'label' => 'Page',
+					'name' => 'page_link',
+					'type' => 'page_link',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_09dioe83jvnuq',
+								'operator' => '==',
+								'value' => 'page',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '100',
+						'class' => '',
+						'id' => '',
+					),
+					'post_type' => array(
+						0 => 'post',
+						1 => 'page',
+					),
+					'taxonomy' => array(
+					),
+					'filters' => array(
+						0 => 'search',
+						1 => 'post_type',
+					),
+					'elements' => '',
+					'min' => '',
+					'max' => '1',
+					'return_format' => '',
+				),
+				array(
+					'key' => 'field_2094h857bhfur',
+					'label' => 'File',
+					'name' => 'file',
+					'type' => 'file',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_09dioe83jvnuq',
+								'operator' => '==',
+								'value' => 'file',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '100',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => '',
+					'library' => '',
+					'min_size' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+			),
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'page',
+			),
+		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'team',
+			),
+		)
+	),
+	'menu_order' => 1,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+) );
+
+acf_add_local_field_group( array(
+	'key' => 'group_5a6920ed2554c',
+	'title' => 'Page Location',
+	'fields' => array(
+		array(
+			'key' => 'field_5a6920f4139a7',
+			'label' => 'Page Location',
+			'name' => 'has_page_location',
+			'type' => 'radio',
+			'value' => NULL,
+			'instructions' => 'Does this page have a custom location?',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'no' => 'No',
+				'yes' => 'Yes',
+			),
+			'allow_null' => 0,
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => 'no',
+			'layout' => 'vertical',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_5a692139139a8',
+			'label' => 'Location',
+			'name' => 'page_location',
+			'type' => 'post_object',
+			'value' => NULL,
+			'instructions' => 'Select the custom location for this page',
+			'required' => 1,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5a6920f4139a7',
+						'operator' => '==',
+						'value' => 'yes',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array(
+				0 => 'locations',
+			),
+			'taxonomy' => array(
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'return_format' => 'id',
+			'ui' => 1,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'page',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+) );
+
+endif;
+
+?>

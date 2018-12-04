@@ -1,0 +1,43 @@
+.title-component {
+	text-align: center;
+	padding: 50px 0;
+	width: 100%;
+
+	@include breakpoint( $break-medium ) {
+		padding: 75px 0;
+	}
+
+	.container {
+		max-width: 960px;
+	}
+
+	&.light {
+		background: $off-white;
+	}
+
+	&__title {
+		margin: 0;
+		padding: 0;
+
+		.light & {
+			color: $blue;
+		}
+	}
+
+	&__paragraph {
+		@include font-size( 1.8 );
+		font-family: $font-secondary;
+		letter-spacing: normal;
+		line-height: 26px;
+		margin: 50px 0 0;
+		padding: 0;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 2 );
+		}
+
+		.light & {
+			color: $blue;
+		}
+	}
+}

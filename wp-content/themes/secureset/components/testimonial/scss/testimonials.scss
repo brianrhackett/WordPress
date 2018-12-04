@@ -1,0 +1,136 @@
+.testimonial {
+	box-sizing: border-box;
+	clear: both;
+	padding: 50px 0;
+	width: 100%;
+
+	@include breakpoint( $break-medium ) {
+		padding: 75px 0;
+	}
+
+	> .container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	}
+
+	&.light {
+		color: $blue;
+		background-color: $off-white;
+	}
+
+	&.dark {
+		color: $white;
+	}
+
+	&__item {
+		@include span( 12 );
+		position: relative;
+		margin-bottom: 20px;
+		box-sizing: border-box;
+
+		&.grid-1 {
+			text-align: center;
+			@include span( 10 at 1 );
+			margin: 0 auto;
+
+			.testimonial__subject {
+				justify-content: center;
+			}
+		}
+
+		&.grid-2 {
+			@include span( 6 );
+			&:last-child {
+				@include span( 6 last );
+			}
+
+			.testimonial__quote {
+				@include font-size( 1.4 );
+				line-height: 24px;
+
+				@include breakpoint( $break-medium ) {
+					@include font-size( 2.2 );
+					line-height: 30px;
+				}
+			}
+
+			.testimonial__subject {
+
+				&-name {
+					@include font-size( 1.6 );
+					line-height: 32px;
+
+					@include breakpoint( $break-medium ) {
+						@include font-size( 2.2 );
+						line-height: 30px;
+					}
+				}
+			}
+		}
+
+		&.grid-3 {
+			@include span( 12 );
+
+			@include breakpoint( $break-medium ) {
+				@include span( 4 );
+
+				&:last-child {
+					@include span( 4 last );
+				}
+			}
+
+			.testimonial__subject {
+				justify-content: start;
+			}
+		}
+	}
+
+	&__quote {
+		@include font-size( 2.2 );
+		font-style: italic;
+		line-height: 30px;
+		font-weight: $regular;
+		margin-bottom: 5px;
+		font-family: $font-secondary;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 2.5 );
+			line-height: 40px;
+			margin-bottom: 15px;
+		}
+	}
+
+	&__subject {
+		text-align: left;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		align-items: center;
+
+		&-name {
+			color: $light-blue;
+			text-align: left;
+			font-size: 22px;
+			line-height: 32px;
+			font-style: italic;
+			margin: 20px 0 20px 10px;
+		}
+
+		&-image {
+			box-shadow: 0 0 10px 0 rgba( $black, 0.5 );
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			object-fit: cover;
+			margin: 15px 0 0;
+
+			@include breakpoint( $break-medium ) {
+				margin: 0;
+			}
+		}
+	}
+}

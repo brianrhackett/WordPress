@@ -1,0 +1,425 @@
+.video-img {
+	padding: 50px 0;
+	overflow: hidden;
+
+	@include breakpoint( $break-medium ) {
+		padding: 75px 0;
+	}
+
+	&-row {
+		margin: 0 0 20px;
+		float: left;
+		width: 100%;
+	}
+
+	&.light {
+		background-color: $off-white;
+	}
+
+	.grid-1 {
+		@include span( 12 of 12 );
+
+		.video-text-holder {
+			bottom: 25px;
+		}
+
+		.media-helper__play-button {
+			bottom: 50%;
+		}
+
+		img {
+			height: 188px;
+			object-fit: cover;
+		}
+
+		@include breakpoint( $break-large ) {
+			img {
+				height: 590px;
+			}
+			.media-helper__play-button {
+				bottom: 20%;
+			}
+		}
+
+		&:last-child {
+			@include span( 12 of 12 last );
+		}
+	}
+
+	.grid-2 {
+		@include span( 6 of 12 );
+
+		.video-text-holder {
+			bottom: 25px;
+		}
+
+		.media-helper__play-button {
+			bottom: 50%;
+		}
+
+		.video-cell-description {
+			display: none;
+		}
+
+		img {
+			height: 126px;
+		}
+
+		@include breakpoint( $break-large ) {
+			img {
+				height: 360px;
+			}
+
+			.media-helper__play-button {
+				bottom: 30%;
+				margin-left: 5%;
+				top: unset;
+				transition: all 0.4s ease;
+				position: absolute;
+			}
+		}
+
+		&:last-child {
+			@include span( 6 of 12 last );
+		}
+	}
+
+	.grid-3 {
+		@include span( 4 of 12 );
+
+		img {
+			object-fit: cover;
+			height: 100px;
+		}
+
+		@include breakpoint( $break-large ) {
+			img {
+				height: 286px;
+			}
+
+			.video-text-holder {
+				bottom: 25px;
+			}
+
+			.media-helper__play-button {
+				bottom: 38%;
+				margin-left: 5%;
+				top: unset;
+				transition: all 0.4s ease;
+				position: absolute;
+			}
+		}
+
+		&:last-child {
+			@include span( 4 of 12 last );
+		}
+	}
+
+	.grid-4 {
+		@include span( 6 of 12 );
+
+		&:last-child {
+			@include span( 6 of 12 last );
+			margin-top: 20px;
+		}
+
+		&:nth-last-child( 2 ) {
+			margin-top: 20px;
+		}
+
+		&:nth-last-child( 3 ) {
+			@include span( 6 of 12 last );
+		}
+
+		.video-text-holder {
+
+			.video-cell-description {
+				display: none;
+			}
+		}
+
+		.media-helper__play-button {
+			bottom: 50%;
+		}
+
+		img {
+			object-fit: cover;
+			height: 100px;
+		}
+
+		@include breakpoint( $break-large ) {
+
+			@include span( 3 of 12 );
+
+			.video-text-holder {
+				bottom: 25px;
+			}
+
+			.media-helper__play-button {
+				bottom: 50%;
+				margin-left: 5%;
+				top: unset;
+				transition: all 0.4s ease;
+			}
+
+			&:last-child {
+				@include span( 3 of 12 last );
+				margin: 0;
+			}
+
+			&:nth-last-child( 2 ) {
+				margin-top: 0;
+			}
+
+			&:nth-last-child( 3 ) {
+				@include span( 3 of 12 last );
+			}
+
+			img {
+				height: 210px;
+			}
+		}
+	}
+
+	.grid-5 {
+		@include span( 4 of 12 );
+
+		&:last-child {
+			@include span( 6 of 12 last );
+			margin-top: 10px;
+		}
+
+		&:nth-last-child( 2 ) {
+			@include span( 6 of 12 );
+			margin-top: 10px;
+		}
+
+		&:nth-last-child( 3 ) {
+			@include span( 4 of 12 last );
+		}
+
+		img {
+			object-fit: cover;
+			height: 100px;
+		}
+
+		@include breakpoint( $break-large ) {
+			@include span( 3 of 15 );
+
+			&:nth-last-child( 2 ) {
+				@include span( 3 of 15 );
+				margin-top: 0;
+			}
+
+			&:nth-last-child( 3 ) {
+				@include span( 3 of 15 );
+				margin-top: 0;
+			}
+
+			&:last-child {
+				@include span( 3 of 15 last );
+				margin-top: 0;
+			}
+
+			img {
+				height: 160px;
+			}
+		}
+	}
+
+	.grid-6 {
+		@include span( 4 of 12 );
+
+		&:last-child {
+			@include span( 4 of 12 last );
+			margin-top: 10px;
+		}
+
+		&:nth-last-child( 2 ) {
+			@include span( 4 of 12 );
+			margin-top: 10px;
+		}
+
+		&:nth-last-child( 3 ) {
+			@include span( 4 of 12 );
+			margin-top: 10px;
+		}
+
+		&:nth-last-child( 4 ) {
+			@include span( 4 of 12 last );
+		}
+
+		img {
+			object-fit: cover;
+			height: 100px;
+		}
+
+		@include breakpoint( $break-large ) {
+			@include span( 2 of 12);
+
+			&:last-child {
+				@include span( 2 of 12 last );
+				margin-top: 0;
+			}
+
+			&:nth-last-child( 2 ) {
+				@include span( 2 of 12 );
+				margin-top: 0;
+			}
+
+			&:nth-last-child( 3 ) {
+				@include span( 2 of 12 );
+				margin-top: 0;
+			}
+
+			&:nth-last-child( 4 ) {
+				@include span( 2 of 12 );
+			}
+
+			img {
+				height: 133px;
+			}
+		}
+	}
+
+	.media-helper__video-wrap {
+		text-align: center;
+		max-height: 810px;
+		overflow: hidden;
+
+		a {
+			background: $gray-gradient;
+		}
+	}
+
+	.grid-3,
+	.grid-4,
+	.grid-5,
+	.grid-6 {
+		a {
+			background-color: rgba( 2, 112, 205, 0.7 );
+			transition: all 0.4s ease;
+
+			.media-helper__play-button {
+				bottom: 0;
+				top: 0;
+				margin-left: auto;
+				width: max-content;
+				transition: all 0.4s ease;
+			}
+		}
+
+		.video-text-holder {
+			display: none;
+		}
+	}
+
+	@include breakpoint( $break-large ) {
+		.grid-3,
+		.grid-4,
+		.grid-5 {
+			a {
+				background-color: transparent;
+			}
+
+			.video-text-holder {
+				display: block;
+			}
+
+			.media-helper__video-link .media-helper__play-button {
+				margin-left: 5%;
+			}
+		}
+	}
+
+	.video-img-cell {
+		position: relative;
+		box-shadow: 0 0 10px 0 rgba( $black, 0.5 );
+		float: left;
+
+		&::after {
+			transition: background-color 0.2s ease;
+			background-color: transparent;
+			content: "";
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			position: absolute;
+			pointer-events: none;
+			opacity: 0.8;
+		}
+
+		&:hover::after {
+			background-color: $lightest-blue;
+		}
+	}
+
+	.video-img-cell:last-child {
+		position: relative;
+		box-shadow: 0 0 10px 0 rgba( $black, 0.5 );
+		float: left;
+	}
+
+	.video-img-cell-media {
+		position: relative;
+	}
+
+	.media-helper__play-button {
+		margin-left: 5%;
+		top: unset;
+		transition: all 0.4s ease;
+		position: absolute;
+	}
+
+	.media-helper__play-button::before {
+		top: -45px;
+		left: 10px;
+		bottom: -45px;
+		border: none;
+	}
+
+	.media-helper__video-link-poster img {
+		display: block;
+		width: 100%;
+	}
+
+
+
+	.video-text-holder {
+		position: absolute;
+		z-index: 10;
+		max-width: 100%;
+		max-height: 60px;
+		left: 5%;
+		width: 80%;
+		pointer-events: none;
+
+		@include breakpoint( $break-large ) {
+			display: block;
+			bottom: 60px;
+		}
+
+		.video-cell-title {
+			@include font-size( 2.4 );
+			line-height: 29px;
+			font-family: $font-primary;
+			color: $off-white;
+			font-weight: $medium;
+		}
+
+		.video-cell-description {
+			@include font-size( 1.6 );
+			color: $off-white;
+			font-family: $font-secondary;
+			line-height: 24px;
+			margin-top: 7px;
+			height: 25px;
+			overflow: hidden;
+
+			@include breakpoint( $break-large ) {
+				display: block;
+			}
+		}
+	}
+}

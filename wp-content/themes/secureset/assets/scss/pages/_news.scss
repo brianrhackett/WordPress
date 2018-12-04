@@ -1,0 +1,434 @@
+.news {
+	@include clearfix;
+
+	&__hero {
+		> .container {
+			position: relative;
+		}
+
+		.hero {
+			min-height: auto;
+		}
+	}
+
+	&__hero-social {
+		display: none;
+		position: absolute;
+		bottom: 95px;
+		right: 20px;
+		z-index: 10;
+		align-items: center;
+		justify-content: center;
+		@include breakpoint( 880px ) {
+			display: flex;
+		}
+	}
+
+	.news__filter-bar {
+		background: $black-gradient;
+		padding: 10px;
+		margin-bottom: 50px;
+		height: 210px;
+		box-shadow: 0 0 20px 0 rgba( 0, 0, 0, 0.5 );
+
+		@include breakpoint( $break-medium ) {
+			height: 150px;
+		}
+	}
+
+	&__search {
+		width: 100%;
+		margin-top: -10px;
+
+		.search-form {
+			margin-top: 50px;
+
+			&__field {
+				width: 100%;
+				border-radius: 0;
+			}
+			@include breakpoint( $break-medium ) {
+				margin: 0;
+			}
+		}
+		@include breakpoint( $break-medium ) {
+			@include span( 4 last );
+		}
+	}
+
+	&__controls {
+		@include clearfix;
+		margin: 30px 0 55px;
+		@include breakpoint( $break-medium ) {
+			margin: 60px 0 100px;
+		}
+	}
+
+	&__controls-wrap-filter {
+		@include span( 5 );
+		@include clearfix;
+
+		.dropdown-pane {
+			&::after {
+				left: 20px;
+				right: inherit;
+			}
+		}
+		@include breakpoint( $break-medium ) {
+			@include span( 3 );
+		}
+	}
+
+	&__controls-wrap-sort {
+		@include span( 5 last );
+		@include clearfix;
+
+		.dropdown-pane {
+			&::after {
+				right: 32px;
+			}
+		}
+		@include breakpoint( $break-medium ) {
+			@include span( 3 );
+			@include push( 1 );
+		}
+	}
+
+	&__controls-label-filter,
+	&__controls-label-sort {
+		@include font-size( 1.4 );
+		float: left;
+		margin-bottom: 10px;
+		@include breakpoint( $break-medium ) {
+			float: none;
+			margin-right: 10px;
+		}
+	}
+
+	&__controls-filter,
+	&__controls-sort {
+		border-bottom-color: $blue;
+		float: left;
+		clear: left;
+		width: 100%;
+		box-sizing: border-box;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+
+		&::after {
+			border-color: $blue transparent transparent;
+		}
+
+		&.hover::after {
+			border-color: transparent transparent $blue;
+		}
+
+		@include breakpoint( $break-medium ) {
+			float: none;
+			clear: none;
+			width: 200px;
+			display: inline-block;
+			margin-bottom: -14px;
+		}
+	}
+
+	&__post-wrap {
+		@include clearfix;
+		margin-bottom: 20px;
+	}
+
+	&__masonry-gutter {
+		width: 2%;
+	}
+
+	&__post-image {
+		width: 100%;
+		height: 193px;
+		background-size: cover;
+		display: block;
+		background-image: url( "../img/post-fallback.jpg" );
+		position: relative;
+		box-shadow: $half-black;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			content: "";
+			background: $blue;
+			background: $gray-gradient-alt-d;
+			pointer-events: none;
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			content: "";
+			background: $lightest-blue;
+			opacity: 0;
+			pointer-events: none;
+			transition: opacity 0.2s ease;
+		}
+
+		img {
+			height: auto;
+			display: block;
+		}
+	}
+
+	&__post-anchor {
+		display: block;
+	}
+
+	.news__post:hover .news__post-image::after {
+		opacity: 0.8;
+	}
+
+	&__post {
+		width: 100%;
+		padding-top: 15px;
+		border-top: solid 5px $off-white;
+		clear: both;
+		position: relative;
+
+		@include breakpoint( $break-medium ) {
+			width: 23.5%;
+		}
+
+		@include breakpoint( $break-large ) {
+			&--featured {
+				margin-bottom: 30px;
+				border: 0;
+				padding: 0;
+				width: 49%;
+
+
+				.news__post-image {
+					height: 433px;
+
+					&::before {
+						position: absolute;
+						top: 0;
+						left: 0;
+						bottom: 0;
+						right: 0;
+						content: "";
+						background: $blue;
+						background: $gray-gradient-alt-d;
+						pointer-events: none;
+					}
+				}
+
+				.news__post-content {
+					position: absolute;
+					bottom: 32px;
+					left: 0;
+					padding: 0 25px;
+					pointer-events: none;
+				}
+
+				.news__post-date {
+					@include font-size( 1.6 );
+					font-weight: $regular;
+					font-family: $font-secondary;
+					color: $off-white;
+					display: inline;
+					float: left;
+					pointer-events: all;
+
+					&::after {
+						content: " | ";
+					}
+				}
+
+				.news__post-categories {
+					display: inline;
+					font-weight: $regular;
+					pointer-events: all;
+					float: left;
+					margin: 0;
+
+					a {
+						@include font-size( 1.6 );
+						font-family: $font-secondary;
+						color: $off-white;
+					}
+				}
+
+				.news__post-title {
+					@include font-size( 3.6 );
+					pointer-events: all;
+					font-family: $font-primary;
+					margin-top: 17px;
+					letter-spacing: 1px;
+					display: inline;
+					float: left;
+				}
+
+				.news__post-excerpt {
+					pointer-events: all;
+					margin: 17px 0 44px;
+					float: left;
+				}
+
+				.news__post-comment-count {
+					display: none;
+				}
+
+				.news__post-comment-count-featured {
+					pointer-events: all;
+					float: left;
+					margin-left: 25px;
+				}
+
+				a.news__post-cta-featured {
+					display: inline-block !important;
+					pointer-events: all;
+					float: left;
+				}
+			}
+		}
+
+
+		&:hover {
+			.news__post-title {
+				color: $blue;
+				transition: color 0.4s ease;
+			}
+		}
+
+		&-no-posts {
+			padding: 20px 0;
+			margin-bottom: 30px;
+			text-align: center;
+
+			p {
+				@include font-size( 3 );
+				font-weight: $bold;
+				font-family: $font-secondary;
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+
+	.news__post--featured:hover {
+		.news__post-title {
+			color: $white;
+		}
+	}
+
+	&__post-comment-count {
+		@include font-size( 1.8 );
+		font-weight: $medium;
+		font-family: $font-primary;
+		width: 52px;
+		height: 50px;
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		background-color: $blue;
+		text-align: center;
+		line-height: 50px;
+		box-shadow: 0 0 20px 0 rgba( 0, 0, 0, 0.5 );
+
+		&::after {
+			font-weight: $bold;
+			font-family: $font-icons;
+			content: "\e91f";
+			margin-left: 5px;
+			position: relative;
+			top: 4px;
+		}
+	}
+
+	&__post-comment-count-featured {
+		display: none;
+	}
+
+	a.news__post-cta-featured {
+		display: none;
+	}
+
+	&__post-date {
+		display: none;
+	}
+
+	&__post-categories {
+		margin-top: 30px;
+
+		ul {
+			margin: -1px 0 0 2px;
+			padding: 0;
+			display: inline-block;
+
+			li {
+				list-style-type: none;
+				display: inline;
+				line-height: 1;
+
+				a {
+					@include font-size( 1.6 );
+					font-family: $font-secondary;
+					color: $light-blue;
+					transition: color 0.2s ease;
+
+					&::after {
+						content: ", ";
+					}
+
+					&:hover {
+						color: $off-white;
+					}
+				}
+
+				&:last-child {
+					a {
+						&::after {
+							content: "";
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__post-title {
+		@include font-size( 1.6 );
+		font-weight: $bold;
+		font-family: $font-secondary;
+		margin: 9px 0 0;
+		transition: color 0.4s ease;
+	}
+
+	&__post-excerpt {
+		margin: 9px 0 30px;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	&__load-more {
+		margin-bottom: 50px;
+		width: 100%;
+		text-align: center;
+
+		&-link {
+			margin: 0 auto;
+		}
+	}
+
+	&__ajax-loader {
+		max-width: 200px;
+		width: 100%;
+		margin: 0 auto;
+		display: block;
+	}
+}

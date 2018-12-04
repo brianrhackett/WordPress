@@ -1,0 +1,317 @@
+/*********
+Global Nav
+**********/
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+	display: inline-block;
+	cursor: pointer;
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible;
+
+	&__box {
+		width: 30px;
+		height: 24px;
+		display: inline-block;
+		position: relative;
+	}
+
+	&__inner {
+		display: block;
+		top: 50%;
+		margin-top: -2px;
+	}
+
+	&__inner,
+	&__inner::after,
+	&__inner::before {
+		width: 30px;
+		height: 5px;
+		background-color: $white;
+		position: absolute;
+		transition-property: transform;
+		transition-duration: 0.15s;
+		transition-timing-function: ease;
+	}
+
+	&__inner::after,
+	&__inner::before {
+		content: "";
+		display: block;
+	}
+
+	&__inner::before {
+		top: -10px;
+	}
+
+	&__inner::after {
+		bottom: -10px;
+	}
+}
+// Squeeze
+
+.hamburger--squeeze {
+	.hamburger__inner {
+		transition-duration: 0.075s;
+		transition-timing-function: cubic-bezier( 0.55, 0.055, 0.675, 0.19 );
+	}
+
+	.hamburger__inner::before {
+		transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+	}
+
+	.hamburger__inner::after {
+		transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier( 0.55, 0.055, 0.675, 0.19 );
+	}
+
+	&.hover,
+	&.is-active {
+		// This class is added by foundation-dropdown
+		.hamburger__inner {
+			transform: rotate( 45deg );
+			transition-delay: 0.12s;
+			transition-timing-function: cubic-bezier( 0.215, 0.61, 0.355, 1 );
+		}
+
+		.hamburger__inner::before {
+			top: 0;
+			opacity: 0;
+			transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+		}
+
+		.hamburger__inner::after {
+			bottom: 0;
+			transform: rotate( -90deg );
+			transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier( 0.215, 0.61, 0.355, 1 );
+		}
+	}
+}
+// Mobile menu styles
+
+.mobile-menu-push {
+	transition: transform 0.3s;
+	position: relative;
+	top: 50px;
+	z-index: 1;
+	@include breakpoint( $break-large ) {
+		top: 0;
+	}
+}
+
+.mobile-menu-active {
+	overflow: hidden;
+
+	.mobile-menu-push {
+		transform: translateX( -100% );
+	}
+}
+
+.mobile-nav {
+	transition: transform 0.3s;
+	transform: translateX( 100% );
+	position: fixed;
+	z-index: 200;
+	width: 100%;
+	height: 100%;
+	top: 50px;
+	left: 0;
+	overflow: scroll;
+	background: $light-gray url( "../img/backgrounds/two-dogs.png" ) repeat fixed top left;
+
+	.location-dropdown {
+		padding: 0 20px;
+		z-index: 3;
+		position: relative;
+
+		.dropdown-pane {
+			z-index: 3;
+			top: 75px !important;
+			left: 0 !important;
+		}
+	}
+
+	&.is-active {
+		transform: translateX( 0 );
+		
+		.mobile-nav__overlay {
+			transform: translateX( 0 );
+		}
+	}
+
+	.menu {
+		height: 100%;
+		z-index: 2;
+		position: relative;
+		margin-top: $space;
+		font-family: $font-primary;
+		overflow-y: auto;
+		list-style-type: none;
+		display: inline-block;
+		padding-left: 25px;
+
+		li {
+			a {
+				@include font-size( 1.8 );
+				color: $off-white;
+				text-transform: uppercase;
+				margin-bottom: 15px;
+				display: block;
+				font-weight: $bold;
+				padding: 0.7rem 0;
+			}
+
+			ul {
+				padding: 0 0 0 5px;
+				margin: 0 0 35px;
+				list-style-type: none;
+				display: inline-block;
+				&:last-of-type {
+					margin: 0 0 20px;
+				}
+
+				li {
+					a {
+						@include font-size( 1.6 );
+						color: $light-gray;
+						margin-bottom: 8px;
+						display: block;
+						font-weight: $medium;
+						text-transform: capitalize;
+						padding: 0 1rem 1rem;
+					}
+				}
+			}
+		}
+	}
+
+	&__student-login {
+		margin: 0 0 40px 25px;
+		@include font-size( 1.8 );
+		box-shadow: 0 0 10px 0 rgba( $black, 0.5 );
+	}
+
+	&__social-icons {
+		display: block;
+		height: 100px;
+		width: 100%;
+		padding-left: 25px;
+		z-index: 3;
+		margin-bottom: 50px;
+
+		a {
+			margin-right: 25px;
+			@include font-size( 3.5 );
+			transition: all 0.3s ease;
+
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&__overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: -2000px;
+		background-color: $dark-gray;
+		opacity: 0.75;
+		z-index: -10;
+		transform: translateX( 100% );
+	}
+	
+	@include breakpoint( $break-large ) {
+		display: none;
+	}
+}
+
+.mobile-menu-mask {
+	z-index: 100;
+	top: 50px;
+	left: 0;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	background-color: $black;
+	overflow: hidden;
+	position: fixed;
+	transition: opacity 0.3s;
+
+	&.is-active {
+		width: 100%;
+		height: 100%;
+		opacity: 0.7;
+	}
+	@include breakpoint( $break-large ) {
+		display: none;
+		transition: none;
+	}
+}
+
+.desktop-nav {
+	display: none;
+	@include breakpoint( $break-large ) {
+		display: block;
+	}
+}
+
+.desktop-nav-more-pane {
+	box-shadow: 0 3px 10px 0 rgba( 0, 0, 0, 0.5 );
+	background: $light-gray;
+	background: $gray-gradient-alt-c;
+
+	.menu {
+		padding-top: 10px;
+		margin: 0;
+
+		> li {
+			border-bottom: solid 1px $white;
+
+			> a {
+				@include font-size( 1.4 );
+				font-weight: $bold;
+				text-transform: uppercase;
+				color: $blue;
+				margin: 15px 0;
+			}
+
+			.sub-menu {
+				padding-bottom: 10px;
+
+				> li {
+					margin-bottom: 10px;
+
+					> a {
+						@include font-size( 1.5 );
+						color: $gray;
+						font-weight: $medium;
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		border: 0;
+		padding: 0 $space;
+		line-height: 1;
+	}
+
+	li {
+		width: 100%;
+	}
+}

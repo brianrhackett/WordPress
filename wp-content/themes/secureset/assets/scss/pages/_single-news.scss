@@ -1,0 +1,446 @@
+.single-news {
+
+	.container {
+		max-width: 995px;
+	}
+
+	&__back {
+		color: $white;
+		font-family: $font-primary;
+		display: block;
+		width: 100%;
+		background: $gray-alt-b;
+		padding-left: 12px;
+		box-sizing: border-box;
+		transition: background-color 200ms;
+		box-shadow: 0 0 20px 0 rgba( 0, 0, 0, 0.5 );
+
+		&:hover {
+			background: $blue;
+		}
+	}
+
+	&__back-anchor {
+		@include font-size( 1.4 );
+		line-height: 45px;
+		display: block;
+		position: relative;
+		text-transform: uppercase;
+
+		@include breakpoint( $break-small ) {
+			@include font-size( 2.4 );
+			line-height: 75px;
+			text-transform: none;
+			font-weight: $medium;
+		}
+	}
+
+	&__title {
+		text-transform: none;
+		color: $off-white;
+		margin: 30px 0 0;
+		display: inline-block;
+
+		&::after {
+			display: none;
+		}
+
+		@include breakpoint( $break-small ) {
+			text-align: left;
+			display: block;
+			margin: 40px 0 0;
+		}
+	}
+
+	&__social {
+		margin: 30px 0 0;
+		text-align: center;
+
+		@include breakpoint( $break-small ) {
+			margin: 22px 0 0;
+		}
+	}
+
+	&__featured-image {
+		margin: 30px 0 15px;
+
+		img {
+			display: block;
+			height: auto;
+			width: 100%;
+		}
+
+		@include breakpoint( $break-small ) {
+			margin: 51px 0 15px;
+		}
+	}
+
+	&__content-wrap {
+		max-width: 791px;
+		margin: 0 auto;
+	}
+
+	&__meta-mobile {
+		@include clearfix;
+		@include breakpoint( $break-small ) {
+			display: none;
+		}
+	}
+
+	&__meta-desktop {
+		@include clearfix;
+		display: none;
+
+		@include breakpoint( $break-small ) {
+			display: block;
+		}
+	}
+
+	&__date-byline-wrap {
+		@include clearfix;
+	}
+
+	&__byline-mobile {
+		@include span( 6 );
+		@include font-size( 1.5 );
+		margin: 0;
+	}
+
+	&__date-mobile {
+		@include span( 6 last );
+		text-align: right;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	&__categories-mobile,
+	&__categories-desktop {
+		@include font-size( 1.5 );
+		@include clearfix;
+		font-family: $font-secondary;
+		width: 100%;
+		clear: left;
+		margin: 30px 0 0;
+
+		> p {
+			float: left;
+			margin: 0;
+			padding: 0;
+		}
+
+		> ul {
+			margin: 0 0 0 5px;
+			padding: 0;
+			float: left;
+
+			> li {
+				list-style-type: none;
+				display: inline;
+				text-transform: uppercase;
+
+				&::after {
+					content: ", ";
+				}
+
+				&:last-child::after {
+					content: "";
+				}
+
+				> a {
+					transition: color 200ms ease;
+
+					&:hover {
+						color: $light-blue;
+					}
+				}
+			}
+		}
+	}
+
+	&__byline-desktop {
+		@include span( 2 );
+		text-align: right;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	&__categories-desktop {
+		@include span( 7 );
+		text-align: center;
+		clear: none;
+		margin-top: 0;
+
+		> p {
+			float: none;
+			display: inline;
+		}
+
+		> ul {
+			float: none;
+			display: inline;
+		}
+	}
+
+	&__date-desktop {
+		@include span( 3 last );
+		text-align: left;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	&__content {
+		margin: 80px 0 0;
+		padding-bottom: 50px;
+
+		img {
+			height: auto;
+		}
+
+		&::first-letter {
+			@include font-size( 4.4 );
+			font-family: $font-primary;
+			float: left;
+			margin: 0 10px 0 0;
+		}
+
+		blockquote {
+			color: $light-blue;
+			border-left: solid 4px $light-blue;
+			padding: 0 0 0 20px;
+
+			p {
+				@include font-size( 2.2 );
+				color: $light-blue;
+			}
+		}
+	}
+}
+
+//Comments
+.comments-area {
+	border-top: solid 5px $off-white;
+
+	&__title {
+		@include font-size( 2.8 );
+		font-family: $font-primary;
+		font-weight: $bold;
+		font-style: normal;
+		text-align: center;
+		margin: 40px 0;
+		color: $off-white;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 3.4 );
+			margin: 70px 0;
+		}
+	}
+
+	&__list {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&__list-item {
+		margin-bottom: 80px;
+		padding: 0;
+	}
+
+	&__section {
+		@include clearfix;
+	}
+
+	&__avatar {
+		@include span( 12 last );
+		text-align: center;
+		margin-bottom: 20px;
+
+		@include breakpoint( $break-medium ) {
+			@include span( 2 );
+		}
+
+		&-image {
+			border-radius: 50%;
+			height: 75px;
+			width: 75px;
+
+			@include breakpoint( $break-medium ) {
+				height: 50px;
+				width: 50px;
+			}
+		}
+	}
+
+	&__section-content {
+		@include span( 12 last );
+
+		@include breakpoint( $break-medium ) {
+			@include span( 10 last );
+		}
+
+		&--unapproved > span {
+			color: $gray-alt;
+		}
+	}
+
+	&__date {
+		@include span( 12 last );
+		@include font-size( 1.8 );
+		font-family: $font-secondary;
+		font-weight: $regular;
+		color: $white;
+
+		@include breakpoint( $break-medium ) {
+			@include span( 7 last );
+		}
+	}
+
+	&__text {
+		@include span( 12 last );
+		font-family: $font-secondary;
+		font-weight: $regular;
+		color: $off-white;
+		margin-top: 15px;
+		margin-bottom: 20px;
+		padding: 0;
+		word-wrap: break-word;
+
+		> p {
+			margin: 0;
+		}
+
+		&--unapproved > p {
+			color: $gray-alt;
+		}
+	}
+
+	&__navigation {
+		&--nav-links {
+			display: block;
+			color: $light-blue;
+		}
+	}
+
+	&__nav-previous,
+	&__nav-next {
+		margin-bottom: 20px;
+		text-align: center;
+		color: $light-blue;
+
+		@include breakpoint( $break-medium ) {
+			display: inline-block;
+			margin-bottom: 80px;
+		}
+
+		a {
+			@include font-size( 1.8 );
+			font-family: $font-secondary;
+			font-weight: $regular;
+			color: $light-blue;
+		}
+	}
+
+	@include breakpoint( $break-medium ) {
+		&__nav-previous {
+			float: left;
+			padding-left: 135px;
+		}
+
+		&__nav-next {
+			float: right;
+		}
+	}
+
+	&__author {
+		@include span( 12 );
+		@include font-size( 2.2 );
+		font-family: $font-primary;
+		font-weight: $bold;
+		color: $off-white;
+
+		@include breakpoint( $break-medium ) {
+			@include span( 5 );
+		}
+	}
+
+	// Overrides
+	.comment-reply-title {
+		@include font-size( 3.4 );
+		font-family: $font-primary;
+		font-weight: $bold;
+		color: $off-white;
+	}
+
+	.comment-form-author {
+		@include span( 12 last );
+		@include font-size( 1.8 );
+		box-sizing: border-box;
+
+
+		@include breakpoint( $break-medium ) {
+			@include span( 6 );
+		}
+	}
+
+	.comment-form-email {
+		@include span( 12 last );
+		@include font-size( 1.8 );
+		box-sizing: border-box;
+
+		@include breakpoint( $break-medium ) {
+			@include span( 6 last );
+			padding-left: 12px;
+		}
+	}
+
+	.comment-form-url {
+		display: none;
+	}
+
+	.comment-form-comment {
+		@include span( 12 last );
+		@include font-size( 1.8 );
+	}
+
+	.comment-notes {
+		@include span( 12 last );
+		@include font-size( 1.2 );
+		color: $off-white;
+	}
+
+	.no-comments {
+		@include font-size( 1.8 );
+		font-family: $font-secondary;
+		padding: 0;
+		margin: 115px 0;
+		opacity: 0.5;
+	}
+	// end overrides
+
+	&__textarea {
+		border: $blue 2px solid;
+		width: 100%;
+		font-size: 16px;
+		color: white;
+		font-family: $font-secondary;
+		background-color: rgba( 55, 72, 91, 0.15 );
+		outline: none;
+		padding-left: 10px;
+		box-sizing: border-box;
+		height: 133px;
+	}
+
+	&__approval {
+		@include font-size( 1.4 );
+		font-family: $font-secondary;
+		color: $off-white;
+		padding: 0;
+		margin: 0;
+	}
+
+	&__submit {
+		@include font-size( 2.2 );
+		font-weight: $medium;
+		margin-bottom: 140px;
+	}
+}

@@ -1,0 +1,59 @@
+/*********************
+Form Fields and Layout
+**********************/
+.form-field,
+input.form-field:not( [ type="radio" ] ):not( [ type="checkbox" ] ):not( [ type="submit" ] ):not( [ type="button" ] ):not( [ type="image" ] ):not( [ type="file" ] ) {
+	border: $blue 2px solid;
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	color: white;
+	font-family: $font-secondary;
+	background-color: rgba( 55, 72, 91, 0.15 );
+	outline: none;
+	padding-left: 10px;
+	box-sizing: border-box;
+	box-shadow: 0 0 10px 0 rgba( 0, 0, 0, 0.5 );
+}
+
+select {
+	optgroup {
+		font-family: $font-secondary;
+		color: $black;
+		font-weight: $regular;
+		background: $white;
+	}
+}
+
+.select-field-container {
+	&::after {
+		content: "";
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-top: 7px solid $blue;
+		display: block;
+		position: relative;
+		float: right;
+		margin-top: -22px;
+		margin-right: 12px;
+	}
+
+	select {
+		@include font-size( 1.6 );
+		border: $blue 2px solid;
+		width: 100%;
+		height: 40px;
+		color: white;
+		font-family: $font-secondary;
+		background-color: rgba( 55, 72, 91, 0.15 );
+		outline: none;
+		padding-left: 10px;
+		box-sizing: border-box;
+		appearance: none;
+		cursor: pointer;
+
+		&::placeholder {
+			opacity: 0.5;
+		}
+	}
+}

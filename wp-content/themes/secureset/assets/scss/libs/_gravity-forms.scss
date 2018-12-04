@@ -1,0 +1,465 @@
+.gform_wrapper {
+
+	ul.gform_fields {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+	}
+
+	label.gfield_label {
+		@include font-size( 1.8 );
+		display: inline-block;
+		font-family: $font-secondary;
+		color: $white;
+		font-weight: 400;
+		width: 100%;
+	}
+
+	.ginput_container_select {
+		&::after {
+			content: "";
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-top: 7px solid $blue;
+			display: block;
+			position: relative;
+			float: right;
+			margin-top: -22px;
+			margin-right: 12px;
+		}
+	}
+
+	.gform_body .gform_fields .gfield select,
+	.gform_body .gform_fields .gfield textarea,
+	.gform_body .gform_fields .gfield input:not( [ type="radio" ] ):not( [ type="checkbox" ] ):not( [ type="submit" ] ):not( [ type="button" ] ):not( [ type="image" ] ):not( [ type="file" ] ) {
+		@include font-size( 1.6 );
+		border: $blue 2px solid;
+		width: 100%;
+		height: 40px;
+		color: white;
+		font-family: $font-secondary;
+		background-color: rgba( 55, 72, 91, 0.15 );
+		outline: none;
+		padding-left: 10px;
+		box-sizing: border-box;
+
+		&::placeholder {
+			opacity: 0.5;
+		}
+	}
+
+	.gform_body .gform_fields .gfield_radio {
+		list-style-type: none;
+		padding: 0;
+		margin-bottom: 12px;
+
+		li {
+			margin-right: 10px;
+			display: inline-block;
+		}
+
+		label {
+			margin-left: 5px;
+		}
+	}
+
+	.gform_body .gform_fields .gfield input[ type="checkbox" ] {
+		display: block;
+		float: left;
+	}
+
+	.gfield_required {
+		color: $blue;
+		margin-left: 3px;
+	}
+
+	.ginput_counter {
+		display: none;
+	}
+
+	.gform_body .gform_fields .gfield select {
+		appearance: none;
+		cursor: pointer;
+
+		&::-ms-expand {
+			display: none;
+		}
+
+		option {
+			color: $dark-blue;
+			background: $white;
+			margin: 20px 0;
+		}
+	}
+
+	.gform_body .gform_fields .gfield textarea {
+		height: 133px;
+		display: block;
+		resize: none;
+	}
+
+	//error warning styling
+	.gform_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not( .gf_left_half ):not( .gf_right_half ) {
+
+		@include breakpoint( $break-medium ) {
+			width: 48%;
+		}
+	}
+
+	li.gfield.gfield_error.gfield_contains_required div.gfield_description {
+		margin-top: 6px;
+	}
+
+	li.gfield.gfield_error.gfield_contains_required label.gfield_label {
+		margin: 0;
+	}
+
+	ul.gform_fields li.gfield.gfield_error + li.gfield.gfield_error {
+		margin-top: 0;
+	}
+
+	.top_label li.gfield_error {
+		color: $red;
+		border: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	div.validation_error {
+		color: $red;
+		font-size: 1.6em;
+		font-weight: 700;
+		margin-bottom: 25px;
+		border-top: 2px solid $red;
+		border-bottom: 2px solid $red;
+		padding: 16px 0;
+		clear: both;
+		width: 100%;
+		text-align: center;
+	}
+
+	li.gfield_error input:not( [ type="radio" ] ):not( [ type="checkbox" ] ):not( [ type="submit" ] ):not( [ type="button" ] ):not( [ type="image" ] ):not( [ type="file" ] ),
+	li.gfield_error textarea {
+		color: $red;
+		border: 2px solid $red;
+	}
+
+	.validation_message {
+		color: $red;
+	}
+
+	.gform_ajax_spinner {
+		display: none;
+	}
+
+	.gform_next_button,
+	.gform_previous_button {
+		@extend .btn;
+	}
+
+	.gform_delete {
+		width: auto;
+		display: inline;
+		cursor: pointer;
+	}
+
+	.big {
+		.gsection_description {
+			@include font-size( 2 );
+		}
+	}
+
+	////////////////////////////
+	// Custom Utility Classes //
+	////////////////////////////
+
+	// Expand the field to full width
+	.full-width {
+		flex: 0 0 100% !important;
+		flex-basis: 100%;
+		max-width: 100%;
+	}
+
+	// Drop to a new line and left align
+	.newline-left {
+
+		@include breakpoint( $break-medium ) {
+			margin-right: 49% !important;
+			max-width: 49%;
+		}
+	}
+
+	// Drop field to new line and right align
+	.newline-right {
+		@include breakpoint( $break-medium ) {
+			margin-left: 49% !important;
+			max-width: 49%;
+		}
+	}
+
+	// This produces a section break in a form
+	.section-break-full-width {
+		height: 5px;
+		background-color: rgba( 0, 0, 0, 0.2 ) !important;
+	}
+
+	.section-break-half-width {
+		height: 5px;
+		background-color: rgba( 0, 0, 0, 0.2 ) !important;
+		text-align: left;
+
+		@include breakpoint( $break-medium ) {
+			width: 49%;
+		}
+	}
+
+	// This produces a highlight field where the field itself is half width, but the highlight is full width
+	.highlight {
+		background-color: rgba( 0, 0, 0, 0.52 ) !important;
+		padding: 10px 22px 20px !important;
+		border-left: solid 5px $dark-blue;
+
+		.ginput_container {
+			background-color: rgba( 0, 0, 0, 0.52 ) !important;
+		}
+	}
+
+	// This will indent a field by 30px
+	.indent {
+		margin-left: 30px !important;
+
+		@include breakpoint( $break-medium ) {
+			flex-basis: calc( 49% - 30px ) !important;
+			max-width: calc( 49% - 30px );
+		}
+	}
+
+	// This makes a textarea taller
+	.tall-textarea {
+		textarea {
+			height: 250px !important;	
+		}
+	}
+
+	// This makes a textarea absolute so it wont mess up the layout
+	.absolute-textarea {
+		@include breakpoint( $break-medium ) {
+			position: relative;
+
+			textarea {
+				position: absolute;
+			}			
+		}
+	}
+
+	// Order classes up to Medium BP
+	.md-order-1 {
+		order: 1;
+
+		@include breakpoint( $break-medium ) {
+			order: 0;
+		}
+	}
+
+	.md-order-2 {
+		order: 2;
+
+		@include breakpoint( $break-medium ) {
+			order: 0;
+		}
+	}
+
+	// This will hide the label
+	.no-label {
+
+		.gfield_label {
+			display: none;
+		}
+	}
+}
+
+.gform_confirmation_wrapper {
+	width: 100%;
+
+	.gform_confirmation_message {
+		@include font-size( 1.5 );
+		font-family: $font-secondary;
+		text-align: center;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 1.6 );
+			line-height: 1.4;
+		}
+
+		a {
+			@include font-size( 1.5 );
+			font-family: $font-secondary;
+			font-weight: normal;
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 1.6 );
+				line-height: 1.4;
+			}
+		}
+	}
+}
+
+.custom_gravity_forms_spinner {
+	background: rgba(0,0,0,.4) url(../../assets/img/ajax-loader.gif) center no-repeat;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+}
+
+.gform_wrapper .gf_progressbar_wrapper {
+	clear: both;
+	width: 100%;
+	margin: 0 0 16px 0;
+	padding: 0 0 16px 0;
+}
+
+.gform_wrapper .gf_progressbar_wrapper h3.gf_progressbar_title {
+	@include font-size( 1.8 );
+	font-weight: bold;
+	font-family: Gesta;
+	color: $off-white;
+	line-height: 21px !important;
+	margin: 0 0 8px 12px !important;
+	padding: 0 !important;
+	clear: both;
+}
+
+.gform_wrapper .gf_progressbar {
+	mask: url( '../img/mask-mobile.svg' ) center/cover;
+	position: relative;
+	border-radius: 25px;
+	box-shadow: inset 0px 0px 1px 1px rgba( 0, 0, 0, 0.05 );
+	background-color: rgba( 64, 64, 66, 0.3 );
+	width: 100%;
+	height: 0;
+	padding-bottom: 5.83333%;
+
+	@include breakpoint( $break-medium ) {
+		mask: url( '../img/mask.svg' ) center/cover;
+		padding-bottom: 2.91666%;
+	}
+}
+
+.gform_wrapper .gf_progressbar_percentage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	text-align: right;
+	font-family: $font-primary;
+	font-size: .813em !important;
+	text-shadow: 0 1px 1px rgba( 0, 0, 0, 0.50 );
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	z-index: 999;
+}
+
+.gform_wrapper .gf_progressbar {
+	&::after {
+		content: none;
+		display: block;
+		width: 100%;
+		z-index: 990;
+		height: 24px;
+		margin-top: -24px;
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 20px;
+		box-shadow: inset 0px 0px 2px 2px rgba( 0, 0, 0, 0.05 );
+	}
+}
+
+.gform_wrapper .gf_progressbar_percentage.percentbar_100 {
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.gform_wrapper .gf_progressbar > span {
+	display: block;
+	width: auto;
+	font-weight: bold;
+	font-size: 14px;
+	color: $off-white;
+}
+
+.gform_wrapper .gf_progressbar_percentage.percentbar_0 {
+	padding-right: 0;
+	justify-content: flex-start;
+}
+
+// gradient variables
+$basePercent: #0270cd;
+
+$TwentyPercent: rgba( $basePercent, 0.4 );
+$FortyPercent: rgba( $basePercent, 0.55 );
+$SixtyPercent: rgba( $basePercent ,0.7 );
+$EightyPercent: rgba( $basePercent, 0.85 );
+
+.gform_wrapper .percentbar_blue {
+	background-color: $TwentyPercent;
+	color: #FFF;
+	margin-left: -3px;
+}
+
+.gform_wrapper .percentbar_blue.percentbar_20 {
+	background-color: $TwentyPercent;
+}
+
+.gform_wrapper .percentbar_blue.percentbar_40 {
+	background: linear-gradient( to right, $TwentyPercent 0%, $TwentyPercent 50%, $FortyPercent 50%, $FortyPercent 100% );
+}
+
+.gform_wrapper .percentbar_blue.percentbar_60 {
+	background: linear-gradient( to right, $TwentyPercent 0%, $TwentyPercent 33.3%, $FortyPercent 33.3%, $FortyPercent 66.6%, $SixtyPercent 66.6%, $SixtyPercent 100% );
+}
+
+.gform_wrapper .percentbar_blue.percentbar_80 {
+	background: linear-gradient( to right, $TwentyPercent 0%, $TwentyPercent 25%, $FortyPercent 25%, $FortyPercent 50%, $SixtyPercent 50%, $SixtyPercent 75%, $EightyPercent 75%, $EightyPercent 100% );
+}
+
+.gform_wrapper .percentbar_blue.percentbar_100 {
+	background: linear-gradient( to right, $TwentyPercent 0%, $TwentyPercent 20%, $FortyPercent 20%, $FortyPercent 40%, $SixtyPercent 40%, $SixtyPercent 60%, $EightyPercent 60%, $EightyPercent 80%, $basePercent 80%, $basePercent 100% );
+}
+
+.gform_wrapper .percentbar_gray {
+	background-color: #7C7C7C;
+	color: #FFF;
+}
+
+.gform_wrapper .percentbar_green {
+	background-color: #88B831;
+	color: #FFF;
+}
+
+.gform_wrapper .percentbar_orange {
+	background-color: #FF7120;
+	color: #FFF;
+}
+
+.gform_wrapper .percentbar_red {
+	background-color: #FF2A1A;
+	color: #FFF;
+}
+
+.gform_body .gform_fields .gfield .ginput_container_multiselect select.gfield_select {
+	height: 133px;
+
+	option {
+		background: none;
+		color: $white;
+		margin: 5px 0;
+	}
+}

@@ -1,0 +1,139 @@
+.program-event-details {
+
+	@include breakpoint( $break-large ) {
+		@include container;
+		padding-top: 100px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	&__sidebar {
+		@include span( 12 last );
+
+		@include breakpoint( $break-large ) {
+			@include span( 4 last );
+		}
+
+		a {
+			@include font-size( 2 );
+			color: $dark-gray;
+		}
+
+		span {
+			@include font-size( 2.4);
+			position: absolute;
+			top: 27px;
+			left: 25px;
+			bottom: 25px;
+			color: $blue;
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 2.2 );
+				top: 25px;
+			}
+		}
+
+		&-header {
+			background-color: $blue;
+			padding: 20px;
+
+			h4 {
+				margin: 0;
+			}
+		}
+
+		&-date,
+		&-address,
+		&-price,
+		&-info {
+			position: relative;
+			background: $white-gradient;
+			padding: 25px 25px 25px 75px;
+
+			p,
+			address {
+				@include font-size( 2 );
+				line-height: 1.4;
+				margin: 0;
+				padding: 0;
+				color: $dark-gray;
+				font-style: normal;
+			}
+
+			li {
+				line-height: 1.4;
+			}
+		}
+
+		&-calendar-link {
+			a {
+				color: $blue;
+				transition: 200ms ease;
+
+				&:hover {
+					color: $dark-blue;
+				}
+			}
+		}
+
+		&__address {
+			background: none;
+			background-color: $gray-alt-e;
+		}
+
+		&__info {
+			background: none;
+			background-color: $gray-alt-e;
+
+			p {
+				@include font-size( 1.6 );
+				line-height: 2;
+			}
+		}
+	}
+
+	&__left {
+		@include clearfix;
+	}
+
+	&__content {
+		@include span( 12 last );
+		padding: 50px 20px 0;
+
+		*:first-child {
+			margin-top: 0;
+		}
+
+		@include breakpoint( $break-large ) {
+			@include span( 7 );
+		}
+	}
+
+	&__bottom {
+		@include span( 12 last );
+		@include clearfix;
+		position: relative;
+		margin-top: 50px;
+
+		@include breakpoint( $break-large ) {
+			@include span( 7 );
+		}
+
+		&-highlight {
+			background: rgba( $off-white, 0.05 );
+			position: relative;
+			min-height: 130px;
+			width: 100%;
+
+			&::before {
+				background: rgba( $off-white, 0.05 );
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: -100%;
+				width: 100%;
+			}
+		}
+	}
+}

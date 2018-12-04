@@ -1,0 +1,174 @@
+.cards {
+	box-sizing: border-box;
+	clear: both;
+	padding: 50px 0;
+	width: 100%;
+
+	@include breakpoint( $break-medium ) {
+		padding: 75px 0;
+	}
+
+	> .container {
+		@include breakpoint( $break-medium ) {
+			display: flex;
+		}
+	}
+
+	&__item {
+		@include span( 12 );
+		box-sizing: border-box;
+		margin-bottom: 25px;
+		position: relative;
+		width: 100%;
+		background-color: rgba( 35, 35, 35, 0.72 );
+		box-shadow: 0 0 10px 0 rgba( 0, 0, 0, 0.5 );
+		padding: 0 0 25px;
+
+		@include breakpoint( $break-medium ) {
+			@include span( 4 );
+
+			&:nth-child( 3n+0 ) {
+				@include span( 4 last );
+			}
+
+			&:nth-child( 2n+0 ) {
+				@include span( 4 );
+			}
+		}
+
+		&.has-link {
+			cursor: pointer;
+
+			&:hover .cards__bg {
+				opacity: 0.8;
+				transition: opacity 0.3s ease-out;
+			}
+		}
+	}
+
+	&__link {
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 3;
+	}
+
+	&__bg {
+		background: $lightest-blue;
+		bottom: 0;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		transition: opacity 0.2s ease-in;
+		z-index: 1;
+	}
+
+	&__image {
+		background-position: center;
+		background-size: cover;
+		height: 188px;
+		position: relative;
+		width: 100%;
+
+		@include breakpoint( $max-width ) {
+			height: 260px;
+		}
+	}
+
+	&__title {
+		margin: 0 0 10px;
+		padding: 0 10px;
+		position: relative;
+		z-index: 2;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 2.4 );
+			padding: 0 20px;
+			margin: 0 0 25px;
+		}
+	}
+
+	&__spacer {
+		height: 20px;
+		width: 100%;
+		background: transparent;
+
+		@include breakpoint( $break-medium ) {
+			height: 45px;
+		}
+	}
+
+	&__paragraph {
+		padding: 0 10px;
+		position: relative;
+		z-index: 2;
+
+		a {
+			color: $light-blue;
+		}
+
+		@include breakpoint( $max-width ) {
+			padding: 0 20px;
+		}
+
+		:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__cta {
+		@include font-size( 1.8 );
+		background-color: $blue;
+		box-sizing: border-box;
+		display: block;
+		font-weight: bold;
+		line-height: 45px;
+		padding: 0 10px;
+		text-transform: uppercase;
+		width: 100%;
+		z-index: 2;
+		position: absolute;
+		bottom: 0;
+
+		@include breakpoint( $max-width ) {
+			padding: 0 20px;
+		}
+
+		& + .card__item-bottom {
+			height: 45px;
+			display: block;
+			width: 100%;
+		}
+	}
+
+	&.light {
+		background: $off-white;
+
+		.cards__item {
+			background-color: $white;
+			box-shadow: 0 0 10px 0 rgba( $dark-blue, 0.2 );
+
+			&.has-link:hover {
+				.cards__title,
+				.cards__paragraph * {
+					color: $white;
+				}
+			}
+		}
+
+		.cards__title,
+		.cards__paragraph * {
+			color: $blue;
+			transition: color 0.3s ease-out;
+		}
+	}
+}
+
+.three-column-stack ~ .three-column-stack {
+	padding-top: 0;
+	margin-top: -50px;
+}

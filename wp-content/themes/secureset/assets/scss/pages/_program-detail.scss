@@ -1,0 +1,443 @@
+.program-detail {
+
+	&__title {
+		@include breakpoint( $break-medium ) {
+			@include font-size( 3.6 );
+		}
+	}
+
+	&__wysiwyg {
+		margin-bottom: 30px;
+
+		p {
+			@include font-size( 1.8 );
+			line-height: 1.45;
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 2 );
+				line-height: 1.4;
+			}
+		}
+	}
+
+	&__bottom-wrapper {
+		padding: 20px 20px 30px;
+
+		@include breakpoint( $break-large ) {
+			margin: 0;
+			padding: 30px 30px 30px 0;
+		}
+
+		p {
+			margin-top: 0;
+
+			@include breakpoint( $break-large ) {
+				margin-bottom: 30px;
+			}
+		}
+
+		.dropdown-trigger {
+			display: block;
+			border-bottom-color: $blue;
+			box-sizing: border-box;
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 1.8 );
+			}
+
+			@include breakpoint( $max-width ) {
+				@include font-size( 2.2 );
+			}
+
+			&::after {
+				border-color: $blue transparent transparent;
+			}
+
+			&.hover::after {
+				border-color: transparent transparent $blue;
+			}
+		}
+
+		.dropdown-pane {
+			width: 300px;
+			max-width: 300px;
+		}
+
+		.btn.btn--large {
+			margin-top: 25px;
+			min-width: 125px;
+			text-align: center;
+
+			@include breakpoint( $max-width - 1, "max" ) {
+				@include font-size( 1.4 );
+				padding: 14px 30px;
+			}
+
+			@include breakpoint( $break-medium ) {
+				display: inline-block;
+				vertical-align: middle;
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__op-selector {
+		@include breakpoint( $break-medium ) {
+			display: inline-block;
+			max-width: 75%;
+			margin-right: 40px;
+			vertical-align: middle;
+		}
+
+		@include breakpoint( $break-large ) {
+			max-width: 68%;
+			margin-right: 20px;
+		}
+
+		@include breakpoint( $max-width ) {
+			margin-right: 40px;
+		}
+	}
+
+
+	&__courses {
+		@include container;
+		margin-top: 50px;
+		padding: 0 20px;
+		clear: both;
+
+		@include breakpoint( $break-medium ) {
+			padding-top: 100px;
+		}
+
+		&-title {
+			max-width: 990px;
+			@include breakpoint( $break-medium ) {
+				text-align: center;
+				margin: auto;
+			}
+		}
+
+		&-description {
+			max-width: 990px;
+
+			@include breakpoint( $break-medium ) {
+				text-align: center;
+				margin: 25px auto 60px;
+			}
+		}
+	}
+
+	&__course-list {
+		&--mobile {
+			display: block;
+
+			@include breakpoint( $break-medium ) {
+				display: none !important;
+			}
+
+			.orbit-bullets {
+				display: flex;
+				flex: 0 0 auto;
+				flex-direction: row;
+				flex-wrap: no-wrap;
+				justify-content: space-between;
+				margin: 15px 0;
+
+				button {
+					border: 1px solid $white;
+					width: 9px;
+					height: 9px;
+					background: transparent;
+					margin: 7px;
+
+					&.is-active {
+						background: $white;
+						width: 11px;
+						height: 11px;
+
+						&:focus {
+							outline: none;
+						}
+					}
+				}
+			}
+
+			.orbit-wrapper {
+				position: relative;
+			}
+
+			.orbit-container {
+				margin: 0 30px;
+			}
+
+			.orbit-previous,
+			.orbit-next {
+				@include font-size( 2.8 );
+				line-height: 28px;
+				height: 28px;
+				width: 20px;
+				padding: 0;
+				left: auto;
+				right: -10px;
+				transform: translateY( -50% );
+
+				&:focus {
+					outline: none;
+				}
+			}
+
+			.orbit-previous {
+				right: auto;
+				left: -10px;
+				transform: rotate( 180deg ) translateY( 50% );
+			}
+		}
+
+		&--desktop {
+			display: none;
+
+			@include breakpoint( $break-medium ) {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+		}
+
+		&-course {
+
+			@include breakpoint( $break-medium ) {
+				box-sizing: border-box;
+				width: 25%;
+				padding: 0 40px 40px 0;
+				margin: 0;
+
+				&:nth-of-type( 4n ) {
+					padding-right: 0;
+				}
+			}
+
+			@include breakpoint( $break-large ) {
+				width: 20%;
+				padding: 0 50px 50px 0;
+
+				&:nth-of-type( 4n ) {
+					padding-right: 50px;
+				}
+
+				&:nth-of-type( 5n ) {
+					padding-right: 0;
+				}
+			}
+
+			&-icon {
+				@include font-size( 6 );
+				color: $blue;
+
+				@include breakpoint( $break-medium ) {
+					color: $white;
+				}
+			}
+
+			&-title {
+				@include font-size( 2 );
+				line-height: 1;
+				margin: 5px 0 20px;
+
+				@include breakpoint( $break-medium ) {
+					@include font-size( 1.8 );
+					margin: 15px 0 30px;
+				}
+			}
+
+			&-description {
+				@include font-size( 2 );
+				margin-bottom: 10px;
+
+				@include breakpoint( $break-medium ) {
+					@include font-size( 1.4 );
+					line-height: 1.4;
+				}
+			}
+		}
+	}
+
+	&__faculty {
+
+		&-title {
+			margin: 40px 0 25px;
+		}
+
+		&-content {
+			@include container;
+			text-align: center;
+			max-width: 990px;
+			padding: 0 20px;
+		}
+	}
+
+	&__big-numbers {
+		max-width: $max-width;
+		padding: 0 20px;
+		margin: 50px auto 40px;
+
+		@include breakpoint( $break-medium - 1, "max" ) {
+			@include clearfix;
+		}
+
+		@include breakpoint( $break-medium ) {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin: 60px auto;
+		}
+	}
+
+	&__big-number {
+		box-sizing: border-box;
+		float: left;
+		width: 42.5vw;
+		height: 42.5vw;
+		border: 4px solid $blue;
+		text-align: center;
+		border-radius: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		align-content: center;
+		margin-bottom: 40px;
+
+		&:nth-of-type( even ) {
+			float: right;
+		}
+
+		@include breakpoint( $break-medium ) {
+			width: 165px;
+			height: 165px;
+			margin-bottom: 0;
+		}
+
+		@include breakpoint( $break-large ) {
+			width: 225px;
+			height: 225px;
+		}
+
+		h3 {
+			@include font-size( 6.4 );
+			color: $blue;
+			width: 100%;
+			font-weight: 300;
+		}
+
+		p {
+			width: 60%;
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 2 );
+			}
+		}
+
+		h3,
+		p {
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	&__dropdown {
+		a {
+			box-sizing: border-box;
+			text-align: left;
+			color: $white;
+			width: 100%;
+		}
+
+		@include breakpoint( $break-medium ) {
+			display: none;
+		}
+	}
+
+	&__schedule-section {
+		@include container;
+		padding: 0 20px;
+		text-align: center;
+
+		&-title {
+			margin: 90px 0 25px;
+		}
+
+		&-description {
+			max-width: 990px;
+			margin: 0 auto 80px;
+		}
+
+		&-schedule {
+
+			&-container {
+				display: none;
+
+				&.current-schedule {
+					display: block;
+				}
+			}
+
+			&-title {
+				display: none;
+				margin: 0 15px;
+				cursor: pointer;
+				padding-bottom: 5px;
+
+				&.active {
+					border-bottom: 3px solid $white;
+				}
+
+				@include breakpoint( $break-medium ) {
+					display: inline;
+				}
+			}
+
+			&-description {
+				max-width: 500px;
+				margin: 50px auto;
+				text-align: left;
+
+				@include breakpoint( $break-medium ) {
+					@include font-size( 1.6 );
+					text-align: center;
+				}
+			}
+
+			&-image-container-outer {
+				height: 70vh;
+				width: 100%;
+				overflow-x: auto;
+				overflow-y: hidden;
+
+				@include breakpoint( $break-medium ) {
+					height: auto;
+				}
+			}
+
+			&-image-container {
+				width: 990px;
+
+				@include breakpoint( $break-medium ) {
+					width: 100%;
+				}
+			}
+
+			&-image {
+				height: 70vh;
+				width: auto;
+
+				@include breakpoint( $break-medium ) {
+					height: auto;
+					width: 100%;
+					max-width: inherit;
+				}
+			}
+		}
+	}
+}

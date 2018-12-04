@@ -1,0 +1,78 @@
+.location-dropdown {
+	@include clearfix;
+	width: 100%;
+	min-height: 75px;
+	position: relative;
+	background: $light-blue-gradient;
+	box-sizing: border-box;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		opacity: 0.8;
+		background: linear-gradient( $black, transparent );
+		content: "";
+	}
+
+	&__wrapper {
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	&__label {
+		@include font-size( 1.6 );
+		text-transform: uppercase;
+		font-family: $font-secondary;
+		font-weight: $bold;
+		float: left;
+		margin-top: 28px;
+		margin-right: $space;
+	}
+
+	&__trigger {
+		float: right;
+		margin-top: 24px;
+		width: 120px;
+		cursor: pointer;
+
+		@include breakpoint ( 375px ) {
+			width: 190px;
+		}
+	}
+
+	@include breakpoint( $break-large ) {
+		height: auto;
+		background: none;
+
+		&::before {
+			display: none;
+		}
+
+		&__label {
+			@include font-size( 1.4 );
+			margin: 0;
+			text-transform: none;
+			font-family: $font-primary;
+			color: $off-white;
+			font-weight: $regular;
+			float: left;
+		}
+
+		&__trigger {
+			@include font-size( 1.4 );
+			margin: 0 0 0 15px;
+			width: auto;
+			cursor: pointer;
+			font-family: $font-primary;
+			border: 0;
+			font-weight: $bold;
+			display: block;
+			float: left;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+}

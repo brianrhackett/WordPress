@@ -1,0 +1,48 @@
+/*****
+ 404
+*****/
+
+.notfound {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: $white;
+	background-image: url( "../img/404.jpg" );
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 500px;
+
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: #008aff;
+		opacity: 0.8;
+	}
+
+	&__content {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__title {
+		@include font-size( 3.8 );
+		font-weight: bold;
+		margin: 0;
+	}
+
+	&__copy {
+		@include font-size( 2 );
+		margin: 25px 0;
+	}
+
+	&__notfound {
+		text-align: center;
+	}
+}

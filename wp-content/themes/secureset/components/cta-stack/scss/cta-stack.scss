@@ -1,0 +1,95 @@
+.cta-stack {
+	@include clearfix;
+	width: 100%;
+
+	&--of-2 {
+		@include breakpoint( $max-width ) {
+			height: 600px;
+		}
+	}
+
+	&--of-3 {
+		@include breakpoint( $max-width ) {
+			height: 500px;
+		}
+	}
+
+	&__item {
+		box-sizing: border-box;
+		float: left;
+		height: 100%;
+		margin: 0;
+		padding: 75px 0;
+		position: relative;
+		text-align: center;
+		width: 100%;
+		display: flex;
+		align-items: center;
+
+		@include breakpoint( $max-width ) {
+			padding: 140px 0;
+			width: 100%;
+		}
+
+		.cta-stack--of-2 & {
+			@include breakpoint( $max-width ) {
+				width: 50%;
+			}
+		}
+
+		.cta-stack--of-3 & {
+			@include breakpoint( $max-width ) {
+				width: 33.33%;
+			}
+		}
+	}
+
+	&__image {
+		background-position: center;
+		background-size: cover;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 0;
+	}
+
+	&__blur {
+		background: $lightest-blue;
+		opacity: 0.8;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 1;
+
+		.cta-stack__item:nth-of-type( 2n ) & {
+			background: rgba( 2, 112, 205, 0.9 );
+		}
+	}
+
+	&__content {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__title {
+		margin: auto;
+		width: 90%;
+
+		@include breakpoint( $max-width ) {
+			max-width: 990px;
+		}
+	}
+
+	&__text {
+		margin: 25px auto 30px;
+		width: 90%;
+
+		@include breakpoint( $max-width ) {
+			max-width: 990px;
+		}
+	}
+}

@@ -1,0 +1,52 @@
+// dark form theme
+.form-stack.dark {
+
+	.gform_wrapper .gf_progressbar_wrapper h3.gf_progressbar_title {
+		color: $off-white !important;
+	}
+
+	.gform_wrapper .gform_body .gform_fields .gfield input,
+	.gform_wrapper .gform_body .gform_fields .gfield .ginput_container_select select,
+	.gform_wrapper .gform_body .gform_fields .gfield textarea {
+		@include font-size( 1.6 );
+		font-family: "Amasis", sans-serif !important;
+		color: $white;
+		background: rgba( 55, 72, 91, 0.15 ) !important;
+		border: $blue 2px solid !important;
+		box-shadow: none;
+
+		&::placeholder {
+			color: $light-blue;
+		}
+	}
+
+	.gfield_required {
+		color: $off-white !important;
+	}
+
+	.selectboxit-list {
+		background-color: $gray !important;
+		border: $blue 2px solid !important;
+
+		.selectboxit-option-anchor {
+			color: $white !important;
+		}
+	}
+
+	.gform_wrapper .ginput_container_select::after {
+		content: "";
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-top: 7px solid $blue;
+		display: block;
+		position: relative;
+		float: right;
+		margin-top: -22px;
+		margin-right: 12px;
+		pointer-events: none;
+	}
+
+	.gform_confirmation_message {
+		color: $blue;
+	}
+}

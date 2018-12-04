@@ -1,0 +1,52 @@
+/*********************
+ * BEM Example
+ * ---------------
+ * Block, Element, Modifier naming conventions
+ *
+ *
+ * Code Example
+ * ---------------
+ * <div class="block block--modifier">
+ *		<div class="block__element"></div>
+ *		<div class="block__another-element"></div>
+ * </div>
+ *
+ *********************/
+
+
+.block {
+	// Default mobile first styles go here for your parent element
+
+	&__element {
+		// Sub element to block - code outputs .block__element{}
+
+		@include breakpoint( $screen-md ) {
+			// Media Query for .block__element styles above 720px
+			// Optional (If no adjustments are needed for this breakpoint, dont use)
+		}
+	}
+
+	&__another-element {
+		// Sub element to block - code outputs .block__another-element{}
+	}
+
+	&--modifier {
+		// Modifier class to block - code outputs .block--modifier{}
+		// Used for changing the defaults set on .block
+	}
+
+	@include breakpoint( $screen-sm ) {
+		// Media Query for .block styles above 480px
+		// Optional (If no adjustments are needed for this breakpoint, dont use)
+	}
+
+	@include breakpoint( $screen-md ) {
+		// Media Query for .block styles above 720px
+		// Optional (If no adjustments are needed for this breakpoint, dont use)
+	}
+
+	@include breakpoint( $screen-lg ) {
+		// Media Query for .block styles above 960px
+		// Optional (If no adjustments are needed for this breakpoint, dont use)
+	}
+}

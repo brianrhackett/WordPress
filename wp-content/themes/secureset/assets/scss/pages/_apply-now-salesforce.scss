@@ -1,0 +1,61 @@
+#gform_wrapper_18,
+#gform_wrapper_15 {
+	li:not(.multi-select-checkboxes) {
+		.gfield_checkbox {
+
+			label {
+				@include font-size( 1.8 );
+				display: inline;
+				font-family: $font-secondary;
+				font-weight: 400;
+				width: 100%;
+			}
+		}
+	}
+
+	#field_18_77,
+	#field_18_58,
+	#field_15_77,
+	#field_15_58 {
+		.gfield_label {
+			display: none;
+		}
+	}
+
+	#field_18_82,
+	#field_15_82 {
+		.gsection_title {
+			display: none;
+		}
+	}
+}
+
+// For the old apply now form
+.vtg-gform-placeholder {
+	display: none;
+}
+
+#field_12_10,
+#field_12_11,
+#field_12_3 {
+	display: none;
+
+	.ginput_container_select {
+
+		&:after {
+			content: "";
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-top: 7px solid #0270cd;
+			display: block;
+			position: relative;
+			float: right;
+			margin-top: -22px;
+			margin-right: 12px;
+		}
+	}
+
+	option {
+		margin: 5px 0;
+	}
+}

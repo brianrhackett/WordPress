@@ -1,0 +1,335 @@
+.alternator {
+	margin: auto;
+	padding: 50px 0;
+	clear: both;
+
+	@include breakpoint( $break-medium ) {
+		padding: 75px 0;
+	}
+
+	&.light {
+		background-color: $off-white;
+	}
+
+	@mixin nthAlternator( $nth: all ) {
+		.alternator__item:nth-of-type( #{ $nth } ) & {
+			@content;
+		}
+	}
+
+	$xs-img-container-height: 100vw;
+
+	$small-img-container-height: 70vw;
+	$small-img-tall-height: 300px;
+	$small-img-short-height: 188px;
+	$small-img-tall-span: 9.5;
+	$small-img-short-span: 9;
+	$small-offset: 15px;
+
+	$med-img-container-height: 45vw;
+	$med-img-tall-height: 35vw;
+	$med-img-short-height: 20vw;
+	$med-img-tall-span: 8;
+	$med-img-short-span: 5;
+	$med-offset: 25px;
+
+	$large-img-container-height: 643px;
+	$large-img-tall-height: 408px;
+	$large-img-short-height: 310px;
+	$large-img-tall-span: 10;
+	$large-img-short-span: 6;
+	$large-offset: 30px;
+
+	&__item {
+		clear: both;
+		padding: 0;
+	}
+
+	&__text-container {
+		@include nthAlternator( even ) {
+			margin-bottom: 75px;
+			margin-top: 75px;
+		}
+
+		@include breakpoint( $max-width ) {
+			@include span( 4 of 12 );
+			height: $large-img-container-height;
+			position: relative;
+
+			@include nthAlternator( even ) {
+				@include push( 8 );
+				float: right;
+				margin: 0;
+			}
+		}
+	}
+
+	&__text {
+		z-index: 1;
+		position: relative;
+
+		@include breakpoint( $max-width ) {
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	&__title {
+		margin: 25px 0 0;
+
+		@include breakpoint( $max-width ) {
+			margin: 110px 0 0;
+
+			@include nthAlternator( even ) {
+				margin: 235px 0 0;
+			}
+		}
+
+		.light & {
+			color: $blue;
+		}
+	}
+
+	&__paragraph {
+		margin: 0;
+		padding: $space 0 $space*2;
+
+		.light & {
+			color: $dark-blue;
+		}
+	}
+
+	&__images {
+		height: $xs-img-container-height;
+		position: relative;
+		z-index: 1;
+
+		@include nthAlternator( even ) {
+			margin: 75px auto -45px;
+		}
+
+		@include breakpoint( $break-small ) {
+			height: $small-img-container-height;
+		}
+
+		@include breakpoint( $break-medium ) {
+			height: $med-img-container-height;
+		}
+
+		@include breakpoint( $max-width ) {
+			@include span( 8 of 12 );
+			float: right;
+			height: $large-img-container-height;
+			margin-top: 0;
+			margin-right: 0;
+
+			@include nthAlternator( even ) {
+				float: left;
+				margin: -50px auto 75px;
+			}
+
+			@include nthAlternator( 1 ) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__image-1 {
+		position: relative;
+
+		& + .alternator__image-2 {
+			top: 100%;
+		}
+
+		@include nthAlternator( odd ) {
+			z-index: -1;
+		}
+
+		@include nthAlternator( even ) {
+			z-index: 1;
+		}
+
+		&-bg {
+			@include span( $small-img-tall-span of 12 );
+			background-color: $blue;
+			box-shadow: 0 0 10px 0 rgba( 0, 0, 0, 0.5 );
+			height: $small-img-tall-height;
+			left: 0;
+			position: absolute;
+			top: 0;
+			z-index: 3;
+
+			@include nthAlternator( even ) {
+				@include span( $small-img-short-span of 12 );
+				height: $small-img-short-height;
+			}
+
+			@include breakpoint( $break-medium ) {
+				@include span( $med-img-tall-span of 12 );
+				height: $med-img-tall-height;
+
+				@include nthAlternator( even ) {
+					@include span( $med-img-short-span of 12 );
+					height: $med-img-short-height;
+				}
+			}
+
+			@include breakpoint( $max-width ) {
+				@include span( $large-img-tall-span of 12 );
+				height: $large-img-tall-height;
+
+				@include nthAlternator( even ) {
+					@include span( $large-img-short-span of 12 );
+					height: $large-img-short-height;
+				}
+			}
+		}
+
+		&-img {
+			@include span( $small-img-tall-span of 12 );
+			background-position: center;
+			background-size: cover;
+			box-shadow: $half-black;
+			height: $small-img-tall-height;
+			left: $small-offset;
+			position: absolute;
+			top: $small-offset;
+			z-index: 4;
+
+			@include nthAlternator( even ) {
+				@include span( $small-img-short-span of 12 );
+				height: $small-img-short-height;
+			}
+
+			@include breakpoint( $break-medium ) {
+				@include span( $med-img-tall-span of 12 );
+				height: $med-img-tall-height;
+				left: $med-offset;
+				top: $med-offset;
+
+				@include nthAlternator( even ) {
+					@include span( $med-img-short-span of 12 );
+					height: $med-img-short-height;
+				}
+			}
+
+			@include breakpoint( $max-width ) {
+				@include span( $large-img-tall-span of 12 );
+				height: $large-img-tall-height;
+				left: $large-offset;
+				top: $large-offset;
+
+				@include nthAlternator( even ) {
+					@include span( $large-img-short-span of 12 );
+					height: $large-img-short-height;
+				}
+			}
+		}
+	}
+
+	&__image-2 {
+		position: relative;
+		top: 75%;
+
+		@include nthAlternator( odd ) {
+			z-index: 1;
+		}
+
+		@include nthAlternator( even ) {
+			z-index: -1;
+		}
+
+		&-bg {
+			@include span( $small-img-short-span of 12 );
+			background-color: $blue;
+			bottom: $small-offset;
+			box-shadow: 0 0 10px 0 rgba( 0, 0, 0, 0.5 );
+			height: $small-img-short-height;
+			margin: 0;
+			position: absolute;
+			right: $small-offset;
+
+			@include nthAlternator( even ) {
+				@include span( $small-img-tall-span of 12 );
+				background-color: $blue;
+				height: $small-img-tall-height;
+				margin: 0;
+				z-index: 1;
+			}
+
+			@include breakpoint( $break-medium ) {
+				@include span( $med-img-short-span of 12 );
+				bottom: $med-offset;
+				height: $med-img-short-height;
+				margin: 0;
+				right: $med-offset;
+
+				@include nthAlternator( even ) {
+					@include span( $med-img-tall-span of 12 );
+					height: $med-img-tall-height;
+					margin: 0;
+				}
+			}
+
+			@include breakpoint( $max-width ) {
+				@include span( $large-img-short-span of 12 );
+				bottom: $large-offset;
+				height: $large-img-short-height;
+				margin: 0;
+				right: $large-offset;
+
+				@include nthAlternator( even ) {
+					@include span( $large-img-tall-span of 12 );
+					height: $large-img-tall-height;
+					margin: 0;
+				}
+			}
+		}
+
+		&-img {
+			@include span( $small-img-short-span of 12 );
+			background-position: center;
+			background-size: cover;
+			bottom: 0;
+			box-shadow: 0 0 10px 0 rgba( 0, 0, 0, 0.5 );
+			height: $small-img-short-height;
+			margin: 0;
+			position: absolute;
+			right: 0;
+
+			@include nthAlternator( even ) {
+				@include span( $small-img-tall-span of 12 );
+				height: $small-img-tall-height;
+				margin: 0;
+				z-index: 2;
+			}
+
+			@include breakpoint( $break-medium ) {
+				@include span( $med-img-short-span of 12 );
+				height: $med-img-short-height;
+				margin: 0;
+
+				@include nthAlternator( even ) {
+					@include span( $med-img-tall-span of 12 );
+					height: $med-img-tall-height;
+					margin: 0;
+				}
+			}
+
+			@include breakpoint( $max-width ) {
+				@include span( $large-img-short-span of 12 );
+				height: $large-img-short-height;
+				margin: 0;
+
+				@include nthAlternator( even ) {
+					@include span( $large-img-tall-span of 12 );
+					height: $large-img-tall-height;
+					margin: 0;
+				}
+			}
+		}
+	}
+}

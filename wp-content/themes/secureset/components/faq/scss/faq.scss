@@ -1,0 +1,313 @@
+.faq {
+	overflow: hidden;
+	width: 100%;
+	padding: 50px 0;
+
+	@include breakpoint( $max-width ) {
+		padding: 75px 0;
+	}
+
+	&.light {
+		background: $off-white;
+	}
+
+	&__desktop-only {
+		display: none;
+
+		@include breakpoint( $max-width ) {
+			display: block;
+		}
+	}
+
+	&__mobile-only {
+		width: 100%;
+
+		.location-dropdown__trigger {
+			border-color: $blue;
+			box-sizing: border-box;
+			display: block;
+			float: left;
+			margin: 30px 0 60px;
+			width: 100%;
+
+			.faq.light & {
+				color: $blue;
+			}
+
+			@include breakpoint( $break-medium ) {
+				@include font-size( 2 );
+				border-bottom: 3px solid $blue;
+				width: 50%;
+			}
+		}
+
+		.dropdown-trigger::after {
+			border-color: $blue transparent transparent;
+		}
+		@include breakpoint( $max-width ) {
+			display: none;
+		}
+	}
+
+	&__title {
+		@include font-size( 2.6 );
+
+		.faq.light & {
+			color: $blue;
+		}
+		@include breakpoint( $max-width ) {
+			@include font-size( 3.3 );
+			margin: 0 0 25px;
+		}
+	}
+
+	&__tabs {
+		@include breakpoint( $max-width ) {
+			@include span( 3 of 12 );
+		}
+	}
+
+	&__tab {
+		@include font-size( 2 );
+		color: $inactive-gray;
+		cursor: pointer;
+		line-height: 28px;
+		margin: 10px 0;
+		padding: 0;
+		transition: color 0.15s ease-out;
+		user-select: none;
+
+		&:hover {
+			color: $blue;
+			transition: color 0.15s ease-out;
+
+			.faq.light & {
+				color: $blue;
+			}
+		}
+
+		.faq.light & {
+			color: $light-blue;
+		}
+
+		&.current-faq-tab {
+			color: $white;
+			transition: color 0.15s ease-out;
+
+			.faq.light & {
+				color: $dark-blue;
+			}
+		}
+	}
+
+	&__list-container {
+		animation: faqContainerEntry 0.8s ease forwards;
+		clear: both;
+		position: relative;
+
+		@include breakpoint( $max-width ) {
+			@include span( last 8 of 12 );
+			clear: none;
+		}
+	}
+
+	&__list {
+		animation: faqListExit 0.8s ease forwards;
+		position: absolute;
+
+		.faq__list-item {
+			@for $i from 1 to 30 {
+				&:nth-of-type( #{$i} ) {
+					animation: faqItemExit 0.275s $easeInCubic $i * 0.05s forwards;
+				}
+			}
+		}
+
+		&.current-faq-list {
+			animation: faqListEntry 0.8s ease forwards;
+			position: static;
+
+			.faq__list-item {
+				opacity: 0;
+				transform: translateX( -45px );
+				@for $i from 1 to 30 {
+					&:nth-of-type( #{$i} ) {
+						animation: faqItemEntry 0.375s $easeOutCubic $i * 0.05s + 0.8s forwards;
+					}
+				}
+			}
+		}
+	}
+
+	&__list-item-content {
+		border-bottom: 1px solid #686868;
+		height: 100%;
+		max-height: 999px;
+		overflow: hidden;
+		position: relative;
+		transition: max-height 0.4s ease;
+
+		.faq.light & {
+			border-bottom: 1px solid $light-blue;
+		}
+
+		.faq__list .faq__list-item:nth-of-type( 1 ) & {
+			border-top: 1px solid #686868;
+
+			.faq.light & {
+				border-top: 1px solid $light-blue;
+			}
+
+			@include breakpoint( $max-width ) {
+				border-top: none;
+
+				.faq.light & {
+					border-top: none;
+				}
+			}
+		}
+	}
+
+	&__list-item-checkbox {
+		display: none;
+
+		&:checked ~ .faq__list-item-content {
+			max-height: 999px;
+			transition: max-height 1s ease;
+
+			.faq__answer {
+				max-height: 999px;
+				transition: max-height 1s ease, margin 0.25s ease;
+				margin: 0 0 25px;
+
+				@include breakpoint( $max-width ) {
+					margin: 0 0 30px;
+				}
+			}
+		}
+	}
+
+	&__icon {
+		cursor: pointer;
+		height: 20px;
+		left: 0;
+		position: absolute;
+		top: 15px;
+		width: 20px;
+
+		@include breakpoint( $break-medium ) {
+			top: 30px;
+		}
+
+		@include breakpoint( $max-width ) {
+			left: 30px;
+			top: 30px;
+		}
+
+		&--one {
+			background-color: $white;
+			display: inline-block;
+			height: 20px;
+			transition: transform 0.15s ease-out 0.05s, background-color 0.15s ease-out;
+			transform: translateX( 9px );
+			width: 2px;
+
+			.faq.light & {
+				background-color: $blue;
+			}
+
+			.faq__list-item-checkbox:checked ~ .faq__list-item-content & {
+				transition: transform 0.15s ease-out 0.05s, background-color 0.15s ease-out;
+				transform: translateX( 9px ) rotate( 90deg );
+			}
+
+			.faq__list-item-label:hover & {
+				background-color: $blue;
+				transition: transform 0.15s ease-out 0.05s, background-color 0.15s ease-out;
+
+				.faq.light & {
+					background-color: $light-blue;
+				}
+			}
+		}
+
+		&--two {
+			background-color: $white;
+			display: inline-block;
+			height: 2px;
+			transition: background-color 0.15s ease-out;
+			transform: translateY( -21px );
+			width: 20px;
+
+			.faq.light & {
+				background-color: $blue;
+			}
+
+			.faq__list-item-label:hover & {
+				background-color: $blue;
+				transition: background-color 0.15s ease-out;
+
+				.faq.light & {
+					background-color: $light-blue;
+				}
+			}
+		}
+	}
+
+	&__question {
+		@include font-size( 1.6 );
+		cursor: pointer;
+		margin-bottom: 12px;
+		margin-left: 12.5%;
+		margin-top: 12px;
+		padding: 0;
+		transition: color 0.15s ease-out;
+		user-select: none;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 1.8 );
+			margin: 25px 0 25px 7.5%;
+		}
+
+		@include breakpoint( $max-width ) {
+			@include font-size( 2 );
+			line-height: 25px;
+			margin: 30px 0 30px 12.5%;
+		}
+
+		.faq.light & {
+			color: $blue;
+		}
+
+		.faq__list-item-label:hover & {
+			color: $blue;
+			transition: color 0.15s ease-out;
+
+			.faq.light & {
+				color: $light-blue;
+			}
+		}
+	}
+
+	&__answer {
+		@include font-size( 1.6 );
+		box-sizing: border-box;
+		overflow: hidden;
+		max-height: 0;
+		padding: 0 0 0 12.5%;
+		transition: max-height 0.4s ease, margin 0.6s ease;
+		line-height: 1.6;
+
+		@include breakpoint( $break-medium ) {
+			padding-left: 7.5%;
+		}
+
+		@include breakpoint( $max-width ) {
+			padding-left: 12.5%;
+		}
+
+		.faq.light & p {
+			color: $dark-blue;
+		}
+	}
+}

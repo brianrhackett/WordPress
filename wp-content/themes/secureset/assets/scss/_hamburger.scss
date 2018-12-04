@@ -1,0 +1,58 @@
+/*************
+Hamburger Icon
+**************/
+
+.hamburger {
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 15px;
+	position: relative;
+	z-index: 1;
+	height: 18px;
+	width: 22px;
+
+	label {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background: green;
+	}
+
+	&__line {
+		transform-origin: 0 50%;
+		background: #fff;
+		display: block;
+		height: 2px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		transition: opacity 400ms ease, transform 400ms ease;
+
+		&--second {
+			top: 50%;
+			transform: translateY( -50% );
+		}
+
+		&--third {
+			bottom: 0;
+		}
+	}
+
+	&--close {
+		.hamburger__line--first {
+			transform: scale( 1.06 ) rotate( 45deg );
+		}
+
+		.hamburger__line--second {
+			opacity: 0;
+		}
+
+		.hamburger__line--third {
+			transform: scaleX( 1.06 ) rotate( -45deg );
+		}
+	}
+}

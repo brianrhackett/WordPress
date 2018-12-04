@@ -1,0 +1,121 @@
+/********
+Variables
+*********/
+$theme_directory: "/wp-content/themes/vtg-theme";
+
+
+
+
+/******************
+Typography / Rhythm
+*******************/
+$space: 25px;
+
+
+
+
+/*****
+Colors
+******/
+
+// General
+$white: #fff;
+$off-white: #f3f4f5;
+$gray-white: #E7EDF2;
+$blue-white: #e9ecf0;
+$black: #000;
+
+// Brand Colors
+$dark-blue: #1c3c6c;
+$blue: #0270cd;
+$light-blue: #8cb7e7;
+$lighter-blue: #f1f1f1;
+$lightest-blue: #008aff;
+
+$footer-gray: #1a1a1a;
+$dark-gray: #2e2a26;
+$gray: #404042;
+$gray-alt: #9b9b9b;
+$gray-alt-b: #1b1b1b;
+$gray-alt-c: #a4acb4;
+$gray-alt-e: #dadee1;
+$gray-mid: #aeb6bf;
+$light-gray: #aeb6bf;
+$lighter-gray: #e1e5e8;
+$transparent-gray: rgba( 243, 244, 245, 0.2 );
+$transparent-gray-alt: rgba( 243, 244, 245, 0.05 );
+$transparent-blue: rgba( 140, 183, 231, 0.3 );
+$inactive-gray: #6d7379;
+
+
+
+$green: #40ae28;
+$red: #d8262e;
+$orange: #f38b00;
+$purple: #904198;
+
+// Gradients
+$dark-blue-gradient: linear-gradient( 90deg, rgba( 28, 60, 108, 0.9 ) 0%, rgba( 2, 112, 205, 0.7 ) 100% );
+$blue-gradient: linear-gradient( 45.46deg, #234d8c 0%, #0270cd 100% );
+$light-blue-gradient: linear-gradient( 51.7deg, #0e58c8 0%, #0270cd 100% );
+$white-gradient: linear-gradient( 137.48deg, #e8e8e8 0%, #f3f4f5 100% );
+$gray-gradient: linear-gradient( 28.46deg, rgba( 46, 42, 38, 0.9 ) 0%, rgba( 46, 42, 38, 0 ) 100% );
+$gray-gradient-alt: linear-gradient( 28.46deg, rgba( 46, 42, 38, 0.9 ) 0%, rgba( 46, 42, 38, 0 ) 100% );
+$gray-gradient-alt-b: linear-gradient( 90deg, #3d4148 0%, rgba( 62, 65, 72, 0 ) 100% );
+$gray-gradient-alt-c: linear-gradient( 313.16deg, #e8e8e8 0%, #f3f4f5 100% );
+$gray-gradient-alt-d: linear-gradient( 26.57deg, #2e2a26 0%, rgba( 46, 42, 38, 0 ) 100% );
+$black-gradient: linear-gradient( 90deg, #000 0%, #2e2a26 100% );
+
+// Default
+$font-color: $off-white;
+
+// Box Shadows
+$half-black: 0 0 10px 0 rgba( 0, 0, 0, 0.5 );
+
+
+
+/****
+Fonts
+*****/
+$font-primary: "gesta", sans-serif;
+$font-secondary: "Amasis", sans-serif;
+$font-icons: "icomoon" !important;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+
+
+
+/********
+Structure
+*********/
+$max-width: 1224px;
+$expanded-width: 1440px;
+
+
+
+
+/********
+Susy Grid
+*********/
+$susy: (
+	columns: 12,
+	container: $max-width,
+	global-box-sizing: border-box,
+	gutters: 25px/77px
+);
+
+
+
+
+/**********
+Breakpoints
+***********/
+$break-xsmall: 375px;
+$break-small: 480px;
+$break-smedium: 540px;
+$break-medium: 720px;
+$break-large: 960px;
+$break-xl: 1800px;
+$max-width: 1200px;

@@ -1,0 +1,76 @@
+.two-column-text {
+	padding: 50px 0 35px;
+	width: 100%;
+
+	@include breakpoint( $break-medium ) {
+		padding: 75px 0;
+	}
+
+	&.light {
+		background-color: $off-white;
+		color: $blue;
+	}
+
+	&__header {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 4.8 );
+			line-height: 58px;
+		}
+
+		.light & {
+			color: $blue;
+		}
+
+		&-underline {
+			background: $blue-gradient;
+			height: 7px;
+			margin: 10px auto 25px;
+			width: 64px;
+
+			@include breakpoint( $break-medium ) {
+				height: 10px;
+				margin: $space auto $space*3;
+				width: $space*6;
+			}
+
+			.light & {
+				background-color: $dark-blue;
+			}
+		}
+	}
+
+	&__copy {
+		@include font-size( 1.5 );
+		box-sizing: border-box;
+		line-height: 21px;
+		margin: auto;
+		padding: 0;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 1.6 );
+			float: left;
+			line-height: 24px;
+			padding: 0 $space 0 0;
+			width: 50%;
+
+			&.right {
+				padding: 0 0 0 $space;
+			}
+		}
+
+
+		@include breakpoint( $max-width ) {
+			float: left;
+			padding: 0 $space*2 0 0;
+			width: 50%;
+
+			&.right {
+				padding: 0 0 0 $space*2;
+			}
+		}
+	}
+}

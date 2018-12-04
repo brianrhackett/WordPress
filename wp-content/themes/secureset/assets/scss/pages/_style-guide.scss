@@ -1,0 +1,164 @@
+.style-guide {
+	&__row {
+		margin: 0 0 20px;
+		padding: 20px 0 0;
+		float: left;
+		width: 100%;
+
+		&--light {
+			background-color: $white;
+		}
+
+		@include breakpoint( $break-medium ) {
+			margin: 0 0 50px;
+		}
+	}
+
+	&__element-label {
+		display: none;
+
+		p {
+			@include font-size( 1.8 );
+			margin: 20px 0;
+			color: $gray-alt;
+
+			@include breakpoint( $break-medium ) {
+				text-align: right;
+				margin: 20px 0 0;
+			}
+		}
+
+		@include breakpoint( $break-medium ) {
+			@include span( 2 );
+			display: block;
+		}
+	}
+
+	&__element-content {
+		@include span( 12 last );
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		p,
+		button {
+			margin: 0;
+			@include breakpoint( $break-medium ) {
+				margin: 0 0 0 25px;
+			}
+		}
+
+		@include breakpoint( $break-medium ) {
+			@include span( 10 last );
+		}
+
+		.btn {
+
+			&:last-child {
+				float: right;
+				margin-left: 0;
+
+				@include breakpoint( $break-medium ) {
+					margin-left: 50px;
+				}
+			}
+
+			@include breakpoint( $break-medium ) {
+
+				&:last-child {
+					float: none;
+				}
+			}
+		}
+
+		blockquote {
+
+			&.medium {
+				text-align: center;
+			}
+		}
+	}
+
+	.swatch {
+		width: 75px;
+		height: 75px;
+		float: left;
+		margin: 0 20px 20px 0;
+
+		// Solids
+		&--dark-blue {
+			background-color: $dark-blue;
+		}
+
+		&--blue {
+			background-color: $blue;
+		}
+
+		&--light-blue {
+			background-color: $light-blue;
+		}
+
+		&--dark-gray {
+			background-color: $dark-gray;
+		}
+
+		&--gray {
+			background-color: $gray;
+		}
+
+		&--light-gray {
+			background-color: $light-gray;
+		}
+
+		&--green {
+			background-color: $green;
+		}
+
+		&--red {
+			background-color: $red;
+		}
+
+		&--orange {
+			background-color: $orange;
+		}
+
+		&--purple {
+			background-color: $purple;
+		}
+
+		// Gradients
+		&--dark-blue-grad {
+			background: $dark-blue-gradient;
+		}
+
+		&--blue-grad {
+			background: $blue-gradient;
+		}
+
+		&--light-blue-grad {
+			background: $light-blue-gradient;
+		}
+
+		&--white-grad {
+			background: $white-gradient;
+		}
+
+		&--gray-grad {
+			background: $gray-gradient;
+		}
+
+		&--gray-grad-alt {
+			background: $gray-gradient-alt;
+		}
+
+		&--gray-grad-alt-b {
+			background: $gray-gradient-alt-b;
+		}
+
+		&--black-grad {
+			background: $black-gradient;
+		}
+	}
+}

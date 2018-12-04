@@ -1,0 +1,95 @@
+.cta-grid {
+	clear: both;
+	padding: 50px 0;
+
+	@include breakpoint( $break-medium ) {
+		padding: 75px 0;
+	}
+
+	&.light {
+		background: $off-white;
+	}
+
+	&__flex-wrap {
+		@include breakpoint( $break-medium ) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+		box-sizing: border-box;
+		padding-bottom: 50px;
+		position: relative;
+		width: 100%;
+		@include breakpoint( $break-medium ) {
+			width: 31%;
+			margin-right: 2%;
+		}
+	}
+
+	&__link {
+		cursor: default;
+		pointer-events: none;
+	}
+
+	&__bg {
+		background-color: $blue;
+		height: 234px;
+		transform: translateX( -5px );
+		width: 100%;
+		@include breakpoint( $break-medium ) {
+			height: 132px;
+			transform: translateX( -10px );
+			width: 179px;
+		}
+	}
+
+	&__image {
+		background-position: center;
+		background-size: cover;
+		height: 234px;
+		left: 0;
+		position: absolute;
+		top: 5px;
+		width: 100%;
+		@include breakpoint( $break-medium ) {
+			height: 132px;
+			left: 0;
+			top: 10px;
+			width: 179px;
+		}
+	}
+
+	&__title {
+		clear: both;
+		margin: 25px 0 10px;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 2.4 );
+			line-height: 1.25;
+		}
+
+		@include breakpoint( $break-medium ) {
+			margin-bottom: 25px;
+			padding-right: $space;
+		}
+	}
+
+	&__cta {
+		@extend .btn;
+		@extend .btn--light;
+	}
+}
+
+.light {
+	.cta-grid__title {
+		color: $blue;
+	}
+}
+
+.dark {
+	.cta-grid__title {
+		color: $white;
+	}
+}

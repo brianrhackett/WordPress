@@ -1,0 +1,529 @@
+.program-landing-container {
+	display: none;
+}
+
+.programs-landing-hero {
+
+	.hero-search {
+
+		&__submit {
+			border-radius: 0;
+		}
+	}
+
+	h1 span {
+		background-image: linear-gradient( to right, rgba( 255, 255, 255, 0.3 ) 0%, rgba( 255, 255, 255, 0.3 ) 100% );
+	}
+}
+
+.programs-landing-info {
+	margin: 90px auto 0;
+	max-width: 990px;
+	text-align: left;
+
+	@include breakpoint( $break-small ) {
+		text-align: center;
+	}
+
+	&__dropdown {
+		display: block;
+		width: 100%;
+		padding-bottom: 50px;
+
+		.dropdown-trigger {
+			width: 50%;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	&__selected-container {
+		display: inline-block;
+		border-bottom: 2px solid $white;
+		width: 50%;
+		position: relative;
+
+		@include breakpoint( $break-medium ) {
+			width: 60%;
+		}
+
+		@include breakpoint( $break-large ) {
+			border-bottom: 5px solid $white;
+		}
+	}
+
+	&__triangle {
+		width: 0;
+		height: 0;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-top: 7px solid $blue;
+		border-bottom: none;
+		display: block;
+		transition: transform 0.25s ease;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY( -50% );
+
+		@include breakpoint( $break-medium ) {
+			right: 10px;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 10px solid $blue;
+		}
+
+		@include breakpoint( $break-large ) {
+			right: 0;
+			border-left: 15px solid transparent;
+			border-right: 15px solid transparent;
+			border-top: 15px solid $blue;
+		}
+	}
+
+	&__selected {
+		@include font-size( 1.6 );
+		display: inline-block;
+		overflow: hidden;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		cursor: pointer;
+		padding-right: 20px;
+		text-align: left;
+
+		@include breakpoint( $break-small  ) {
+			@include font-size( 2.2 );
+		}
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 3.6 );
+			padding-right: 0;
+		}
+
+		@include breakpoint( $break-large ) {
+			@include font-size( 5.4 );
+		}
+
+		&.hover .programs-landing-info__triangle {
+			transform: rotate( 180deg ) translateY( 50% );
+		}
+	}
+
+	&__label {
+		@include font-size( 1.6 );
+		display: inline-block;
+		vertical-align: top;
+		margin: 0;
+		padding: 0 0 0 15px;
+		text-align: right;
+
+		@include breakpoint( $break-small  ) {
+			@include font-size( 2.2 );
+		}
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 3.6 );
+		}
+
+		@include breakpoint( $break-large ) {
+			@include font-size( 5.4 );
+			padding: 0;
+			margin: 0 0 0 50px;
+		}
+	}
+
+	&__description {
+		@include font-size( 1.8 );
+		line-height: 1.44;
+		text-align: center;
+		margin: 0;
+	}
+}
+
+.programs-landing {
+	$small-img-container-height: 56vw;
+	$small-offset: 10px;
+	$med-img-container-height: 45vw;
+	$med-offset: 25px;
+	$large-img-container-height: 408px;
+	$large-info-container-height: 466px;
+	$large-offset: 30px;
+	overflow: hidden;
+
+	&__program {
+		padding: 95px 0;
+		clear: both;
+	}
+
+	&__top {
+		@include breakpoint( $break-large ) {
+			overflow: visible;
+			height: 540px;
+			position: relative;
+		}
+	}
+
+	&__img-section-container {
+		@include breakpoint( $break-large ) {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 438px;
+			width: 100%;
+		}
+	}
+
+	&__img-section {
+		height: $small-img-container-height;
+		position: relative;
+		margin-bottom: 30px;
+
+		@include breakpoint( $break-medium ) {
+			height: $med-img-container-height;
+		}
+
+		@include breakpoint( $break-large ) {
+			height: $large-img-container-height;
+			@include span( 6.5 );
+
+			.programs-landing__program:nth-of-type( 2n ) & {
+				@include span( 6.5 last );
+			}
+		}
+	}
+
+	&__img-bg {
+		right: $small-offset;
+		bottom: $small-offset;
+		left: 0;
+		top: 0;
+		box-shadow: 0 0 10px 0 rgba( $black, 0.9 );
+		position: absolute;
+
+		@include breakpoint( $break-medium ) {
+			right: $med-offset;
+			bottom: $med-offset;
+		}
+
+		@include breakpoint( $break-large ) {
+			right: $large-offset;
+			bottom: $large-offset;
+		}
+	}
+
+	&__img {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: absolute;
+		box-shadow: 0 0 10px 0 rgba( $black, 0.9 );
+		bottom: 0;
+		right: 0;
+		left: $small-offset;
+		top: $small-offset;
+
+		@include breakpoint( $break-medium ) {
+			left: $med-offset;
+			top: $med-offset;
+		}
+
+		@include breakpoint( $break-large ) {
+			left: $large-offset;
+			top: $large-offset;
+		}
+	}
+
+	&__info-section {
+		@include breakpoint( $break-large ) {
+			height: $large-info-container-height;
+			position: relative;
+			@include span( 7.5 last );
+
+			.programs-landing__program:nth-of-type( 2n ) & {
+				@include span( 7.5 );
+			}
+		}
+	}
+
+	&__info-section-container {
+		@include clearfix;
+	}
+
+	&__info-bg {
+		@include breakpoint( $break-large ) {
+			box-shadow: 0 0 10px 0 rgba( $black, 0.9 );
+			left: 0;
+			top: 0;
+			position: absolute;
+			right: $large-offset;
+			bottom: $large-offset;
+		}
+	}
+
+	&__info {
+		@include breakpoint( $break-large ) {
+			box-shadow: 0 0 10px 0 rgba( $black, 0.9 );
+			background-color: $white;
+			position: absolute;
+			right: 0;
+			min-height: 378px;
+			left: $large-offset;
+			top: $large-offset;
+			padding: 25px;
+		}
+	}
+
+	&__icon-container {
+		display: block;
+		height: 50px;
+		width: 50px;
+		border-radius: 50px;
+		position: relative;
+
+		@include breakpoint( $break-large ) {
+			margin-bottom: 20px;
+			height: 85px;
+			width: 85px;
+			border-radius: 50px;
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		height: 35px;
+		width: 35px;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		margin: auto;
+		background-size: cover;
+
+		@include breakpoint( $break-large ) {
+			height: 55px;
+			width: 55px;
+		}
+	}
+
+	&__title {
+		@include font-size( 2.6 );
+		margin: 0;
+		padding: 10px 0 0;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 3 );
+		}
+
+		@include breakpoint( $break-large ) {
+			@include font-size( 4.2 );
+			display: inline;
+		}
+	}
+
+	&__location {
+		@include font-size( 2.6 );
+		color: $light-gray;
+		margin: 0;
+		padding: 0;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 3 );
+		}
+
+		@include breakpoint( $break-large ) {
+			@include font-size( 3.2 );
+			display: inline;
+			margin-left: 20px;
+		}
+	}
+
+	&__description {
+		@include font-size( 1.8 );
+		line-height: 1.44;
+		@include breakpoint( $break-large ) {
+			color: $black;
+		}
+	}
+
+	&__available-label {
+		@include font-size( 2.2 );
+		line-height: 1.18;
+		margin: 25px 0 0;
+
+		@include breakpoint( $break-large ) {
+			color: $light-gray;
+		}
+	}
+
+	&__date {
+		@include font-size( 1.6 );
+		text-transform: uppercase;
+		text-decoration: underline;
+		margin: 20px 50px 0 0;
+		display: inline-block;
+		cursor: pointer;
+		font-weight: bold;
+	}
+
+	&__bottom {
+		@include clearfix;
+		@include breakpoint( $break-large ) {
+			padding-top: 30px;
+		}
+	}
+
+	&__courses-label {
+		@include font-size( 2.2 );
+		margin: 50px 0 20px;
+
+		@include breakpoint( $break-large ) {
+			@include span( 2 );
+			color: $light-gray;
+			display: block;
+			margin: 0;
+		}
+	}
+
+	&__courses {
+
+		@include span( 12 last );
+		@include breakpoint( $break-large ) {
+			@include span( 5 );
+		}
+	}
+
+	&__course-icon {
+		@include font-size( 5 );
+		@include span( 3 );
+		text-align: center;
+		display: block;
+		margin-bottom: 50px;
+		position: relative;
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:nth-of-type( 4n ) {
+			@include breakpoint( $break-large, max ) {
+				margin-right: 0;
+			}
+		}
+
+		@include breakpoint( $break-large ) {
+			@include font-size( 6 );
+			@include span( 2.4 );
+
+			&:nth-of-type( 5n ) {
+				@include span( 2.4 last );
+			}
+		}
+
+		&:hover {
+			// Using !important to override inline style on hover
+			color: $white !important;
+			transition: all 0.3s ease;
+
+			.programs-landing__course-title {
+				z-index: 2;
+				opacity: 1;
+			}
+		}
+	}
+
+	&__course-title {
+		@include font-size( 1.6 );
+		display: block;
+		color: $white;
+		line-height: 24px;
+		position: absolute;
+		top: 120%;
+		left: 50%;
+		margin-left: -95px;
+		width: 190px;
+		opacity: 0;
+		text-align: center;
+		padding: 0;
+		z-index: 0;
+		pointer-events: none;
+		transition: all 0.3s ease;
+
+		p {
+			padding: 10px;
+			margin: 0;
+		}
+
+		&-caret {
+			position: absolute;
+			top: -15px;
+			left: 50%;
+			margin-left: -10px;
+			width: 0;
+			height: 0;
+			font-size: 0;
+			line-height: 0;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+		}
+
+		@include breakpoint( $break-large, max ) {
+			.programs-landing__course-icon:nth-of-type( 4n+1 ) & {
+				left: 50%;
+				transform: translateX( -39px );
+				margin-left: 0;
+
+				.programs-landing__course-title-caret {
+					left: 29px;
+					margin-left: 0;
+				}
+			}
+
+			.programs-landing__course-icon:nth-of-type( 4n+4 ) & {
+				left: auto;
+				right: 50%;
+				margin-left: 0;
+				transform: translateX( 39px );
+
+				.programs-landing__course-title-caret {
+					left: auto;
+					right: 29px;
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	&__included {
+		@include span( 12 last );
+		@include breakpoint( $break-large ) {
+			@include span( 5 last );
+		}
+	}
+
+	&__included-label {
+		@include font-size( 1.6 );
+		line-height: 1.5;
+		margin-bottom: 15px;
+
+		@include breakpoint( $break-large ) {
+			@include font-size( 2.6 );
+			margin-top: 0;
+		}
+
+		& ~ ul {
+			padding-left: 18px;
+			margin: 0;
+		}
+	}
+
+	&__included-item {
+		@include font-size( 1.6 );
+		line-height: 1.5;
+
+		p {
+			@include font-size( 1.8 );
+			line-height: 1.44;
+			padding: 0;
+			margin: 3px 0 0;
+		}
+	}
+}

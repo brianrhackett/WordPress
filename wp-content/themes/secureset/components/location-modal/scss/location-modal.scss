@@ -1,0 +1,184 @@
+.location-modal {
+	display: none;
+	padding: 0;
+	margin: 0;
+	background-color: $blue-white;
+	box-shadow: 0 0 10px 0 rgba( $black, 0.5 );
+	overflow: visible;
+
+	&__flex-wrap {
+
+		@include breakpoint( $break-medium ) {
+			display: flex;
+			justify-content: space-around;
+			align-items: stretch;
+		}
+	}
+
+	&__logo-mobile {
+		width: 130px;
+		margin: 7px 0 5px;
+
+		@include breakpoint( $break-medium ) {
+			display: none;
+		}
+	}
+
+	&__logo-desktop {
+		display: none;
+
+		@include breakpoint( $break-medium ) {
+			width: 138px;
+			margin: 0 0 12px;
+			display: block;
+		}
+	}
+
+	&__map {
+		width: 100%;
+		height: 200px;
+
+		@include breakpoint( $break-medium ) {
+			min-width: 386px;
+			min-height: 415px;
+			flex: 0 0 386px;
+			height: auto;
+		}
+	}
+
+	&__content-wrap {
+		padding: 35px 0 0;
+
+		@include breakpoint( $break-medium ) {
+			padding: 25px 50px 50px;
+		}
+	}
+
+	&__heading {
+		margin: 0 12px;
+		color: $blue;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 4.8 );
+			margin: 0 0 25px;
+			letter-spacing: 2px;
+		}
+	}
+
+	&__copy {
+		margin: 5px 12px 0;
+		color: $black;
+
+		@include breakpoint( $break-medium ) {
+			margin: 0 0 25px;
+		}
+	}
+
+	&__dropdown-heading {
+		@include font-size( 2.2 );
+		color: $light-gray;
+		font-family: $font-primary;
+		padding: 0 10px 0 0;
+		margin: 30px 12px 0;
+
+		@include breakpoint( $break-medium ) {
+			margin: 0;
+			display: inline-block;
+			float: left;
+		}
+	}
+
+	&__button-mobile {
+		@include font-size( 1.4 );
+		text-transform: uppercase;
+		background: $blue;
+		background: $blue-gradient;
+		color: $white;
+		font-family: $font-primary;
+		margin: 0;
+		border: 0;
+		width: 100%;
+		padding: 15px 0 13px;
+		cursor: pointer;
+		font-weight: normal;
+
+		@include breakpoint( $break-medium ) {
+			display: none;
+		}
+	}
+
+	&__button-desktop {
+		float: left;
+		display: none;
+
+		@include breakpoint( $break-medium ) {
+			display: block;
+			clear: both;
+			margin-top: 36px;
+			width: 175px;
+		}
+	}
+
+	.location-select {
+		margin: 0 12px;
+		position: relative;
+
+		@include breakpoint( $break-medium ) {
+			margin: 0;
+		}
+	}
+
+	.location-dropdown__trigger {
+		@include font-size( 1.6 );
+		font-family: $font-secondary;
+		color: $black;
+		width: 100%;
+		padding: 0 0 3px;
+		margin: 0 0 30px;
+		border-bottom: solid 4px $blue;
+
+		&::after {
+			border-color: $black transparent transparent;
+		}
+
+		&.hover::after {
+			border-color: transparent transparent $black;
+		}
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 2.4 );
+			float: left;
+			margin: 6px 0 0;
+			padding-right: 20px;
+			width: auto;
+		}
+	}
+}
+
+.location-modal-fancybox {
+
+	.location-container {
+		@include breakpoint( $break-medium ) {
+			width: unset;
+		}
+	}
+
+	.dropdown-pane {
+		z-index: 99995;
+		margin-bottom: 20px;
+		padding: 10px 0;
+
+		@include breakpoint( $break-medium ) {
+			//width: 145px;
+		}
+	}
+
+	.location-modal {
+		max-width: 90%;
+		width: 335px;
+
+		@include breakpoint( $break-medium ) {
+			width: 1046px;
+		}
+	}
+}

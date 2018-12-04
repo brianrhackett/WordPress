@@ -1,0 +1,275 @@
+/******
+Content
+*******/
+.dropdown-trigger {
+	@include font-size( 1.6 );
+	font-family: $font-secondary;
+	color: $white;
+	font-weight: $bold;
+	padding: 0 $space 6px 0;
+	border-bottom: 3px solid $white;
+	position: relative;
+	cursor: pointer;
+
+	&::after {
+		display: block;
+		width: 0;
+		height: 0;
+		border: inset 7px;
+		content: "";
+		border-bottom-width: 0;
+		border-top-style: solid;
+		border-color: $white transparent transparent;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		left: auto;
+		margin-top: -9px;
+
+		@include breakpoint( $break-medium ) {
+			margin-top: -6px;
+		}
+	}
+
+	&.hover::after {
+		border-top-width: 0;
+		border-bottom-style: solid;
+		border-color: transparent transparent $white;
+		border-bottom-width: 7px;
+		border-top-style: none;
+	}
+}
+
+.dropdown-pane {
+	background: $blue;
+	background: $light-blue-gradient;
+	border: none;
+	padding: 0;
+	width: 100%;
+	z-index: 999;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	a {
+		@include font-size( 1.5 );
+		font-family: $font-primary;
+		font-weight: $bold;
+		text-align: left;
+		color: $light-blue;
+		padding: 1rem 15px;
+		line-height: 1.2;
+		display: block;
+		cursor: pointer;
+		margin: 0.5rem 0;
+		border-left: 6px solid transparent;
+		transition: all 0.4s ease;
+		text-transform: capitalize;
+
+		&:hover {
+			color: $white;
+			border-left: 6px solid white;
+			transition: all 0.4s ease;
+		}
+	}
+
+	&.light {
+		background: $off-white;
+
+		a {
+			color: $gray;
+
+			&:hover {
+				color: $blue;
+				transition: all 0.4s ease;
+			}
+		}
+
+		&::after {
+			border-bottom: 14px solid $off-white;
+		}
+	}
+}
+
+// Wordpress Search Form
+.search-form {
+	@include clearfix;
+	position: relative;
+	display: block;
+
+	&__field {
+		@include font-size( 1.8 );
+		color: $white;
+		padding: 10px 10px 9px;
+		background: transparent;
+		border: solid 2px $blue;
+		border-right: none;
+		font-family: $font-secondary;
+		float: left;
+		display: block;
+		appearance: none;
+		border-radius: 0;
+		height: 43px;
+	}
+
+	&__submit {
+		float: left;
+		background: $blue;
+		background: $light-blue-gradient;
+		border: none;
+		height: 43px;
+		width: 43px;
+		display: block;
+		position: absolute;
+		right: 0;
+		appearance: none;
+		border-radius: 0;
+	}
+
+	&__icon {
+		width: 43px;
+		height: 43px;
+		position: absolute;
+		margin-left: -43px;
+		pointer-events: none;
+
+		&::after {
+			@include font-size( 2 );
+			color: $white;
+			font-family: $font-icons;
+			content: "\e919";
+			position: absolute;
+			top: 10px;
+			left: 13px;
+		}
+	}
+}
+
+.social-links {
+	@include clearfix;
+	display: flex;
+	align-items: center;
+
+	p {
+		@include font-size( 2 );
+		display: inline;
+		margin: 0;
+	}
+
+	ul {
+		list-style-type: none;
+		display: inline;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: inline-block;
+			margin-left: $space;
+			line-height: 1;
+
+			a {
+				display: block;
+			}
+
+			.icon {
+				@include font-size( 2.2 );
+				transition: color 0.2s ease;
+				color: $white;
+
+				&:hover {
+					color: $blue;
+				}
+			}
+		}
+	}
+}
+
+.news-featured-comments {
+	@include font-size( 1.8 );
+	font-weight: $medium;
+	font-family: $font-primary;
+	display: inline-block;
+	height: 45px;
+	width: 78px;
+	line-height: 45px;
+	text-align: center;
+	border-radius: 100px;
+	background: rgba( 255, 255, 255, 0.2 );
+
+	&::after {
+		font-weight: $bold;
+		font-family: $font-icons;
+		content: "\e91f";
+		margin-left: 5px;
+		position: relative;
+		top: 4px;
+	}
+}
+
+// The events plugin doesn't give you options for this datepicker
+.datepicker-dropdown.datepicker-orient-top {
+	&::before {
+		border: none;
+	}
+
+	&::after {
+		bottom: -12px;
+		border-bottom: 0;
+		border-top: 12px solid #fff;
+	}
+}
+
+.dark {
+	& + .dark:not( .latest-programs ):not( .latest-events ) {
+		padding-top: 0;
+	}
+
+	.btn:not( .btn--submit ):not( .cta ) {
+		background: $white;
+		color: $blue;
+	}
+
+	.btn--light:not( .btn--submit ):not( .cta ) {
+		background: $light-blue-gradient;
+		color: $off-white;
+	}
+}
+
+.light {
+	& + .light:not( .latest-programs ):not( .latest-events ) {
+		padding-top: 0;
+	}
+}
+
+.component-title {
+	@include font-size( 3.2 );
+	margin: 0 0 25px;
+	text-align: center;
+	font-style: italic;
+	font-weight: $medium;
+	font-family: $font-primary;
+	color: $off-white;
+
+	@include breakpoint( $break-medium ) {
+		@include font-size( 5 );
+		margin: 0 0 50px;
+	}
+}
+.programs-landing__program .description,
+.mid-title{
+	font-size: 1.8rem;
+	line-height: 1.4;
+	font-family: Amasis,sans-serif;
+}
+.programs-landing__program .description{
+	font-size:1.4rem;
+}
+
+.col-md-6 .dropdown-trigger{
+	display:block;
+}

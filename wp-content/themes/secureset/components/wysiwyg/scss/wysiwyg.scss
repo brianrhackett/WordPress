@@ -1,0 +1,77 @@
+.wysiwyg-component {
+	position: relative;
+	padding: 50px 0;
+	width: 100%;
+	background-color: $off-white;
+	color: $dark-blue;
+	overflow: hidden;
+
+	@include breakpoint( $break-medium ) {
+		padding: 75px 0;
+	}
+
+	&__content {
+
+		> * {
+			width: 100%;
+			float: none;
+			display: block;
+
+			@include breakpoint( $break-medium ) {
+				max-width: 74.47873%;
+				clear: none;
+			}
+		}
+
+		> img {
+			margin: 50px auto;
+			width: auto;
+
+			@include breakpoint( $break-medium ) {
+				max-width: 31.94329%;
+				float: right;
+				clear: right;
+				margin: 0 0 25px 25px;
+			}
+		}
+
+		> .wp-caption {
+			margin: 50px auto;
+			max-width: 100%;
+
+			@include breakpoint( $break-medium ) {
+				max-width: 31.94329% !important;
+				float: right;
+				margin: 0 0 25px 25px;
+			}
+		}
+
+		blockquote {
+			p {
+				@include font-size( 1.8 );
+				font-style: italic;
+				color: $blue;
+				font-family: $font-secondary;
+			}
+
+			@include breakpoint( $break-medium ) {
+				float: right;
+				clear: right;
+				max-width: 31.94329%;
+				margin: 0 0 25px 25px;
+			}
+		}
+	}
+
+	.wp-caption-text {
+		@include font-size( 1.5 );
+		margin: 0;
+		background-color: $blue;
+		padding: 7px 14px;
+		color: $off-white;
+	}
+
+	&.dark {
+		background-color: transparent;
+	}
+}

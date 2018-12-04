@@ -1,0 +1,49 @@
+/******
+Buttons
+*******/
+.btn,
+.light .btn,
+.dark .btn {
+	@include font-size( 1.4 );
+	line-height: 1;
+	padding: 14px 26px;
+	font-family: $font-primary;
+	font-weight: $bold;
+	text-transform: uppercase;
+	background: $light-blue-gradient;
+	color: $off-white;
+	border: 0;
+	cursor: pointer;
+	border-radius: 100px;
+	box-shadow: 0 5px 10px 0 rgba( 46, 42, 38, 0.5 );
+	transition: transform 0.4s ease;
+	letter-spacing: 1.5px;
+
+	@include breakpoint( $break-medium ) {
+		padding: 15px 40px 13px;
+	}
+
+	&:hover {
+		box-shadow: none;
+		transform: perspective( 1px ) scale( 0.97 );
+	}
+
+	&--large {
+		@include font-size( 1.8 );
+		padding: 14px 26px;
+
+		@include breakpoint( $break-medium ) {
+			@include font-size( 2.4 );
+			padding: 20px 50px;
+		}
+	}
+
+	&--light {
+		background: $white;
+		color: $blue;
+	}
+}
+
+a.btn {
+	display: inline-block;
+}
