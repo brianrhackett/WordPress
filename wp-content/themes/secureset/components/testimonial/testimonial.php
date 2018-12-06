@@ -3,7 +3,7 @@
 	<div class="container">
 		<?php if ( !empty( $fields['testimonial_item'] ) ): ?>
 			<?php foreach ( $fields['testimonial_item'] as $item ): ?>
-				<div class="testimonial__item grid-<?php echo count($fields['testimonial_item']);?>">
+				<div class="testimonial__item grid-1<?php //echo count($fields['testimonial_item']);?>">
 					<?php if( !empty( $item['quote_text'] ) ): ?>
 						<div class="testimonial__quote">
 							<?php echo( $item['quote_text'] ); ?>

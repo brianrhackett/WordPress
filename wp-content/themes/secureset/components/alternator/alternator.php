@@ -11,7 +11,7 @@
 					<div class="alternator__item clearfix">
 						<div class="alternator__images">
 							<?php if ( $image_1_url && $even || $image_2_url && !$even ) : ?>
-								<div class="alternator__image-1"
+								<div class="alternator__image-1 clearfix"
 									data-speed="<?php echo ( ( $key % 2 == 0 ) ? '14' : '7' ); ?>"
 									data-additional="<?php echo ( ( $key % 2 == 0 ) ? '30' : '50' ); ?>" >
 									<div

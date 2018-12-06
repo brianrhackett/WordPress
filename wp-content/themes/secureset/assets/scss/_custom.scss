@@ -73,6 +73,10 @@ p{
 	}
 }
 
+.alternator__image-1-img{
+	float:right;
+}
+
 .alternator__image-2{
 	top:0;
 }
@@ -168,5 +172,18 @@ p{
 		}
 		
 		
+	}
+}
+
+.testimonial.dark{
+	background-image:url('https://cdn2.hubspot.net/hubfs/1637876/Background%20Images-Landing%20Pages/ssa_prep_online_bg_images-01.png');
+	background-size:cover;
+}
+
+.testimonial__item.grid-1{
+	margin:60px auto 0;
+	
+	&:first-child{
+		margin:0 auto;
 	}
 }

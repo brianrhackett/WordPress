@@ -303,30 +303,6 @@ acf_add_local_component( 'hero', array(
 				),
 			),
 		),
-		array(
-			'key' => 'field_59fc9d049a607',
-			'label' => 'Video',
-			'name'	=> 'hero_video',
-			'type' => 'oembed',
-			'instructions' => 'Place in the video embed url',
-			'required' => 0,
-			'conditional_logic' => array(
-				array(
-					array(
-						'field' => 'field_37ed53c2b9g3a',
-						'operator' => '==',
-						'value' => 'hero-video',
-					),
-				),
-			),
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'width' => '',
-			'height' => '',
-		),
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
