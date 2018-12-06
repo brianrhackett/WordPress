@@ -215,3 +215,8 @@ require get_template_directory() . '/inc/news.php';
  */
 require get_template_directory() . '/inc/security.php';
 
+/**
+ * LearnDash Customizations go in here
+ */
+require get_template_directory() . '/inc/custom-learndash.php';
+
