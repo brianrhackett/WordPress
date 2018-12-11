@@ -1783,11 +1783,11 @@ function acf_prepare_field_for_import( $field ) {
 		'_valid',
 	));
 	
-	
-	// filter for 3rd party customization
-	$field = apply_filters( "acf/prepare_field_for_import", $field );
-	$field = apply_filters( "acf/prepare_field_for_import/type={$field['type']}", $field );
-	
+	if(!empty($field)){
+		// filter for 3rd party customization
+		$field = apply_filters( "acf/prepare_field_for_import", $field );
+		$field = apply_filters( "acf/prepare_field_for_import/type={$field['type']}", $field );
+	}
 	
 	// return
 	return $field;
