@@ -58,7 +58,7 @@ function wdm_add_associate_instructor_field($post_args){
 
 	$posts_array = get_posts($args);
 
-	$data += ['0' => __('-- Select an Instructor --', 'your-plugin-textdomain')];
+	$data += [0 => __('-- Select an Instructor --', 'your-plugin-textdomain')];
 
 	foreach ($posts_array as $posts_array) {
 	   $data += [$posts_array->ID => $posts_array->post_title];
@@ -67,15 +67,58 @@ function wdm_add_associate_instructor_field($post_args){
 	$vcoursefield = array(
 		'name'=>__('Associated Instructor', 'your-plugin-textdomain'),
 		'type'=>'select',
-		'initial_options' =>$data,
+		'initial_options' => $data,
 		'help_text'=>__('Select instructor to associate', 'your-plugin-textdomain'),
 		'default' => '0'
 	);
-//die('<pre>'.print_r($post_args,1));
-	array_unshift($post_args['sfwd-courses']['fields'], $vcoursefield);
-//	array_unshift($post_args[1]['fields'], $vcoursefield);
-//	array_unshift($post_args[3]['fields'], $vcoursefield);
-//	array_unshift($post_args[2]['fields'], $vcoursefield);
 
+	$post_args['sfwd-courses']['fields'] = array('course_instructor' => $vcoursefield) + $post_args['sfwd-courses']['fields'];
 	return $post_args;
+}
+
+
+
+register_taxonomy("Instructor Video", array("instructor"));
+add_action('admin_init', 'instructor_video');
+function instructor_video(){
+	add_meta_box("instructor_video", "Instructor Video", "populate_video", "instructor");
+	add_meta_box("instructor", "Assign Instructor", "populate_instructors", "product");
+}
+
+function populate_instructors(){
+	global $post;
+	$custom = get_post_custom($post->ID);
+	$instructor = $custom["instructor"][0];
+	$instructors = get_posts(array(
+		'post_type' => 'instructor',
+		'post_count' => -1
+	));
+	echo '<select name="instructor">
+			<option>-- Select an Instructor --';
+	foreach($instructors as $person){
+		echo '<option '.($instructor == $person->ID ? 'selected' : '').' value="'.$person->ID.'">'.$person->post_title.'</option>';
+	}
+	echo '</select>';
+}
+
+function populate_video(){
+	global $post;
+	$custom = get_post_custom($post->ID);
+	$video = $custom["instructor_video"][0];
+	echo '<div><label>Paste video embed code here:</label></div>
+		<div><input style="font-size:1.25em;line-height:2em;width:100%;" type="text" name="instructor_video" value="'.$video.'" /></div>';
+}
+add_action('save_post', 'save_video');
+function save_video(){
+	global $post;
+	if(array_key_exists('instructor_video', $_POST))
+		update_post_meta($post->ID, "instructor_video", $_POST["instructor_video"]);
+}
+
+add_action( 'save_post', 'wc_instructor' );
+function wc_instructor($post_id){
+    $post_type = get_post_type($post_id);
+    if($post_type == 'product'  && array_key_exists('instructor', $_POST)) {
+        update_post_meta($post_id,'instructor',$_POST["instructor"]);
+    }
 }
