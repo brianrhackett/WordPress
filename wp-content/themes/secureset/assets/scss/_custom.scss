@@ -187,3 +187,187 @@ p{
 		margin:0 auto;
 	}
 }
+
+.woocommerce #content div.product div.summary, 
+.woocommerce div.product div.summary, 
+.woocommerce-page #content div.product div.summary, 
+.woocommerce-page div.product div.summary,
+.woocommerce #content div.product div.images, 
+.woocommerce div.product div.images, 
+.woocommerce-page #content div.product div.images, 
+.woocommerce-page div.product div.images{
+	float:left;
+	display:block;
+	width:auto;
+}
+
+.single-news__content-wrap{
+	max-width:none;
+	margin:0;
+}
+
+.site-main.single-product{
+	
+	.hero{
+		background-color:$blue;
+		background-image:url('/wp-content/uploads/2018/11/securesetacademy_students_color-8.jpg');
+		background-size:cover;
+		background-position:center center;
+		position:relative;
+		
+		&:after{
+			content:'';
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			background:rgba(0,138,255,.8);
+			z-index:1;
+			position:absolute;
+		}
+		
+		.container{
+			position:relative;
+			z-index:2;
+			
+			.price{
+				float:right;
+				color:inherit;
+				font-size:1.8em;
+				font-family:"gesta", sans-serif;
+			}
+		}
+	}
+	
+	.alternator{
+		background:#333;
+	}
+	
+	.cta-stack__item{
+		background-image:url('/wp-content/uploads/2018/11/DSC_4953_16_9.jpg');
+		background-size:cover;
+	}
+}
+.hero--hero-course .hero__content{
+	padding:75px 0;
+}
+.alternator__text > div{
+	font-size: 1.6rem;
+	line-height: 1.4;
+	margin:1em 0;
+}
+
+.woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit:disabled[disabled], .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button:disabled[disabled], .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled],
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+	@extend .btn;
+	
+	&.btn--light{
+		@extend .btn--light;
+	}
+}
+
+#coupon_code{
+	padding:15px 10px 13px;
+	line-height:14px;
+}
+
+.woocommerce{
+	.product-remove a.remove{
+		background:#f00;
+		color:#fff!important;
+		width:1.25em;
+		height:1.25em;
+		font-size:1.8em;
+		line-height:1.125em;
+		&:hover{
+			color:#f00!important;
+			background:#fff;
+		}
+	}
+	
+	table.shop_table {
+		border:1px solid rgba(255,255,255,0.3);
+		td{
+			border-top:1px solid rgba(255,255,255,0.3);
+		}
+	}
+}
+.cart_totals{
+	margin:0 0 60px;
+}
+.woocommerce-cart-form{
+	margin:20px 0 20px;
+}
+
+.type-product > .container{
+	padding:0;
+}
+
+.woocommerce-product-details__short-description p{
+	font-size:2rem;
+}
+
+.light h3{
+	color:$blue;
+}
+
+.ld-course-list-content{
+	.row{
+		display:block;
+	}
+}
+
+.course_progress, .ld-course-list-content{
+	@extend .container;
+}
+
+.instructor{
+	
+	padding:75px 0;
+	
+	.video-container{
+		padding-top:75px;
+	}
+	
+	&.light{
+		background:$off-white;
+		
+		p{
+			color:$dark-gray;
+		}
+		
+		h5{
+			color:$blue;
+		}
+	}
+}
+.woocommerce .col2-set [class*='col']{
+	max-width:none;
+}
+
+.woocommerce-additional-fields__field-wrapper,
+.woocommerce-billing-fields__field-wrapper{
+	label,.woocommerce-input-wrapper{
+		display:inline-block;
+		width:40%;
+	}
+	.woocommerce-input-wrapper{
+		width:55%;
+	}
+	p[id$='name_field']{
+		width:100%;
+	}
+	
+	label.screen-reader-text + .woocommerce-input-wrapper{
+		margin-left:40%;
+		margin-bottom:20px;
+	}
+	
+	#order_comments_field{
+		label,.woocommerce-input-wrapper{
+			display:block;
+			width:100%;		
+		}
+	}
+}
