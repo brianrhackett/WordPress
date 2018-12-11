@@ -51,6 +51,7 @@
 					endif;
 
 			endif;
+		if ( $hero_type !== 'hero-course' ) {
 		?>
 		<div class="container">
 			<div class="hero__content">
@@ -93,21 +94,9 @@
 		</div>
 
 		<?php 
-		if ( $hero_type === 'hero-video' ) {
-			$video = $fields['hero_video'];
-			if($video) {
-				preg_match( '/src="(.+?)"/', $video, $matches );
-				$src =  $matches[1];
-		?>	
-				<div class="js-full-vid full-vid">
-					<div class="full-vid-holder" ><iframe width="100%" height="100%" src="" class="js-full-video-iframe full-video-iframe" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"  data="<?php echo $src; ?>"></iframe><div class="exit">&times;</div></div>
-					<div class="container">
-						<span class="js-full-vid-play-button media-helper__play-button playpause">Play Video</span>
-					</div>
-				</div>
-		<?php 
-			}
-		} 
+		} else {
+			bundle_hero_display($fields['hero_course']);
+		}
 		?>
 	</section>
 <?php endif;

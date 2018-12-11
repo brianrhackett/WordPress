@@ -19,7 +19,7 @@ acf_add_local_component( 'hero', array(
 			),
 			'choices' => array(
 				'hero-regular' => 'Hero',
-				'hero-video' => 'Hero with Video',
+				'hero-course' => 'Hero with Course',
 				'hero-text' => 'Text Only Hero',
 				'hero-nonav' => 'No Nav Hero',
 			),
@@ -303,7 +303,25 @@ acf_add_local_component( 'hero', array(
 				),
 			),
 		),
+		array(
+			'key' => 'field_58ed668fe45cd',
+			'label' => 'Course',
+			'name' => 'hero_course',
+			'type' => 'select',
+			'required' => 1,
+			'choices' => get_bundles(),
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_37ed53c2b9g3a',
+						'operator' => '==',
+						'value' => 'hero-course',
+					),
+				),
+			),
+		),
 	),
+	
 	'menu_order' => 0,
 	'position' => 'normal',
 	'style' => 'seamless',
