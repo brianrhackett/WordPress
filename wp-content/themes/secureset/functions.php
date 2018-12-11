@@ -123,6 +123,7 @@ add_action( 'wp_enqueue_scripts', '__theme_enqueue', 11 );
  */
 require get_template_directory() . '/inc/components.php';
 require get_template_directory() . '/acf/acf-include.php';
+require get_template_directory() . '/acf-functions.php' ;
 
 
 /**
