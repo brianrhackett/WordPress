@@ -1,0 +1,73 @@
+<?php
+
+acf_add_local_component( 'bundle-alternator', array(
+	'key' => 'group_59f76971ae435',
+	'title' => 'Bundle Alternator',
+	'fields' => array(
+		array(
+			'key' => 'field_37ed53c2b9ccc',
+			'label' => 'Display Type',
+			'name' => 'display_type',
+			'type' => 'radio',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '100',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'alternator' => 'Alternator',
+				'grid' => 'Grid'
+			),
+			'allow_null' => 0,
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => 'regular-hero',
+			'layout' => 'horizontal',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_58ed668fe45ac',
+			'label' => 'Bundle',
+			'name' => 'bundle',
+			'type' => 'select',
+			'required' => 1,
+			'choices' => get_bundles(),
+		),
+		array(
+			'key' => 'field_59f76b4c5a6de',
+			'label' => 'Mode',
+			'name' => 'mode',
+			'type' => 'radio',
+			'value' => NULL,
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'light' => 'Light',
+				'dark' => 'Dark',
+			),
+			'allow_null' => 0,
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => 'dark',
+			'layout' => 'vertical',
+			'return_format' => 'value',
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+) );

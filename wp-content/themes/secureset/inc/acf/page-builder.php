@@ -43,6 +43,8 @@ acf_add_local_field_group( array(
 				make_component_layout( array( 'label' => 'Latest Programs', 'name' => 'latest-programs' ) ),
 				make_component_layout( array( 'label' => 'Workshop', 'name' => 'workshop' ) ),
 				make_component_layout( array( 'label' => 'Upcoming Course', 'name' => 'upcoming-course' ) ),
+				make_component_layout( array( 'label' => 'Featured Bundle', 'name' => 'bundle' ) ),
+				make_component_layout( array( 'label' => 'Bundle Alternator', 'name' => 'bundle-alternator' ) ),
 			),
 		),
 	),

@@ -1,0 +1,46 @@
+<?php
+acf_add_local_component( 'course-instructor',  array(
+	'key' => 'group_5a377be5253ea',
+	'title' => 'Course Instructor',
+	'fields' => array(
+		array(
+			'key' => 'field_59bdbdfdebf19',
+			'label' => 'Mode',
+			'name' => 'mode',
+			'type' => 'radio',
+			'value' => NULL,
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'light' => 'Light',
+				'dark' => 'Dark',
+			),
+			'allow_null' => 0,
+			'other_choice' => 0,
+			'save_other_choice' => 0,
+			'default_value' => 'dark',
+			'layout' => 'vertical',
+			'return_format' => 'value',
+		),
+		array(
+			'key' => 'field_5a039bf8983ad',
+			'label' => 'Course',
+			'name' => 'course',
+			'type' => 'number',
+		),	
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => 1,
+	'description' => '',
+));
